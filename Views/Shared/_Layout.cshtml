@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-site-verification" content="cnRMZlLDxXf8DfPZn7Cpn0U6rvKxLKkoG9FShwSS_qc" />
+    <title>Age of Queens - @ViewData["Title"]</title>
+    <meta name="title" content="Age of Queens - a Community for and by women to enjoy Age of Empires together">
+    <meta name="description" content="Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels.">
+    <meta name="keywords" content="Age of Empires, aoe, aoe2, aoe2:de, women, girls, community, age of queens, players, online, gaming" />
+    <meta property="og:title" content="Age of Queens - a Community for and by women to enjoy Age of Empires together" />
+    <meta property="og:description" content="Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels." />
+    <meta property="og:image" content="https://age-of-queens.com/Images/age_of_queens_banner.png" />
+    <meta property="og:url" content="https://age-of-queens.com" />
+    <meta property="og:type" content="website" />
+    <meta content="#5b0339" data-react-helmet="true" name="theme-color" />
+    <link rel="canonical" href="https://age-of-queens.com" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="icon" type="image/x-icon" href="~/Age_of_Queens_logo.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Age of Queens</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown">About us</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" asp-controller="AboutUs" asp-action="WhatIsAgeofqueens">What is Age of Queens?</a>
+                                <a class="dropdown-item" asp-controller="AboutUs" asp-action="Introductions">Introductions</a>
+                                <a class="dropdown-item" asp-controller="AboutUs" asp-action="PastEvents">Past Events</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Leaderboard" asp-action="Index">Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Twitch" asp-action="Index">Twitch Team</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="ActiveEvent" asp-action="Index">Active Event</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; 2021 - Age of Queens
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

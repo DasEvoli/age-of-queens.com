@@ -1,0 +1,462 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1540px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
+    #twitter-widget {
+        display: none;
+    }
+
+    #instagram-widget {
+        display: none;
+    }
+
+    .big-button-font{
+        font-size: 1.2em !important;
+    }
+
+    .side-card {
+        display: none;
+    }
+
+    .col-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-9 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .col-12 {
+        overflow: scroll !important;
+    }
+
+    #youtube-widget {
+        width: auto;
+        height: auto;
+    }
+
+    #twitchteam-info-container {
+
+    }
+
+    #twitchteam-info-container p {
+
+    }
+
+    #twitchteam-info-container img {
+        max-width: 100%;
+    }
+
+    .twitch-iframe {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .twitch-team-member-image {
+        height: 8em !important;
+    }
+
+    #casting-roster-table td {
+        vertical-align: middle;
+    }
+
+    #casting-roster-table th {
+        vertical-align: middle;
+    }
+
+    
+
+    .table {
+        font-size: 10px !important;
+    }
+
+    .table th {
+        padding: 0.2em;
+    }
+
+    .table td {
+        padding: 0.2em;
+    }
+
+    .challonge-widget {
+        display: none;
+    }
+}
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+h1 {
+    margin-bottom: 0em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid #ffffff1f !important;
+}
+
+h2 {
+    border-bottom: 1px solid #ffffff1f !important;
+    padding-bottom: 0.4em;
+}
+
+h3 {
+    border-bottom: 1px solid #ffffff1f !important;
+    padding-top: 1em;
+    padding-bottom: 0.5em;
+}
+
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.btn.focus, .btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
+}
+
+.btn {
+    color: white;
+    font-family: 'Mate SC', serif;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn-primary {
+    background-color: #d6c99e;
+    color: #442356;
+    border: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+
+body {
+    margin-bottom: 60px;
+    background: linear-gradient( 0deg, rgba(12,11,38,1) 0%, rgba(102,2,60,1) 100%);
+    color: white;
+    background-attachment: fixed;
+    font-family: Montserrat;
+    font-size: 14px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    border-top: solid 1px #f9f7d094;
+}
+
+.row {
+    align-items: flex-start;
+}
+
+.navbar {
+    border-bottom: solid 1px #f9f7d094;
+    font-family: 'Mate SC', serif;
+    font-size: 1.4em;
+    color: #f7ebda;
+}
+
+.navbar a {
+    color: #f7ebda;
+    text-decoration: none !important;
+}
+
+
+.nav-link:hover {
+    color: rgb(255 255 255) !important;
+}
+
+.navbar-brand {
+    color: #f7ebda;
+    text-decoration: none;
+    font-size: 1.7rem;
+}
+
+.nav-link {
+    color: inherit;
+}
+
+.navbar-dark .navbar-brand {
+    color: inherit;
+}
+
+a .navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: inherit;
+}
+
+.dropdown-menu {
+    background-color: #64023b;
+    font-size: 1em;
+}
+
+.challonge-widget {
+    margin-top: 2em;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#instagram-widget {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#youtube-widget {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    border-radius: 20px;
+}
+
+.border-top {
+    border-top: 1px solid #ffffff1f !important;
+}
+.border-bottom {
+    border-bottom: 1px solid #ffffff1f !important;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.table {
+    color: white;
+    border-color: #dee2e64a;
+    font-size: 1.2em;
+    margin-top: 2em;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #dee2e67a;
+}
+
+.table-bordered td, .table-bordered th {
+    border: 1px solid #dee2e64a;
+}
+
+.table thead{
+    border-bottom: solid 2px #ffffff;
+}
+
+.clickable-tr:hover {
+    cursor: pointer;
+    background-color: #ffffff21 !important;
+}
+
+#casting-roster-table {
+    text-align: center;
+    font-size: 0.9em;
+    
+}
+
+#casting-roster-table td, #casting-roster-table th {
+    padding: 0em;
+}
+
+.accordion > .card:first-of-type {
+    border-radius: 20px;
+}
+
+article {
+    padding: 2em;
+    border-radius: 15px;
+    background-color: #a9b1e414;
+    margin-top: 2em;
+    -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+    box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+}
+
+article img {
+    max-height: 500px;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+article p {
+    font-size: 1.2em;
+    margin: 0em;
+    text-align: justify;
+}
+
+article h1 {
+    margin-bottom: 0.5em;
+}
+
+.card {
+    margin-top: 2em;
+    background-color: #a9b1e414;
+    margin-left: auto;
+    color: white;
+    margin-right: auto
+}
+
+.card a {
+    text-decoration: none;
+}
+
+.card-title {
+    padding-top: 0em;
+    padding-bottom: 0.2em;
+    border-bottom: solid 1px #ffffff1f;
+}
+
+.card-text {
+    font-size: 1.1em;
+}
+
+.player-introduction {
+    margin: 1em;
+    background-color: #a9b1e414;
+    padding: 2em;
+    -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+    box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+}
+
+.player-introduction .row {
+    align-items: center;
+    position: relative;
+}
+
+.player-introduction-buttons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.player-introduction p{
+    padding-left: 1em;
+}
+
+.player-introduction a {
+    text-decoration: none;
+}
+
+.player-introduction img {
+    max-width: 100%;
+    border-radius: 10px;
+    max-height: 15em;
+}
+
+#twitchteam-info-container {
+    text-align: center;
+    margin: 2em;
+}
+
+#twitchteam-info-container p {
+    padding: 2em;
+}
+
+.twitch-iframe {
+    margin-left: 1em;
+    margin-top: 1em;
+}
+
+.big-button-font {
+    font-size: 1.8em;
+}
+
+.past-event-container {
+    margin-top: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.past-event-container img {
+    max-width: 100%;
+    margin-bottom: 1em;
+    max-height: 200px;
+}
+
+.medals-list {
+    list-style: none;
+    text-align: left;
+    margin-right: auto;
+    padding-left: 0;
+}
+
+#active-event-title{
+    margin-top: 2em;
+}
+
+.annotation{
+    font-size: 0.9em;
+    padding-left: 1em;
+}
+
+.twitch-team-member-container {
+    display: grid;
+    text-align: center;
+}
+
+#twitch-team-members-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+}
+
+.twitch-team-member-image {
+    padding: 1em;
+    height: 10em;
+    border-radius: 100%;
+}
+
+.twitch-team-member-image:hover {
+    filter: brightness(1.25);
+}
+
+.past-event-header {
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.icon {
+    max-width: 2em !important;
+}
+

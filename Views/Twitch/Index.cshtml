@@ -1,0 +1,57 @@
+﻿@model ageofqueenscom.Models.TwitchViewModel
+
+@{
+    ViewData["Title"] = "Twitch Team";
+}
+
+@if (Model.TwitchTeam != null)
+{
+    <h1>@Model.TwitchTeam.TeamDisplayName - Twitch Team</h1>
+    <div id="twitchteam-info-container">
+        <img src="@Model.TwitchTeam.Banner" />
+        <p>"@Model.TwitchTeam.Info"</p>
+    </div>
+}
+
+<div id="accordion" style="margin-top:2em">
+    <div class="card">
+        <div class="card-header">
+            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">
+                Show Members
+            </button>
+        </div>
+
+        <div id="twitch-team-memberlist" class="collapse hide" data-parent="#accordion">
+            <div class="card-body" id="twitch-team-members-container">
+                @if (Model.TwitchTeam.TwitchTeamMemberList != null)
+                {
+                    @foreach (ageofqueenscom.Code.JsonClasses.TwitchUser item in Model.TwitchUserList)
+                    {
+                <div class="twitch-team-member-container">
+
+                    <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img class="twitch-team-member-image" src="@item.ProfileImageUrl" /></a>
+                    <h7>@item.DisplayName</h7>
+                </div>
+                    }
+                }
+
+</div>
+        </div>
+    </div>
+</div>
+<div style="margin-top:2em">
+    <h3>Currently Online</h3>
+    <div id="online-streams-container" style="display:flex; flex-wrap:wrap">
+        @if (Model.TwitchStreamsList != null)
+        {
+            @foreach (ageofqueenscom.Code.JsonClasses.TwitchStream item in Model.TwitchStreamsList)
+            {
+                <div class="twitch-iframe">
+                    <h4>@item.UserName</h4>
+                    <iframe src="https://player.twitch.tv/?channel=@item.UserName&parent=age-of-queens.com&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="189" width="310"></iframe>
+                </div>
+            }
+        }
+
+    </div>
+</div>
