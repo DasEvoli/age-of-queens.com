@@ -77,7 +77,22 @@ for details on configuring this project to bundle and minify static web assets. 
         vertical-align: middle;
     }
 
-    
+    .player-introduction .row {
+        align-items: center;
+        position: relative;
+        flex-wrap: wrap !important;
+        justify-content: center;
+    }
+
+    .player-introduction-buttons {
+        position: unset !important;
+        right: unset !important;
+        top: unset !important;
+    }
+
+    .player-introduction-text {
+        text-align: center;
+    }
 
     .table {
         font-size: 10px !important;
@@ -94,10 +109,21 @@ for details on configuring this project to bundle and minify static web assets. 
     .challonge-widget {
         display: none;
     }
+
+    .navbar-brand {
+        font-size: 2.3rem !important;
+    }
+
+    .navbar-toggler {
+        font-size: 1em !important;
+    }
+
+    .past-event-header {
+        background-size: 150% !important;
+    }
 }
 
 html {
-    font-size: 14px;
     position: relative;
     min-height: 100%;
 }
@@ -357,9 +383,19 @@ article h1 {
     box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
 }
 
+.player-introduction-image{
+
+}
+
+.player-introduction-text {
+    padding: 2em;
+    font-size: 16px;
+}
+
 .player-introduction .row {
     align-items: center;
     position: relative;
+    flex-wrap: nowrap;
 }
 
 .player-introduction-buttons {
@@ -368,18 +404,14 @@ article h1 {
     top: 0;
 }
 
-.player-introduction p{
-    padding-left: 1em;
-}
-
 .player-introduction a {
     text-decoration: none;
 }
 
 .player-introduction img {
-    max-width: 100%;
+    max-width: 12em;
     border-radius: 10px;
-    max-height: 15em;
+    max-height: 18em;
 }
 
 #twitchteam-info-container {
