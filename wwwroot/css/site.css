@@ -13,6 +13,14 @@ for details on configuring this project to bundle and minify static web assets. 
         font-size: 10px;
     }
 
+    body {
+        margin-bottom: 0px !important;
+    }
+
+    .footer {
+        display: none !important;
+    }
+
     #twitter-widget {
         display: none;
     }
@@ -120,6 +128,10 @@ for details on configuring this project to bundle and minify static web assets. 
 
     .past-event-header {
         background-size: 150% !important;
+    }
+
+    .dropdown-menu {
+        display: block !important;
     }
 }
 
