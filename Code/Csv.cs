@@ -38,8 +38,9 @@ namespace ageofqueenscom.Code
                     list.Add(item);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -84,8 +85,9 @@ namespace ageofqueenscom.Code
                     table.Rows.Add(seed);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -132,8 +134,9 @@ namespace ageofqueenscom.Code
                     table.Rows.Add(seed);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -195,8 +198,9 @@ namespace ageofqueenscom.Code
                     rosterTable.RosterRows.Add(row);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -228,8 +232,9 @@ namespace ageofqueenscom.Code
                     blogpostList.Add(blogpost);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -265,9 +270,9 @@ namespace ageofqueenscom.Code
                     playerList.Add(player);
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                Console.WriteLine("Couldn't load Leaderboard");
+                Log.Write(e);
                 return null;
             }
             return playerList;

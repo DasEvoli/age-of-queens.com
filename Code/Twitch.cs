@@ -27,8 +27,9 @@ namespace ageofqueenscom.Code
                 TwitchAccessToken accessToken = JsonConvert.DeserializeObject<TwitchAccessToken>(responseString);
                 return accessToken;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
         }
@@ -47,8 +48,9 @@ namespace ageofqueenscom.Code
                 TwitchTeamList twitchTeamList = JsonConvert.DeserializeObject<TwitchTeamList>(responseString);
                 return twitchTeamList.Data[0];
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
         }
@@ -74,8 +76,9 @@ namespace ageofqueenscom.Code
                 TwitchStreamList list = JsonConvert.DeserializeObject<TwitchStreamList>(responseString);
                 return list.Data;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
@@ -103,8 +106,9 @@ namespace ageofqueenscom.Code
                 TwitchUserList list = JsonConvert.DeserializeObject<TwitchUserList>(responseString);
                 return list.Data;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Log.Write(e);
                 return null;
             }
 
