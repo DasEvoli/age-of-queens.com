@@ -40,14 +40,14 @@
     </div>
 </div>
 <div style="margin-top:2em">
-    <h3>Currently Online</h3>
+    <h2>Currently Online</h2>
     <div id="online-streams-container" style="display:flex; flex-wrap:wrap">
         @if (Model.TwitchStreamsList != null)
         {
             @foreach (ageofqueenscom.Code.JsonClasses.TwitchStream item in Model.TwitchStreamsList)
             {
                 <div class="twitch-iframe">
-                    <h4>@item.UserName</h4>
+                    <p>@item.UserName</p>
                     <iframe src="https://player.twitch.tv/?channel=@item.UserName&parent=age-of-queens.com&autoplay=false" frameborder="0" allowfullscreen="true" scrolling="no" height="189" width="310"></iframe>
                 </div>
             }

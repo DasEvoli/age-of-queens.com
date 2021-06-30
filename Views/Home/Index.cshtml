@@ -1,18 +1,19 @@
 ﻿@model ageofqueenscom.Models.HomeViewModel
 
 @{
-    ViewData["Title"] = "an Age of Empires 2 community by and for women";
+    ViewData["Title"] = "an AOE2 Community";
 }
 
 <div class="row">
     <div class="col-9">
+        <h1>News</h1>
         @if (Model.BlogpostList != null)
         {
             @foreach (ageofqueenscom.Code.BlogpostModel item in Model.BlogpostList)
             {
                 <div data-aos="fade-right">
                     <article>
-                        <h1 class="border-bottom">@item.Title</h1>
+                        <h2 class="border-bottom">@item.Title</h2>
                         <p>@item.Content</p>
                         @if (!String.IsNullOrEmpty(item.ImageUrl))
                         {
@@ -36,7 +37,7 @@
         <div class="card side-card">
             <img src="/Images/queensclash.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h3 class="card-title">Past Events</h3>
+                <H2 class="card-title">Past Events</H2>
                 <p class="card-text">Watch our last events</p>
                 <a href="https://age-of-queens.com/AboutUs/PastEvents" class="btn btn-primary">Click</a>
             </div>
@@ -44,7 +45,7 @@
         <div class="card side-card">
             <img src="/Images/discord.png" class="card-img-top" alt="...">
             <div class="card-body">
-                <h3 class="card-title">Want to join?</h3>
+                <H2 class="card-title">Want to join?</H2>
                 <p class="card-text">Join our Age of Queens Discord today!</p>
                 <a href="https://age-of-queens.com/AboutUs/WhatIsAgeofqueens" class="btn btn-primary">Click</a>
             </div>
@@ -52,7 +53,7 @@
         <div class="card side-card">
             <img src="/Images/twitch.png" class="card-img-top" alt="...">
             <div class="card-body">
-                <h3 class="card-title">We have a Twitch Team!</h3>
+                <H2 class="card-title">We have a Twitch Team!</H2>
                 <p class="card-text">Explore all members</p>
                 <a href="https://age-of-queens.com/Twitch" class="btn btn-primary">Click</a>
             </div>
@@ -60,7 +61,7 @@
         <div class="card side-card">
             <img src="/Images/paypal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
-                <h3 class="card-title">Support us!</h3>
+                <H2 class="card-title">Support us!</H2>
                 <p class="card-text">Every donation will go to the next prize pool</p>
                 <a href="https://www.paypal.com/paypalme/ageofqueens" class="btn btn-primary">Donate</a>
             </div>

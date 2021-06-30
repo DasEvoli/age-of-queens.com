@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="cnRMZlLDxXf8DfPZn7Cpn0U6rvKxLKkoG9FShwSS_qc" />
     <title>Age of Queens - @ViewData["Title"]</title>
-    <meta name="title" content="Age of Queens - a Community for and by women to enjoy Age of Empires together">
-    <meta name="description" content="Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels.">
+    <meta name="title" content="Age of Queens - an AOE2 Community">
+    <meta name="description" content="Age of Queens is a community for women who play Age of Empires II.">
     <meta name="keywords" content="Age of Empires, aoe, aoe2, aoe2:de, women, girls, community, age of queens, players, online, gaming" />
     <meta property="og:title" content="Age of Queens - a Community for and by women to enjoy Age of Empires together" />
     <meta property="og:description" content="Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels." />
@@ -17,9 +17,9 @@
     <link rel="canonical" href="https://age-of-queens.com" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="~/css/aos.css" rel="stylesheet"> <!--Slide effect-->
     <link rel="icon" type="image/x-icon" href="~/Age_of_Queens_logo.ico">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
@@ -74,9 +74,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.js"></script>
-    <script src="~/lib/jquery.csv.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="~/lib/aos.min.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
