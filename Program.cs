@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using System.IO;
 
 namespace ageofqueenscom
 {
@@ -7,6 +8,7 @@ namespace ageofqueenscom
     {
         public static void Main(string[] args)
         {
+            
             CreateHostBuilder(args).Build().Run();
         }
 

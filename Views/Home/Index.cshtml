@@ -10,15 +10,17 @@
         {
             @foreach (ageofqueenscom.Code.BlogpostModel item in Model.BlogpostList)
             {
-                <article>
-                    <h1 class="border-bottom">@item.Title</h1>
-                    <p>@item.Content</p>
-                    @if (!String.IsNullOrEmpty(item.ImageUrl))
-                    {
-                        <img style="border-radius: 10px" src="@item.ImageUrl"/>
-                    }
-                    <p style="float: right;">@item.Created.ToString() by @item.Author</p>
-                </article>
+                <div data-aos="fade-right">
+                    <article>
+                        <h1 class="border-bottom">@item.Title</h1>
+                        <p>@item.Content</p>
+                        @if (!String.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img style="border-radius: 10px" src="@item.ImageUrl" />
+                        }
+                        <p style="float: right;">@item.Created.ToString() by @item.Author</p>
+                    </article>
+                </div>
             }
         }
     </div>
@@ -65,3 +67,13 @@
         </div>
     </div>
 </div>
+
+@section scripts {
+
+    <script>
+
+        AOS.init();
+
+    </script>
+
+}

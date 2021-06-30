@@ -9,6 +9,7 @@
 {
     foreach (ageofqueenscom.Code.IntroductionModel introduction in Model.Introductions)
     {
+    <div data-aos="fade-right">
         <div class="player-introduction">
             <div class="row">
                 <div class="player-introduction-image">
@@ -30,5 +31,16 @@
                 </div>
             </div>
         </div>
+    </div>
     }
+}
+
+@section scripts {
+
+    <script>
+
+        AOS.init();
+
+    </script>
+
 }
