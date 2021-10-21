@@ -6,8 +6,10 @@
 
 <div class="container">
     <h1>Leaderboard RM</h1>
-    <p class="annotation" style="margin-top: 1em;">Data provided by Julinse</pclass="annotation">
-    <p class="annotation">If you want to be included in the leaderboard go to the pinned messages on the Age of Queens Discord server in #announcements for further instructions</p>
+    <span class="annotation">
+        Data provided by Julinse <br />
+        If you want to be included in the leaderboard go to the pinned messages on the Age of Queens Discord server in #announcements for further instructions
+    </span>
 
     <table class="table table-striped table-bordered">
         <thead>
@@ -27,7 +29,7 @@
                 foreach (ageofqueenscom.Code.LeaderboardPlayerModel item in Model.LeaderboardPlayerListRM)
                 {
                     rankNumber += 1;
-                    <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-tr">
+                    <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-hover">
                         <th scope="row">@rankNumber</th>
                         <th>@item.Name</th>
                         <td>@item.Rating</td>

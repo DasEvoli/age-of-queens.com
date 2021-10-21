@@ -1,0 +1,35 @@
+﻿@model ageofqueenscom.Models.ModsViewModel
+@{
+    ViewData["Title"] = "Twitch Team";
+}
+
+@if (Model.ModList != null)
+{
+    foreach (ageofqueenscom.Code.ModModel mod in Model.ModList)
+    {
+        <div data-aos="fade-right">
+            <div class="mod-container clickable-hover" onclick="window.open('@mod.ModUrl')">
+                <img src="@mod.ImageUrl" />
+                <div class="mod-content">
+                    <h2>@mod.Title</h2>
+                    <span>@mod.Category</span>
+                    <p>@mod.Description</p>
+                </div>
+                <div class="mod-info">
+                    <span>@mod.Creator - @mod.Date</span>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+@section scripts {
+
+    <script>
+
+        AOS.init();
+
+    </script>
+
+}

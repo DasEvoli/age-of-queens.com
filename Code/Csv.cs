@@ -278,5 +278,42 @@ namespace ageofqueenscom.Code
             return playerList;
         }
 
+        public static List<ModModel> LoadMods()
+        {
+            List<ModModel> modList = new List<ModModel>();
+
+            string path = @"Csv/Mods.csv";
+
+            try
+            {
+                using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
+                csvReader.CommentTokens = new string[] { "#" };
+                csvReader.SetDelimiters(new string[] { "," });
+                while (!csvReader.EndOfData)
+                {
+                    string[] fields = csvReader.ReadFields();
+                    ModModel mod = new ModModel
+                    {
+                        Title = fields[0],
+                        Description = fields[1],
+                        Creator = fields[2],
+                        Date = fields[3],
+                        Id = fields[4],
+                        Category = fields[5],
+                        ImageUrl = fields[6],
+                        ModUrl = "https://www.ageofempires.com/mods/details/" + fields[4]
+                    };
+                    modList.Add(mod);
+                }
+            }
+            catch (Exception e)
+            {
+                Log.Write(e);
+                return null;
+            }
+
+            return modList;
+        }
+
     }
 }

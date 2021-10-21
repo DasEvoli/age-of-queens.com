@@ -9,7 +9,7 @@
         <h1>News</h1>
         @if (Model.BlogpostList != null)
         {
-            @foreach (ageofqueenscom.Code.BlogpostModel item in Model.BlogpostList)
+            foreach (ageofqueenscom.Code.BlogpostModel item in Model.BlogpostList)
             {
                 <div data-aos="fade-right">
                     <article>
@@ -19,7 +19,7 @@
                         {
                             <img style="border-radius: 10px" src="@item.ImageUrl" />
                         }
-                        <p style="float: right;">@item.Created.ToString() by @item.Author</p>
+                        <span style="float: right;">@item.Created.ToString() by @item.Author</span>
                     </article>
                 </div>
             }

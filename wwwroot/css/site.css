@@ -98,7 +98,7 @@ for details on configuring this project to bundle and minify static web assets. 
         top: unset !important;
     }
 
-    .player-introduction-text {
+    .player-introduction-content {
         text-align: center;
     }
 
@@ -226,6 +226,7 @@ body {
 
 .nav-link:hover {
     color: rgb(255 255 255) !important;
+    cursor: pointer;
 }
 
 .navbar-brand {
@@ -317,7 +318,7 @@ button.accept-policy {
     border-bottom: solid 2px #ffffff;
 }
 
-.clickable-tr:hover {
+.clickable-hover:hover {
     cursor: pointer;
     background-color: #ffffff21 !important;
 }
@@ -392,13 +393,14 @@ article h1 {
     padding: 2em;
     -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
     box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+    border-radius: 1em;
 }
 
 .player-introduction-image{
 
 }
 
-.player-introduction-text {
+.player-introduction-content {
     padding: 2em;
     font-size: 16px;
 }
@@ -467,9 +469,10 @@ article h1 {
     margin-top: 2em;
 }
 
-.annotation{
+.annotation {
     font-size: 0.9em;
-    padding-left: 1em;
+    display: block;
+    margin-top: 0.8em;
 }
 
 .twitch-team-member-container {
@@ -503,3 +506,35 @@ article h1 {
     max-width: 2em !important;
 }
 
+.mod-container {
+    background-color: #a9b1e414;
+    box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+    margin: 2em;
+    border-radius: 1em;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.mod-container img {
+    max-width: 15%;
+    max-height: 12em;
+    margin: 1em;
+    border-radius: 1em;
+    object-fit: cover;
+}
+
+.mod-container p {
+    margin-top: 1em;
+}
+
+.mod-content {
+    margin-left: 1em;
+    width: 80%;
+    margin-top: 1em;
+}
+
+.mod-info {
+    padding-bottom: 1em;
+    padding-left: 1em;
+    color: #c7c7c7;
+}

@@ -47,7 +47,7 @@
                                         {
                                             foreach (ageofqueenscom.Code.SeedSoloRowModel itemRow in item.Rows)
                                             {
-                                                <tr onclick="window.open('@itemRow.AoeNetUrl')" class="clickable-tr">
+                                                <tr onclick="window.open('@itemRow.AoeNetUrl')" class="clickable-hover">
                                                     <th scope="row">@itemRow.SeedNumber</th>
                                                     <td>@itemRow.PlayerName</td>
                                                     <td>@itemRow.SeedingElo</td>
@@ -101,8 +101,11 @@
                                                     <th scope="row">@row.SeedNumber</th>
                                                     <td>@row.TeamName</td>
                                                     <td>@row.TeamElo</td>
-                                                    <td onclick="window.open('@row.PlayerOneAoeNetUrl')" class="clickable-tr">@row.PlayerOneName</td>
-                                                    <td onclick="window.open('@row.PlayerTwoAoeNetUrl')" class="clickable-tr">@row.PlayerTwoName</td>
+                                                    <td onclick="window.open('@row.PlayerOneAoeNetUrl')" class="
+                                                        
+                                                        
+                                                        ">@row.PlayerOneName</td>
+                                                    <td onclick="window.open('@row.PlayerTwoAoeNetUrl')" class="clickable-hover">@row.PlayerTwoName</td>
                                                 </tr>
                                             }
                                         }
@@ -187,7 +190,7 @@
                                 }
                                 else
                                 {
-                                    <td onclick="window.open('@item.StreamerUrl')" class="clickable-tr">@item.StreamerName (@item.StreamerLanguage)</td>
+                                    <td onclick="window.open('@item.StreamerUrl')" class="clickable-hover">@item.StreamerName (@item.StreamerLanguage)</td>
                                 }
 
                                 @if (String.IsNullOrEmpty(item.CasterName))
@@ -196,7 +199,7 @@
                                 }
                                 else
                                 {
-                                    <td onclick="window.open('@item.CasterUrl')" class="clickable-tr">@item.CasterName (@item.CasterLanguage)</td>
+                                    <td onclick="window.open('@item.CasterUrl')" class="clickable-hover">@item.CasterName (@item.CasterLanguage)</td>
                                 }
                                 <td>@item.CastDay</td>
                                 <td>@item.CastTime</td>

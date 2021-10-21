@@ -7,7 +7,7 @@
     <title>Age of Queens - @ViewData["Title"]</title>
     <meta name="title" content="Age of Queens - an AOE2 Community">
     <meta name="description" content="Age of Queens is a community for women who play Age of Empires II.">
-    <meta name="keywords" content="Age of Empires, aoe, aoe2, aoe2:de, women, girls, community, age of queens, players, online, gaming" />
+    <meta name="keywords" content="Age of Empires, aoe, aoe2, aoe2:de, women, girls, community, age of queens, players, online, gaming, age-of-queens" />
     <meta property="og:title" content="Age of Queens - a Community for and by women to enjoy Age of Empires together" />
     <meta property="og:description" content="Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels." />
     <meta property="og:image" content="https://age-of-queens.com/Images/age_of_queens_banner.png" />
@@ -50,10 +50,13 @@
                             <a class="nav-link" asp-area="" asp-controller="Leaderboard" asp-action="Index">Leaderboard</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Mods" asp-action="Index">Mods</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Twitch" asp-action="Index">Twitch Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="ActiveEvent" asp-action="Index">Active Event</a>
+                            <a class="nav-link" asp-area="" asp-controller="ActiveEvent" asp-action="Index">Active/Last Event</a>
                         </li>
                     </ul>
                 </div>
@@ -68,7 +71,7 @@
 
     <footer class="footer">
         <div class="container">
-            &copy; 2021 - Age of Queens
+            &copy; 2021 - Vinzenz Wetzel / DasEvoli
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
