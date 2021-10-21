@@ -47,7 +47,6 @@ namespace ageofqueenscom
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            var contentRoot = env.ContentRootPath;
 
             if (env.IsDevelopment())
             {
@@ -70,13 +69,13 @@ namespace ageofqueenscom
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
-                Path.Combine(contentRoot, @"Images")),
+                Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
                 RequestPath = new PathString("/Images")
             });
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
-                Path.Combine(contentRoot, @"Csv")),
+                Path.Combine(Directory.GetCurrentDirectory(), @"Csv")),
                 RequestPath = new PathString("/Csv")
             });
 
