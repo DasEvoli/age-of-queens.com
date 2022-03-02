@@ -156,19 +156,18 @@ namespace ageofqueenscom.Code
         }
 
         public static ActiveEventViewModel InitializeActiveEvent(){
-            
-            
-            string path = @"Csv/Current_Event.csv";
+            string path = @"Csv/Current_Event_Data.csv";
             try
             {
                 using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
                 csvReader.CommentTokens = new string[] { "#" };
                 csvReader.SetDelimiters(new string[] { "," });
                 ActiveEventViewModel model = new ActiveEventViewModel();
+                model.ActiveGameEventGameList = new List<ActiveEventGameModel>();
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
-                    if(csvReader.LineNumber == 1){
+                    if(csvReader.LineNumber == 3){
                         model.Title = fields[0];
                         model.Information = fields[1];
                         model.RegistrationLink = fields[2];
@@ -176,24 +175,18 @@ namespace ageofqueenscom.Code
                         continue;
                     }
 
-                    {
-                        ActiveEventGameModel gameModel = new ActiveEventGameModel(){
-                            Date = fields[0],
-                            Team1 = fields[1],
-                            Team2 = fields[2],
-                            Team3 = fields[3],
-                            Team4 = fields[4],
-                            Team5 = fields[5],
-                            Team6 = fields[6],
-                            Team7 = fields[7],
-                            Team8 = fields[8],
-                            Maps = fields[9],
-                            Mode = fields[10],
-                            GameCount = fields[11],
-                            Information = fields[12]
-                        };
-                        model.ActiveGameEventGameList.Add(gameModel);
+                    ActiveEventGameModel gameModel = new ActiveEventGameModel(){
+                        Date = fields[0],
+                        ActiveEventTeams = new List<string>(),
+                        Maps = fields[9],
+                        Mode = fields[10],
+                        GameCount = fields[11],
+                        Information = fields[12]
                     };
+                    for(int i = 1; i < 9; i++){
+                        if(!String.IsNullOrEmpty(fields[i])) gameModel.ActiveEventTeams.Add(fields[i]);
+                    }
+                    model.ActiveGameEventGameList.Add(gameModel);
                 }
                 return model;
             }

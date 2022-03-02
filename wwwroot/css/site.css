@@ -396,10 +396,6 @@ article h1 {
     border-radius: 1em;
 }
 
-.player-introduction-image{
-
-}
-
 .player-introduction-content {
     padding: 2em;
     font-size: 16px;
@@ -537,4 +533,11 @@ article h1 {
     padding-bottom: 1em;
     padding-left: 1em;
     color: #c7c7c7;
+}
+
+.border-custom-aoq {
+    border-radius: 1em;
+    border-color: #f7ebda;
+    border-style: groove;
+    border-width: 5px;
 }
