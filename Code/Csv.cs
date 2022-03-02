@@ -71,6 +71,7 @@ namespace ageofqueenscom.Code
                     };
                     blogpostList.Add(blogpost);
                 }
+                blogpostList.Reverse();
             }
             catch (Exception e)
             {
@@ -180,8 +181,7 @@ namespace ageofqueenscom.Code
                         ActiveEventTeams = new List<string>(),
                         Maps = fields[9],
                         Mode = fields[10],
-                        GameCount = fields[11],
-                        Information = fields[12]
+                        Information = fields[11]
                     };
                     for(int i = 1; i < 9; i++){
                         if(!String.IsNullOrEmpty(fields[i])) gameModel.ActiveEventTeams.Add(fields[i]);

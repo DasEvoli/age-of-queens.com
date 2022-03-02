@@ -24,12 +24,14 @@ async def loop():
         url_teamseed = 'https://docs.google.com/spreadsheets/d/1Ljr1248kdWjpxuOuSE_Y-mDNLUGn00zoBehrStFhsnQ/export?format=csv&id=1Ljr1248kdWjpxuOuSE_Y-mDNLUGn00zoBehrStFhsnQ&gid=0'
         #url_introductions = 'https://docs.google.com/spreadsheets/d/1I-3c8zzonzmsOIJGejQDVEcmaTKj3shBEQvKyFCaKgs/export?format=csv&id=1I-3c8zzonzmsOIJGejQDVEcmaTKj3shBEQvKyFCaKgs&gid=1821488200'
         url_mods = 'https://docs.google.com/spreadsheets/d/1lxuqnQGlkopeHeKBp8qDMGgFC72Cy5ZGWBA5kks-VBc/export?format=csv&id=1lxuqnQGlkopeHeKBp8qDMGgFC72Cy5ZGWBA5kks-VBc&gid=0'
+        url_activeevent = 'https://docs.google.com/spreadsheets/d/1ro9r0h6xNabPvelKh7pviK682tTQE_bLCBrvXkta_Hc/export?format=csv&id=1ro9r0h6xNabPvelKh7pviK682tTQE_bLCBrvXkta_Hc&gid=1420222812'
         await download_csv(url_casting_roster, 'CastingRoster.csv')
         await download_csv(url_solo_seed, 'SoloSeed.csv')
         await download_csv(url_leaderboard, 'LeaderboardRM.csv')
         await download_csv(url_blogposts, 'BlogPosts.csv')
         await download_csv(url_teamseed, 'TeamSeed.csv')
         await download_csv(url_mods, 'Mods.csv')
+        await download_csv(url_activeevent, 'Active_Event_Data.csv')
         #await download_csv(url_introductions, 'Introductions.csv')
 
             

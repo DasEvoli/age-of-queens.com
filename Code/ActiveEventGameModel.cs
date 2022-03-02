@@ -8,7 +8,6 @@ namespace ageofqueenscom.Code
         public List<string> ActiveEventTeams;
         public string Maps {get;set;}
         public string Mode {get;set;}
-        public string GameCount {get;set;}
         public string Information {get;set;}
     }
 }
