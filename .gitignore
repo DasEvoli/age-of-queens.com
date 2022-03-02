@@ -11,10 +11,10 @@ appsettings.Development.json
 log.txt
 
 # Images
-Images/
+#Images/
 
 # Csv
-Csv/
+#Csv/
 
 # User-specific files
 *.rsuser
