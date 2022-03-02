@@ -12,14 +12,7 @@ namespace ageofqueenscom.Controllers
         {
 
             ActiveEventViewModel model = new ActiveEventViewModel();
-
-            //model.SeedSoloTables = new List<SeedSoloTable>();
-            //model.SeedSoloTables.Add(Csv.LoadSeedSoloTable(0));
-            //model.SeedSoloTables.Add(Csv.LoadSeedSoloTable(5));
-
-            model.SeedTeamTables = new List<SeedTeamTableModel>();
-            model.SeedTeamTables.Add(Csv.LoadSeedTeamTable(1));
-            model.RosterTable = Csv.LoadRosterTable();
+            model = Csv.InitializeActiveEvent();
 
             return View(model);
         }

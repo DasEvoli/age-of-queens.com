@@ -1,0 +1,19 @@
+namespace ageofqueenscom.Code
+{
+    public class ActiveEventGameModel
+    {
+        public string Date {get;set;}
+        public string Team1 {get;set;}
+        public string Team2 {get;set;}
+        public string Team3 {get;set;}
+        public string Team4 {get;set;}
+        public string Team5 {get;set;}
+        public string Team6 {get;set;}
+        public string Team7 {get;set;}
+        public string Team8 {get;set;}
+        public string Maps {get;set;}
+        public string Mode {get;set;}
+        public string GameCount {get;set;}
+        public string Information {get;set;}
+    }
+}

@@ -1,4 +1,5 @@
 ﻿using ageofqueenscom.Code;
+using ageofqueenscom.Models;
 using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
@@ -46,167 +47,6 @@ namespace ageofqueenscom.Code
 
             return list;
         }
-
-        public static SeedSoloTableModel LoadSeedSoloTable(int firstCol)
-        {
-            SeedSoloTableModel table = new SeedSoloTableModel();
-
-            string path = @"Csv/SoloSeed.csv";
-            try
-            {
-                using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
-                csvReader.CommentTokens = new string[] { "#" };
-                csvReader.SetDelimiters(new string[] { "," });
-
-                table.ColNames = new List<string>();
-                table.Rows = new List<SeedSoloRowModel>();
-
-                // Skip one Row
-                csvReader.ReadFields();
-
-                // Read the cols
-                string[] cols = csvReader.ReadFields();
-                table.ColNames.Add(cols[firstCol]);
-                table.ColNames.Add(cols[firstCol + 1]);
-                table.ColNames.Add(cols[firstCol + 2]);
-                table.ColNames.Add(cols[firstCol + 3]);
-
-
-                // Read every row
-                while (!csvReader.EndOfData)
-                {
-                    string[] fields = csvReader.ReadFields();
-                    SeedSoloRowModel seed = new SeedSoloRowModel();
-                    if (String.IsNullOrEmpty(fields[firstCol])) break;
-                    seed.SeedNumber = fields[firstCol];
-                    seed.PlayerName = fields[firstCol + 1];
-                    seed.SeedingElo = fields[firstCol + 2];
-                    seed.AoeNetUrl = fields[firstCol + 3];
-                    table.Rows.Add(seed);
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Write(e);
-                return null;
-            }
-
-            return table;
-        }
-
-        public static SeedTeamTableModel LoadSeedTeamTable(int firstCol)
-        {
-            SeedTeamTableModel table = new SeedTeamTableModel();
-
-            string path = @"Csv/TeamSeed.csv";
-            try
-            {
-                using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
-                csvReader.CommentTokens = new string[] { "#" };
-                csvReader.SetDelimiters(new string[] { "," });
-
-                table.ColNames = new List<string>();
-                table.Rows = new List<SeedTeamRowModel>();
-
-                // Read the cols
-                string[] cols = csvReader.ReadFields();
-                table.ColNames.Add(cols[firstCol]);
-                table.ColNames.Add(cols[firstCol + 1]);
-                table.ColNames.Add(cols[firstCol + 2]);
-                table.ColNames.Add(cols[firstCol + 3]);
-                //table.ColNames.Add(cols[firstCol + 4]);
-                table.ColNames.Add(cols[firstCol + 5]);
-                //table.ColNames.Add(cols[firstCol + 6]);
-
-                // Read every row
-                while (!csvReader.EndOfData)
-                {
-                    string[] fields = csvReader.ReadFields();
-                    SeedTeamRowModel seed = new SeedTeamRowModel();
-                    if (String.IsNullOrEmpty(fields[firstCol])) break;
-                    seed.SeedNumber = fields[firstCol];
-                    seed.TeamName = fields[firstCol + 1];
-                    seed.TeamElo = fields[firstCol + 2];
-                    seed.PlayerOneName = fields[firstCol + 3];
-                    seed.PlayerOneAoeNetUrl = fields[firstCol + 4];
-                    seed.PlayerTwoName = fields[firstCol + 5];
-                    seed.PlayerTwoAoeNetUrl = fields[firstCol + 6];
-                    table.Rows.Add(seed);
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Write(e);
-                return null;
-            }
-
-            return table;
-        }
-
-        public static CastRosterTableModel LoadRosterTable()
-        {
-            CastRosterTableModel rosterTable = new CastRosterTableModel();
-
-            string path = @"Csv/CastingRoster.csv";
-            try
-            {
-                using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
-                csvReader.CommentTokens = new string[] { "#" };
-                csvReader.SetDelimiters(new string[] { "," });
-
-                rosterTable.RosterCols = new List<string>();
-                rosterTable.RosterRows = new List<CastRoasterRowModel>();
-
-                csvReader.ReadLine();
-                csvReader.ReadLine();
-                csvReader.ReadLine();
-
-                // Read the cols
-                string[] cols = csvReader.ReadFields();
-                rosterTable.RosterCols.Add(cols[0]);
-                rosterTable.RosterCols.Add(cols[1]);
-                rosterTable.RosterCols.Add(cols[2]);
-                rosterTable.RosterCols.Add(cols[3]);
-                rosterTable.RosterCols.Add(cols[4]);
-                //rosterTable.RosterCols.Add(cols[5]);
-                //rosterTable.RosterCols.Add(cols[6]);
-                rosterTable.RosterCols.Add(cols[7]);
-                //rosterTable.RosterCols.Add(cols[8]);
-                //rosterTable.RosterCols.Add(cols[9]);
-                rosterTable.RosterCols.Add(cols[10]);
-                rosterTable.RosterCols.Add(cols[11]);
-
-                // Read every row
-                while (!csvReader.EndOfData)
-                {
-                    string[] fields = csvReader.ReadFields();
-                    CastRoasterRowModel row = new CastRoasterRowModel
-                    {
-                        Round = fields[0],
-                        GameDate = fields[1],
-                        GameTime = fields[2],
-                        PlayerName = fields[3],
-                        StreamerName = fields[4],
-                        StreamerUrl = fields[5],
-                        StreamerLanguage = fields[6],
-                        CasterName = fields[7],
-                        CasterUrl = fields[8],
-                        CasterLanguage = fields[9],
-                        CastDay = fields[10],
-                        CastTime = fields[11]
-                    };
-                    rosterTable.RosterRows.Add(row);
-                }
-            }
-            catch (Exception e)
-            {
-                Log.Write(e);
-                return null;
-            }
-
-            return rosterTable;
-        }
-
         public static List<BlogpostModel> LoadBlogposts()
         {
             List<BlogpostModel> blogpostList = new List<BlogpostModel>();
@@ -315,5 +155,53 @@ namespace ageofqueenscom.Code
             return modList;
         }
 
+        public static ActiveEventViewModel InitializeActiveEvent(){
+            
+            
+            string path = @"Csv/Current_Event.csv";
+            try
+            {
+                using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
+                csvReader.CommentTokens = new string[] { "#" };
+                csvReader.SetDelimiters(new string[] { "," });
+                ActiveEventViewModel model = new ActiveEventViewModel();
+                while (!csvReader.EndOfData)
+                {
+                    string[] fields = csvReader.ReadFields();
+                    if(csvReader.LineNumber == 1){
+                        model.Title = fields[0];
+                        model.Information = fields[1];
+                        model.RegistrationLink = fields[2];
+                        model.Image = fields[3];
+                        continue;
+                    }
+
+                    {
+                        ActiveEventGameModel gameModel = new ActiveEventGameModel(){
+                            Date = fields[0],
+                            Team1 = fields[1],
+                            Team2 = fields[2],
+                            Team3 = fields[3],
+                            Team4 = fields[4],
+                            Team5 = fields[5],
+                            Team6 = fields[6],
+                            Team7 = fields[7],
+                            Team8 = fields[8],
+                            Maps = fields[9],
+                            Mode = fields[10],
+                            GameCount = fields[11],
+                            Information = fields[12]
+                        };
+                        model.ActiveGameEventGameList.Add(gameModel);
+                    };
+                }
+                return model;
+            }
+            catch (Exception e)
+            {
+                Log.Write(e);
+                return null;
+            }
+        }
     }
 }

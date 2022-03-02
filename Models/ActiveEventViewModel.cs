@@ -5,9 +5,11 @@ namespace ageofqueenscom.Models
 {
     public class ActiveEventViewModel
     {
-        public List<SeedSoloTableModel> SeedSoloTables;
-        public List<SeedTeamTableModel> SeedTeamTables;
-        public CastRosterTableModel RosterTable;
+        public List<ActiveEventGameModel> ActiveGameEventGameList;
+        public string Title;
+        public string Information;
+        public string RegistrationLink;
+        public string Image;
     }
 
 }
