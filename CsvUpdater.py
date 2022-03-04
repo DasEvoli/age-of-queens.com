@@ -30,4 +30,4 @@ while True:
     download_csv(url_teamseed, 'TeamSeed.csv')
     download_csv(url_mods, 'Mods.csv')
     download_csv(url_currentevent, 'Current_Event_Data.csv')
-    time.sleep(10)
+    time.sleep(600)
