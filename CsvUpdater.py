@@ -8,9 +8,11 @@ SAVE_PATH = '/Csv/'
 def download_csv(url :str, filename :str):
     try:
         r = requests.get(url, allow_redirects=True)
-        open(dir_path + SAVE_PATH + filename, 'wb').write(r.content)
-        r.close()
-        print("Okay")
+        if(r.status_code == 200):
+            open(dir_path + SAVE_PATH + filename, 'wb').write(r.content)
+            r.close()
+        else:
+            raise Exception("Request Status Code %s", r.status_code)
     except Exception as e:
         print(e)
 
