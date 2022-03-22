@@ -10,13 +10,7 @@ appsettings.Development.json
 # Log Files
 log.txt
 
-# Images
-#Images/
-
 .vscode
-
-# Csv
-#Csv/
 
 # User-specific files
 *.rsuser
