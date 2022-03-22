@@ -3,10 +3,6 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Config Files
-appsettings.json
-appsettings.Development.json
-
 # Log Files
 log.txt
 
