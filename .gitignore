@@ -6,8 +6,6 @@
 # Log Files
 log.txt
 
-.vscode
-
 # User-specific files
 *.rsuser
 *.suo
@@ -452,10 +450,10 @@ $RECYCLE.BIN/
 ##
 ## Visual Studio Code
 ##
-.vscode/*
+#.vscode/*
 !.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
+#!.vscode/tasks.json
+#!.vscode/launch.json
 !.vscode/extensions.json
-.vscode/launch.json
-.vscode/tasks.json
+#.vscode/launch.json
+#.vscode/tasks.json
