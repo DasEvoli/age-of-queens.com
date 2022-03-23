@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ageofqueenscom.Models;
-using ageofqueenscom.Code;
 
 namespace ageofqueenscom.Controllers
 {

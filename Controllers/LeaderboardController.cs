@@ -1,9 +1,6 @@
 ﻿using ageofqueenscom.Code;
 using ageofqueenscom.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.VisualBasic.FileIO;
-using System;
-using System.IO;
 
 namespace ageofqueenscom.Controllers
 {

@@ -16,7 +16,6 @@ def download_csv(url :str, filename :str):
     except Exception as e:
         print(e)
 
-
 while True:
     url_casting_roster = 'https://docs.google.com/spreadsheets/d/1zmYGhrCTQN3L5WDFfAYkThcuJRKOMLKE2MOvBykbT7I/export?format=csv&id=1zmYGhrCTQN3L5WDFfAYkThcuJRKOMLKE2MOvBykbT7I&gid=0'
     url_solo_seed = 'https://docs.google.com/spreadsheets/d/1ALlkjl-jcCAHdapkVypjhUGkfyaNf3ebIUUw9F6APE8/export?format=csv&id=1ALlkjl-jcCAHdapkVypjhUGkfyaNf3ebIUUw9F6APE8&gid=0'

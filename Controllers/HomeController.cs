@@ -9,6 +9,7 @@ namespace ageofqueenscom.Controllers
 {
     public class HomeController : Controller
     {
+        //Todo check if we need this
         private readonly ILogger<HomeController> _logger;
 
         public HomeController(ILogger<HomeController> logger)

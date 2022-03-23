@@ -1,5 +1,4 @@
-﻿using ageofqueenscom.Code;
-using ageofqueenscom.Models;
+﻿using ageofqueenscom.Models;
 using Microsoft.VisualBasic.FileIO;
 using System;
 using System.Collections.Generic;
@@ -9,7 +8,6 @@ namespace ageofqueenscom.Code
 {
     public static class Csv
     {
-
         public static List<IntroductionModel> LoadIntroductions()
         {
             List<IntroductionModel> list = new List<IntroductionModel>();
