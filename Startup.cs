@@ -58,14 +58,12 @@ namespace ageofqueenscom
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseForwardedHeaders(new ForwardedHeadersOptions
             {
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
-
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
+            app.UseStaticFiles();   // For wwwroot
             app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
@@ -78,16 +76,10 @@ namespace ageofqueenscom
                 Path.Combine(Directory.GetCurrentDirectory(), @"Csv")),
                 RequestPath = new PathString("/Csv")
             });
-
-
             app.UseRouting();
-
             app.UseSession();
-
             app.UseCookiePolicy();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
