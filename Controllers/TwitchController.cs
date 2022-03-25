@@ -23,8 +23,8 @@ namespace ageofqueenscom.Controllers
 
         public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
-            ClientId = configuration["Twitch:ClientId"];
-            ClientSecret = configuration["Twitch:ClientSecret"];
+            ClientId = configuration["TWITCH_CLIENT_ID"];
+            ClientSecret = configuration["TWITCH_CLIENT_SECRET"];
             HttpClientFactory = httpClientFactory;
             UpdateAccessToken();
         }
