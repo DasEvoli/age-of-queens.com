@@ -7,15 +7,11 @@ namespace ageofqueenscom.Controllers
     {
         public IActionResult Index()
         {
+            // Default View
             return View("WhatIsAgeofqueens");
         }
 
         public IActionResult WhatIsAgeofqueens()
-        {
-            return View();
-        }
-
-        public IActionResult Rules()
         {
             return View();
         }

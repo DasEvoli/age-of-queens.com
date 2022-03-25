@@ -7,7 +7,7 @@
 
 @if (Model.Introductions != null)
 {
-    foreach (ageofqueenscom.Code.IntroductionModel introduction in Model.Introductions)
+    foreach (ageofqueenscom.Models.IntroductionsViewModel.IntroductionModel introduction in Model.Introductions)
     {
     <div data-aos="fade-right">
         <div class="player-introduction">
@@ -33,12 +33,9 @@
     }
 }
 
-@section scripts {
-
+@section scripts 
+{
     <script>
-
         AOS.init();
-
     </script>
-
 }

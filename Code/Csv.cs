@@ -8,9 +8,9 @@ namespace ageofqueenscom.Code
 {
     public static class Csv
     {
-        public static List<IntroductionModel> LoadIntroductions()
+        public static List< IntroductionsViewModel.IntroductionModel> LoadIntroductions()
         {
-            List<IntroductionModel> list = new List<IntroductionModel>();
+            List< IntroductionsViewModel.IntroductionModel> list = new List< IntroductionsViewModel.IntroductionModel>();
 
             string path = @"Csv/Introductions.csv";
             try
@@ -26,7 +26,7 @@ namespace ageofqueenscom.Code
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
-                    IntroductionModel item = new IntroductionModel();
+                    IntroductionsViewModel.IntroductionModel item = new  IntroductionsViewModel.IntroductionModel();
                     item.Name = fields[1];
                     item.Description = fields[2];
                     item.ImageUrl = fields[3];
@@ -45,9 +45,9 @@ namespace ageofqueenscom.Code
 
             return list;
         }
-        public static List<BlogpostModel> LoadBlogposts()
+        public static List<HomeViewModel.BlogpostModel> LoadBlogposts()
         {
-            List<BlogpostModel> blogpostList = new List<BlogpostModel>();
+            List<HomeViewModel.BlogpostModel> blogpostList = new List<HomeViewModel.BlogpostModel>();
 
             string path = @"Csv/BlogPosts.csv";
 
@@ -59,7 +59,7 @@ namespace ageofqueenscom.Code
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
-                    BlogpostModel blogpost = new BlogpostModel
+                    HomeViewModel.BlogpostModel blogpost = new HomeViewModel.BlogpostModel
                     {
                         Title = fields[0],
                         Content = fields[1],
@@ -80,9 +80,9 @@ namespace ageofqueenscom.Code
             return blogpostList;
         }
 
-        public static List<LeaderboardPlayerModel> LoadLeaderboardRM()
+        public static List<LeaderboardViewModel.LeaderboardPlayerModel> LoadLeaderboardRM()
         {
-            List<LeaderboardPlayerModel> playerList = new List<LeaderboardPlayerModel>();
+            List<LeaderboardViewModel.LeaderboardPlayerModel> playerList = new List<LeaderboardViewModel.LeaderboardPlayerModel>();
             string path = @"Csv/LeaderboardRM.csv";
             try
             {
@@ -99,7 +99,7 @@ namespace ageofqueenscom.Code
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
-                    LeaderboardPlayerModel player = new LeaderboardPlayerModel();
+                    LeaderboardViewModel.LeaderboardPlayerModel player = new LeaderboardViewModel.LeaderboardPlayerModel();
                     if (String.IsNullOrEmpty(fields[1])) break;
                     player.Name = fields[1];
                     player.Country = fields[2];
@@ -117,9 +117,9 @@ namespace ageofqueenscom.Code
             return playerList;
         }
 
-        public static List<ModModel> LoadMods()
+        public static List<ModsViewModel.ModModel> LoadMods()
         {
-            List<ModModel> modList = new List<ModModel>();
+            List<ModsViewModel.ModModel> modList = new List<ModsViewModel.ModModel>();
 
             string path = @"Csv/Mods.csv";
 
@@ -131,7 +131,7 @@ namespace ageofqueenscom.Code
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
-                    ModModel mod = new ModModel
+                    ModsViewModel.ModModel mod = new ModsViewModel.ModModel
                     {
                         Title = fields[0],
                         Description = fields[1],
@@ -162,7 +162,7 @@ namespace ageofqueenscom.Code
                 csvReader.CommentTokens = new string[] { "#" };
                 csvReader.SetDelimiters(new string[] { "," });
                 ActiveEventViewModel model = new ActiveEventViewModel();
-                model.ActiveGameEventGameList = new List<ActiveEventGameModel>();
+                model.ActiveGameEventGameList = new List<ActiveEventViewModel.ActiveEventGameModel>();
                 while (!csvReader.EndOfData)
                 {
                     string[] fields = csvReader.ReadFields();
@@ -174,7 +174,7 @@ namespace ageofqueenscom.Code
                         continue;
                     }
 
-                    ActiveEventGameModel gameModel = new ActiveEventGameModel(){
+                    ActiveEventViewModel.ActiveEventGameModel gameModel = new ActiveEventViewModel.ActiveEventGameModel(){
                         Date = fields[0],
                         ActiveEventTeams = new List<string>(),
                         Maps = fields[9],

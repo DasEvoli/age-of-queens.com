@@ -8,10 +8,8 @@ namespace ageofqueenscom.Controllers
     {
         public IActionResult Index()
         {
-
             ActiveEventViewModel model = new ActiveEventViewModel();
             model = Csv.InitializeActiveEvent();
-
             return View(model);
         }
     }

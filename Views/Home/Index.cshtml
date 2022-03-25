@@ -9,7 +9,7 @@
         <h1>News</h1>
         @if (Model.BlogpostList != null)
         {
-            foreach (ageofqueenscom.Code.BlogpostModel item in Model.BlogpostList)
+            foreach (ageofqueenscom.Models.HomeViewModel.BlogpostModel item in Model.BlogpostList)
             {
                 <div data-aos="fade-right">
                     <article>
@@ -72,9 +72,7 @@
 @section scripts {
 
     <script>
-
         AOS.init();
-
     </script>
 
 }

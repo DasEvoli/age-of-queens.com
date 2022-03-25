@@ -2,27 +2,16 @@
 using ageofqueenscom.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 
 namespace ageofqueenscom.Controllers
 {
     public class HomeController : Controller
     {
-        //Todo check if we need this
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
             HomeViewModel model = new HomeViewModel();
-
             model.BlogpostList = Csv.LoadBlogposts();
-
             return View(model);
         }
 
