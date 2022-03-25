@@ -3,17 +3,18 @@ using System.IO;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ageofqueenscom.Code;
 using ageofqueenscom.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Logging;
 
 namespace ageofqueenscom.Controllers
 {
     public class TwitchController : Controller
     {
         public IConfiguration Configuration;
+        private readonly ILogger _logger = null;
         public string ClientId = null;
         public string ClientSecret = null;
         public string AccessToken = null;
@@ -22,9 +23,10 @@ namespace ageofqueenscom.Controllers
         public readonly string ValidationUrl = "https://id.twitch.tv/oauth2/validate";
         public readonly IHttpClientFactory HttpClientFactory;
 
-        public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
+        public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory, ILogger<TwitchController> logger)
         {
             Configuration = configuration;
+            _logger = logger;
             ClientId = configuration["TWITCH_CLIENT_ID"];
             ClientSecret = configuration["TWITCH_CLIENT_SECRET"];
             AccessToken = configuration["TWITCH_ACCESS_TOKEN"];
@@ -67,7 +69,7 @@ namespace ageofqueenscom.Controllers
             }
             catch (Exception e)
             {
-                Log.Write(e);
+                _logger.LogError(e.ToString());
                 return null;
             }
         }
@@ -95,7 +97,7 @@ namespace ageofqueenscom.Controllers
             }
             catch (Exception e)
             {
-                Log.Write(e);
+                _logger.LogError(e.ToString());
                 return null;
             }
         }
@@ -123,7 +125,7 @@ namespace ageofqueenscom.Controllers
             }
             catch (Exception e)
             {
-                Log.Write(e);
+                _logger.LogError(e.ToString());
                 return null;
             }
         }
@@ -139,7 +141,7 @@ namespace ageofqueenscom.Controllers
             }
             catch (Exception e)
             {
-                Log.Write(e);
+                _logger.LogError(e.ToString());
                 return false;
             }
         }
@@ -163,7 +165,7 @@ namespace ageofqueenscom.Controllers
             }
             catch (Exception e)
             {
-                Log.Write(e);
+                _logger.LogError(e.ToString());
                 return false;
             }
         }

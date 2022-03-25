@@ -1,10 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
 using ageofqueenscom.Models;
+using Microsoft.Extensions.Logging;
 
 namespace ageofqueenscom.Controllers
 {
     public class AboutUsController : Controller
     {
+        private readonly ILogger _logger = null;
+        public AboutUsController(ILogger<AboutUsController> logger)
+        {
+            _logger = logger;
+        }
         public IActionResult Index()
         {
             // Default View
@@ -19,7 +26,14 @@ namespace ageofqueenscom.Controllers
         public IActionResult Introductions()
         {
             IntroductionsViewModel model = new IntroductionsViewModel();
-            model.Introductions = Code.Csv.LoadIntroductions();
+            try
+            {
+                model.Introductions = Code.Csv.LoadIntroductions();
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.ToString());
+            }
             return View(model);
         }
 

@@ -12,26 +12,30 @@
 </div>
 
 <div>
-    @foreach (ageofqueenscom.Models.ActiveEventViewModel.ActiveEventGameModel item in Model.ActiveGameEventGameList)
+    @if(Model.ActiveGameEventGameList != null)
     {
-        <article style="padding:1.2em">
-            <div class="border-bottom">
-                <span style="padding-top: 0em; font-size: 2em;">@item.Date</span>
-                <span style="padding-top: 0em; float: right; font-size: 2em;">@item.Mode</span>
-            </div>
-            
-            <div style="margin-top:1em; text-align:center">
-            @for(int i = 0; i < item.ActiveEventTeams.Count; i++)
-            {
-                if(i != 0){
-                    <span style="padding:0em 0.3em 0em 0.3em">vs.</span>
+        @foreach (ageofqueenscom.Models.ActiveEventViewModel.ActiveEventGameModel item in Model.ActiveGameEventGameList)
+        {
+            <article style="padding:1.2em">
+                <div class="border-bottom">
+                    <span style="padding-top: 0em; font-size: 2em;">@item.Date</span>
+                    <span style="padding-top: 0em; float: right; font-size: 2em;">@item.Mode</span>
+                </div>
+                
+                <div style="margin-top:1em; text-align:center">
+                @for(int i = 0; i < item.ActiveEventTeams.Count; i++)
+                {
+                    if(i != 0){
+                        <span style="padding:0em 0.3em 0em 0.3em">vs.</span>
+                    }
+                    <span style="font-size:1.5em; font-weight:bold; padding: 0.3em; background-color: #dda2d61a; padding-bottom: 0.3em; border-radius: 0.3em;">@item.ActiveEventTeams[i]</span>
                 }
-                <span style="font-size:1.5em; font-weight:bold; padding: 0.3em; background-color: #dda2d61a; padding-bottom: 0.3em; border-radius: 0.3em;">@item.ActiveEventTeams[i]</span>
-            }
-            </div>
-            <div class="border-bottom" style="font-size: 1.3em; margin-top: 1em; text-align: center; width: 50%; margin-left: auto; margin-right: auto;">@item.Maps</div>
-            <div style="text-align: center; margin-top: 1em;">@item.Information</div>
+                </div>
+                <div class="border-bottom" style="font-size: 1.3em; margin-top: 1em; text-align: center; width: 50%; margin-left: auto; margin-right: auto;">@item.Maps</div>
+                <div style="text-align: center; margin-top: 1em;">@item.Information</div>
 
-        </article>
+            </article>
+        }
     }
+
 </div>
