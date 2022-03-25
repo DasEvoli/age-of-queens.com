@@ -10,8 +10,6 @@ namespace ageofqueenscom.Controllers
         {
             LeaderboardViewModel model = new LeaderboardViewModel();
             model.LeaderboardPlayerListRM = Csv.LoadLeaderboardRM();
-            
-
             return View(model);
         }
     }
