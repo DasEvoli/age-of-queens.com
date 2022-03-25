@@ -23,7 +23,7 @@
 
         <div id="twitch-team-memberlist" class="collapse hide" data-parent="#accordion">
             <div class="card-body" id="twitch-team-members-container">
-                @if (Model.TwitchTeam != null && Model.TwitchTeam.TwitchTeamMemberList != null)
+                @if (Model.TwitchTeam != null && Model.TwitchTeam.TwitchTeamMemberList != null && Model.TwitchUserList != null)
                 {
                     @foreach (ageofqueenscom.Code.JsonClasses.TwitchUser item in Model.TwitchUserList)
                     {

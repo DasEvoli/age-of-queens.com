@@ -5,9 +5,9 @@
             "name": ".NET Core Launch (web)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "debug",
             // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp3.1/ageofqueenscom.dll",
+            "program": "${workspaceFolder}/bin/Debug/netcoreapp6.0/ageofqueenscom.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "stopAtEntry": false,
