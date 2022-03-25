@@ -26,6 +26,7 @@ namespace ageofqueenscom.Controllers
             return View(model);
         }
 
+        // TODO: Learn more about those properties
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
