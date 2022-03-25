@@ -2,19 +2,22 @@ import time
 import requests
 import os
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
+DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 SAVE_PATH = '/Csv/'
+TIMEOUT = 600
 
 def download_csv(url :str, filename :str):
     try:
         r = requests.get(url, allow_redirects=True)
         if(r.status_code == 200):
-            open(dir_path + SAVE_PATH + filename, 'wb').write(r.content)
+            open(DIR_PATH + SAVE_PATH + filename, 'wb').write(r.content)
             r.close()
         else:
             raise Exception("Request Status Code %s", r.status_code)
     except Exception as e:
         print(e)
+    finally:
+        r.close()
 
 while True:
     url_casting_roster = 'https://docs.google.com/spreadsheets/d/1zmYGhrCTQN3L5WDFfAYkThcuJRKOMLKE2MOvBykbT7I/export?format=csv&id=1zmYGhrCTQN3L5WDFfAYkThcuJRKOMLKE2MOvBykbT7I&gid=0'
@@ -31,4 +34,4 @@ while True:
     download_csv(url_teamseed, 'TeamSeed.csv')
     download_csv(url_mods, 'Mods.csv')
     download_csv(url_currentevent, 'Current_Event_Data.csv')
-    time.sleep(600)
+    time.sleep(TIMEOUT)
