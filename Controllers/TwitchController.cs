@@ -2,6 +2,7 @@
 using System.IO;
 using System.Net.Http;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using ageofqueenscom.Code.JsonClasses;
 using ageofqueenscom.Code;
 using ageofqueenscom.Models;
@@ -26,25 +27,28 @@ namespace ageofqueenscom.Controllers
             ClientId = configuration["TWITCH_CLIENT_ID"];
             ClientSecret = configuration["TWITCH_CLIENT_SECRET"];
             HttpClientFactory = httpClientFactory;
-            UpdateAccessToken();
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            //TODO: Create httpclient async so that the site does not lag when trying to open it.
             HttpClient httpClient = HttpClientFactory.CreateClient();
             TwitchViewModel model = new TwitchViewModel();
-            if (AccessToken != null) // TODO: Maybe show that no access token was generated
+            UpdateAccessToken();    // TODO: We could make the loading much faster if we generate the AccessToken only when it's expired.
+            if (AccessToken != null) 
             {
-                model.TwitchTeam = GetTwitchTeam("ageofqueens", AccessToken);
-                model.TwitchStreamsList = GetStreams(model.TwitchTeam.TwitchTeamMemberList, AccessToken);
-                model.TwitchUserList = GetUsers(model.TwitchTeam.TwitchTeamMemberList, AccessToken); // TODO: Refactor name
+                model.TwitchTeam = await GetTwitchTeam("ageofqueens", AccessToken);
+                // Can be executed parallel. They depend on Twitch Team data.
+                Task[] tasks= new Task[2];
+                tasks[0] = Task.Run(async() => model.TwitchStreamsList = await GetStreams(model.TwitchTeam.TwitchTeamMemberList, AccessToken));
+                tasks[1] = Task.Run(async() => model.TwitchUserList = await GetUsers(model.TwitchTeam.TwitchTeamMemberList, AccessToken));
+                Task.WaitAll(tasks);
             }
             return View(model);
         }
+
         public void UpdateAccessToken()
         {
             try
-            {
+            {  
                 string url = BaseTokenUrl + "?client_id=" + ClientId + "&client_secret=" + ClientSecret + "&grant_type=" + "client_credentials";
                 HttpClient httpClient = HttpClientFactory.CreateClient();
                 HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Post, url));
@@ -60,7 +64,8 @@ namespace ageofqueenscom.Controllers
                 Log.Write(e);
             }
         }
-        public TwitchTeam GetTwitchTeam(string team, TwitchAccessToken accessToken) // TODO: Find better way accessing token
+
+        public async Task<TwitchTeam> GetTwitchTeam(string team, TwitchAccessToken accessToken) // TODO: Find better way accessing token
         {
             TwitchTeam twitchTeam = null;
             try
@@ -69,11 +74,11 @@ namespace ageofqueenscom.Controllers
                 HttpClient httpClient = HttpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken.AccessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
-                HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, url));
+                HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
-                    StreamReader reader = new StreamReader(content.ReadAsStream());
-                    string responseString = reader.ReadToEnd();
+                    StreamReader reader = new StreamReader(await content.ReadAsStreamAsync());
+                    string responseString = await reader.ReadToEndAsync();
                     TwitchTeamList twitchTeamList = JsonConvert.DeserializeObject<TwitchTeamList>(responseString);
                     twitchTeam = twitchTeamList.Data[0];
                 }
@@ -85,7 +90,8 @@ namespace ageofqueenscom.Controllers
                 return null;
             }
         }
-        public List<TwitchStream> GetStreams(List<TwitchTeamMember> members, TwitchAccessToken accessToken)
+
+        public async Task<List<TwitchStream>> GetStreams(List<TwitchTeamMember> members, TwitchAccessToken accessToken)
         {
             List<TwitchStream> streams = null;
             try
@@ -97,11 +103,11 @@ namespace ageofqueenscom.Controllers
                 HttpClient httpClient = HttpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken.AccessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
-                HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, url));
+                HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
-                    StreamReader reader = new StreamReader(content.ReadAsStream());
-                    string responseString = reader.ReadToEnd();
+                    StreamReader reader = new StreamReader(await content.ReadAsStreamAsync());
+                    string responseString = await reader.ReadToEndAsync();
                     streams = JsonConvert.DeserializeObject<TwitchStreamList>(responseString).Data;
                 }
                 return streams;
@@ -111,8 +117,9 @@ namespace ageofqueenscom.Controllers
                 Log.Write(e);
                 return null;
             }
-        } 
-        public List<TwitchUser> GetUsers(List<TwitchTeamMember> members, TwitchAccessToken accessToken)
+        }
+
+        public async Task<List<TwitchUser>> GetUsers(List<TwitchTeamMember> members, TwitchAccessToken accessToken)
         {
             List<TwitchUser> users = null;
             try
@@ -124,11 +131,11 @@ namespace ageofqueenscom.Controllers
                 HttpClient httpClient = HttpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken.AccessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
-                HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, url));
+                HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
-                    StreamReader reader = new StreamReader(content.ReadAsStream());
-                    string responseString = reader.ReadToEnd();
+                    StreamReader reader = new StreamReader(await content.ReadAsStreamAsync());
+                    string responseString = await reader.ReadToEndAsync();
                     users = JsonConvert.DeserializeObject<TwitchUserList>(responseString).Data;
                 }
                 return users;
@@ -139,5 +146,6 @@ namespace ageofqueenscom.Controllers
                 return null;
             }
         }
+
     }
 }
