@@ -3,8 +3,6 @@ Create Error messages when something is not loading correctly
 Check if we can improve Namespaces
 Check if we can improve using directives
 
-Check if we need Microsoft.EntityFrameworkCore in csproj file
-Read where and how we can store log messages from ILogger in files
 
 Check if we can use property bindings (or called decorations)
 Refactor Views
@@ -18,3 +16,5 @@ Finished:
     Organize Images in Directories and store path in appsettings.py
     Maybe rename Csv Files and Csv Code file itself
     Check if we can use wwwroot better
+    Check if we need Microsoft.EntityFrameworkCore in csproj file
+    Read where and how we can store log messages from ILogger in files

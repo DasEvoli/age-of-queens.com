@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ageofqueenscom.Code;
 using ageofqueenscom.Models;
@@ -28,12 +26,6 @@ namespace ageofqueenscom.Controllers
                 model.BlogpostList = null;
             }
             return View(model);
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }
