@@ -57,7 +57,7 @@ namespace Ageofqueenscom.Controllers
             try
             {
                 string url = $"{_baseApiUrl}/teams?name={teamName}";
-                HttpClient httpClient = _httpClientFactory.CreateClient();
+                using HttpClient httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
@@ -87,7 +87,7 @@ namespace Ageofqueenscom.Controllers
                 for (int i = 1; i < members.Count; i++) idQuery += "&user_id=" + members[i].UserId;
                 string url = $"{_baseApiUrl}/streams?{idQuery}";
 
-                HttpClient httpClient = _httpClientFactory.CreateClient();
+                using HttpClient httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
@@ -116,7 +116,7 @@ namespace Ageofqueenscom.Controllers
                 for (int i = 1; i < members.Count; i++) idQuery += "&id=" + members[i].UserId;
                 string url = $"{_baseApiUrl}/users?{idQuery}";
 
-                HttpClient httpClient = _httpClientFactory.CreateClient();
+                using HttpClient httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
                 httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
@@ -139,7 +139,7 @@ namespace Ageofqueenscom.Controllers
         {
             try
             {
-                HttpClient httpClient = _httpClientFactory.CreateClient();
+                using HttpClient httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
                 HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, _validationUrl));
                 return response.IsSuccessStatusCode;
@@ -157,7 +157,7 @@ namespace Ageofqueenscom.Controllers
             try
             {  
                 string url = $"{_baseTokenUrl}?client_id={_clientId}&client_secret={_clientSecret}&grant_type=client_credentials";
-                HttpClient httpClient = _httpClientFactory.CreateClient();
+                using HttpClient httpClient = _httpClientFactory.CreateClient();
                 HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Post, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
