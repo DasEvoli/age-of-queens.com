@@ -1,13 +1,11 @@
-﻿@using Microsoft.Extensions.Configuration
-@inject IConfiguration Configuration
-@model Ageofqueenscom.Models.ModsViewModel
+﻿@model ModsViewModel
 @{
     ViewData["Title"] = "Mods";
 }
 
 @if (Model.ModList != null)
 {
-    foreach (Ageofqueenscom.Models.ModsViewModel.Mod mod in Model.ModList)
+    foreach (ModsViewModel.Mod mod in Model.ModList)
     {
         <div data-aos="fade-right">
             <div class="mod-container clickable-hover" onclick="window.open('@mod.ModUrl')">

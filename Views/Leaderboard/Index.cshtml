@@ -1,6 +1,4 @@
-﻿@using Microsoft.Extensions.Configuration
-@inject IConfiguration Configuration
-@model Ageofqueenscom.Models.LeaderboardViewModel
+﻿@model LeaderboardViewModel
 
 @{
     ViewData["Title"] = "Leaderboard";
@@ -28,7 +26,7 @@
             @if (Model.LeaderboardPlayerListRM != null)
             {
                 int rankNumber = 0;
-                foreach (Ageofqueenscom.Models.LeaderboardViewModel.LeaderboardPlayer item in Model.LeaderboardPlayerListRM)
+                foreach (LeaderboardViewModel.LeaderboardPlayer item in Model.LeaderboardPlayerListRM)
                 {
                     rankNumber += 1;
                     <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-hover">

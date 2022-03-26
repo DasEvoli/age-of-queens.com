@@ -1,3 +1,4 @@
-﻿@using Ageofqueenscom
-@using Ageofqueenscom.Models
+﻿@using Ageofqueenscom.Models    <!-- When it says it's unneccessary it's a lie. We need this using directive -->
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers

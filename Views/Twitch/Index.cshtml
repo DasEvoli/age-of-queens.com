@@ -1,6 +1,4 @@
-﻿@using Microsoft.Extensions.Configuration
-@inject IConfiguration Configuration
-@model Ageofqueenscom.Models.TwitchViewModel
+﻿@model TwitchViewModel
 
 @{
     ViewData["Title"] = "Twitch Team";
@@ -31,7 +29,7 @@ else
             <div class="card-body" id="twitch-team-members-container">
                 @if (Model.Team != null && Model.Team.TeamMemberList != null && Model.UserList != null)
                 {
-                    @foreach (Ageofqueenscom.Models.TwitchViewModel.Json.User item in Model.UserList)
+                    @foreach (TwitchViewModel.Json.User item in Model.UserList)
                     {
                 <div class="twitch-team-member-container">
 
@@ -53,7 +51,7 @@ else
     <div id="online-streams-container" style="display:flex; flex-wrap:wrap">
         @if (Model.StreamsList != null)
         {
-            @foreach (Ageofqueenscom.Models.TwitchViewModel.Json.Stream item in Model.StreamsList)
+            @foreach (TwitchViewModel.Json.Stream item in Model.StreamsList)
             {
                 <div class="twitch-iframe">
                     <p>@item.UserName</p>
