@@ -7,8 +7,6 @@
     ViewData["OgUrl"] = "https://age-of-queens.com/AboutUs/Introductions";
 }
 
-
-
 @if (Model.Introductions != null)
 {
     foreach (IntroductionsViewModel.Introduction introduction in Model.Introductions)
@@ -16,7 +14,7 @@
     <div data-aos="fade-right">
         <div class="player-introduction">
             <div class="row">
-                    <img src="@Configuration["Directories:Images:Introductions"]@{@introduction.Name}.jpg" />
+                <img src="@Configuration["Directories:Images:Introductions"]@{@introduction.Name}.jpg" />
                 <div class="player-introduction-content">
                     <h2>@introduction.Name</h2>
                     <p>@introduction.Description</p>
@@ -43,7 +41,5 @@ else
 
 @section scripts 
 {
-    <script>
-        AOS.init();
-    </script>
+    <script>AOS.init()</script>
 }

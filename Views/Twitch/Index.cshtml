@@ -1,5 +1,4 @@
 ﻿@model TwitchViewModel
-
 @{
     ViewData["Title"] = "Twitch Team";
     ViewData["Description"] = "We have an official Twitch Team. Check our members and if someone is online.";
@@ -24,29 +23,25 @@ else
 <div id="accordion" style="margin-top:2em">
     <div class="card">
         <div class="card-header">
-            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">
-                Show Members
-            </button>
+            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">Show Members</button>
         </div>
-
         <div id="twitch-team-memberlist" class="collapse hide" data-parent="#accordion">
             <div class="card-body" id="twitch-team-members-container">
                 @if (Model.Team != null && Model.Team.TeamMemberList != null && Model.UserList != null)
                 {
                     @foreach (TwitchViewModel.Json.User item in Model.UserList)
                     {
-                <div class="twitch-team-member-container">
-
+                    <div class="twitch-team-member-container">
                     <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img class="twitch-team-member-image" src="@item.ProfileImageUrl" /></a>
                     <h7>@item.DisplayName</h7>
-                </div>
+                    </div>
                     }
                 }
                 else 
                 {
                     <div class="alert alert-warning" role="alert">Error while loading the content.</div>
                 }
-</div>
+            </div>
         </div>
     </div>
 </div>

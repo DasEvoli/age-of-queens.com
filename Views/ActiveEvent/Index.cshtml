@@ -1,5 +1,4 @@
 ﻿@model ActiveEventViewModel
-
 @{
     ViewData["Title"] = "Active Event";
     ViewData["Description"] = "Explore our current event and see when the next games will start.";
@@ -12,9 +11,7 @@
     <h1 style="text-align:center">@Model.Title</h1>
     <p style="text-align:center;margin-top:1em">@Model.Information</p>
     <img style="max-height: 20em; display: block; margin-left: auto; margin-right: auto" class="border-custom-aoq" src="@Model.Image">
-    <!--<h3>@Model.RegistrationLink</h3>-->
 </div>
-
 <div>
     @if(Model.ActiveGameEventGameList != null)
     {
@@ -25,7 +22,6 @@
                     <span style="padding-top: 0em; font-size: 2em;">@item.Date</span>
                     <span style="padding-top: 0em; float: right; font-size: 2em;">@item.Mode</span>
                 </div>
-                
                 <div style="margin-top:1em; text-align:center">
                 @for(int i = 0; i < item.ActiveEventTeams.Count; i++)
                 {
@@ -37,9 +33,11 @@
                 </div>
                 <div class="border-bottom" style="font-size: 1.3em; margin-top: 1em; text-align: center; width: 50%; margin-left: auto; margin-right: auto;">@item.Maps</div>
                 <div style="text-align: center; margin-top: 1em;">@item.Information</div>
-
             </article>
         }
     }
-
+    else 
+    {
+        <div class="alert alert-warning" role="alert">Error while loading the content.</div>
+    }
 </div>

@@ -5,6 +5,7 @@
     ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
     ViewData["OgUrl"] = "https://age-of-queens.com/AboutUs";
 }
+
 <div style="text-align:center">
     <iframe id="youtube-widget" width="800" height="450" src="https://www.youtube.com/embed/NYaasI9sbJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
@@ -62,11 +63,5 @@
 </div>
 
 @section scripts {
-
-    <script>
-
-        AOS.init();
-
-    </script>
-
+    <script>AOS.init()</script>
 }

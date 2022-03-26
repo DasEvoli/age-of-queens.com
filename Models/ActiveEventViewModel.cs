@@ -19,5 +19,4 @@ namespace Ageofqueenscom.Models
             public string Information {get;set;}
         }
     }
-
 }
