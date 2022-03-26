@@ -4,9 +4,9 @@ namespace ageofqueenscom.Models
 {
     public class ModsViewModel
     {
-        public List<ModModel> ModList;
+        public List<Mod> ModList;
 
-        public class ModModel
+        public class Mod
         {
             public string Title { get; set; }
             public string Description { get; set; }

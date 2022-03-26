@@ -4,9 +4,9 @@ namespace ageofqueenscom.Models
 {
     public class IntroductionsViewModel
     {
-        public List<IntroductionModel> Introductions;
+        public List<Introduction> Introductions;
 
-        public class IntroductionModel
+        public class Introduction
         {
             public string Name { get; set; }
             public string Description { get; set; }

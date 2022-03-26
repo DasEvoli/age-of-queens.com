@@ -8,17 +8,17 @@ namespace ageofqueenscom.Code
 {
     public class Csv
     {
-        public static List<IntroductionsViewModel.IntroductionModel> LoadIntroductions()
+        public static List<IntroductionsViewModel.Introduction> LoadIntroductions()
         {
             string path = "Csv/Introductions.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
 
-            List< IntroductionsViewModel.IntroductionModel> list = new List< IntroductionsViewModel.IntroductionModel>();
+            List< IntroductionsViewModel.Introduction> list = new List< IntroductionsViewModel.Introduction>();
             while (!csvReader.EndOfData)
             {
-                IntroductionsViewModel.IntroductionModel item = new  IntroductionsViewModel.IntroductionModel();
+                IntroductionsViewModel.Introduction item = new  IntroductionsViewModel.Introduction();
                 string[] fields = csvReader.ReadFields();
                 item.Name = fields[1];
                 item.Description = fields[2];
@@ -32,18 +32,18 @@ namespace ageofqueenscom.Code
             return list;
         }
         
-        public static List<HomeViewModel.BlogpostModel> LoadBlogposts()
+        public static List<HomeViewModel.Blogpost> LoadBlogposts()
         {
             string path = "Csv/BlogPosts.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
 
-            List<HomeViewModel.BlogpostModel> blogpostList = new List<HomeViewModel.BlogpostModel>();
+            List<HomeViewModel.Blogpost> blogpostList = new List<HomeViewModel.Blogpost>();
             while (!csvReader.EndOfData)
             {
                 string[] fields = csvReader.ReadFields();
-                HomeViewModel.BlogpostModel blogpost = new HomeViewModel.BlogpostModel
+                HomeViewModel.Blogpost blogpost = new HomeViewModel.Blogpost
                 {
                     Title = fields[0],
                     Content = fields[1],
@@ -57,14 +57,14 @@ namespace ageofqueenscom.Code
             return blogpostList;
         }
 
-        public static List<LeaderboardViewModel.LeaderboardPlayerModel> LoadLeaderboardRM()
+        public static List<LeaderboardViewModel.LeaderboardPlayer> LoadLeaderboardRM()
         {
             string path = "Csv/LeaderboardRM.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
 
-            List<LeaderboardViewModel.LeaderboardPlayerModel> playerList = new List<LeaderboardViewModel.LeaderboardPlayerModel>();
+            List<LeaderboardViewModel.LeaderboardPlayer> playerList = new List<LeaderboardViewModel.LeaderboardPlayer>();
             csvReader.ReadLine();   // We don't have write access to the file so we need to skip lines which are not commented
             csvReader.ReadLine();
             csvReader.ReadLine();
@@ -75,7 +75,7 @@ namespace ageofqueenscom.Code
             while (!csvReader.EndOfData)
             {
                 string[] fields = csvReader.ReadFields();
-                LeaderboardViewModel.LeaderboardPlayerModel player = new LeaderboardViewModel.LeaderboardPlayerModel();
+                LeaderboardViewModel.LeaderboardPlayer player = new LeaderboardViewModel.LeaderboardPlayer();
                 if (String.IsNullOrEmpty(fields[1])) break; // We don't have write access to the file and many lines are not filled but still there
                 player.Name = fields[1];
                 player.Country = fields[2];
@@ -87,18 +87,18 @@ namespace ageofqueenscom.Code
             return playerList;
         }
 
-        public static List<ModsViewModel.ModModel> LoadMods()
+        public static List<ModsViewModel.Mod> LoadMods()
         {
             string path = "Csv/Mods.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
 
-            List<ModsViewModel.ModModel> modList = new List<ModsViewModel.ModModel>();
+            List<ModsViewModel.Mod> modList = new List<ModsViewModel.Mod>();
             while (!csvReader.EndOfData)
             {
                 string[] fields = csvReader.ReadFields();
-                ModsViewModel.ModModel mod = new ModsViewModel.ModModel
+                ModsViewModel.Mod mod = new ModsViewModel.Mod
                 {
                     Title = fields[0],
                     Description = fields[1],
@@ -121,7 +121,7 @@ namespace ageofqueenscom.Code
             csvReader.SetDelimiters(new string[] { "," });
 
             ActiveEventViewModel model = new ActiveEventViewModel();
-            model.ActiveGameEventGameList = new List<ActiveEventViewModel.ActiveEventGameModel>();                
+            model.ActiveGameEventGameList = new List<ActiveEventViewModel.ActiveEventGame>();                
             
             // Sets the meta data for the model.
             string[] fields = csvReader.ReadFields();
@@ -134,7 +134,7 @@ namespace ageofqueenscom.Code
             while (!csvReader.EndOfData)
             {
                 fields = csvReader.ReadFields();
-                ActiveEventViewModel.ActiveEventGameModel gameModel = new ActiveEventViewModel.ActiveEventGameModel(){
+                ActiveEventViewModel.ActiveEventGame gameModel = new ActiveEventViewModel.ActiveEventGame(){
                     Date = fields[0],
                     ActiveEventTeams = new List<string>(),
                     Maps = fields[9],

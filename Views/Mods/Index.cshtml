@@ -5,7 +5,7 @@
 
 @if (Model.ModList != null)
 {
-    foreach (ageofqueenscom.Models.ModsViewModel.ModModel mod in Model.ModList)
+    foreach (ageofqueenscom.Models.ModsViewModel.Mod mod in Model.ModList)
     {
         <div data-aos="fade-right">
             <div class="mod-container clickable-hover" onclick="window.open('@mod.ModUrl')">

@@ -26,7 +26,7 @@
             @if (Model.LeaderboardPlayerListRM != null)
             {
                 int rankNumber = 0;
-                foreach (ageofqueenscom.Models.LeaderboardViewModel.LeaderboardPlayerModel item in Model.LeaderboardPlayerListRM)
+                foreach (ageofqueenscom.Models.LeaderboardViewModel.LeaderboardPlayer item in Model.LeaderboardPlayerListRM)
                 {
                     rankNumber += 1;
                     <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-hover">

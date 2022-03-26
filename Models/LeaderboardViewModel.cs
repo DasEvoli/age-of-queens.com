@@ -4,9 +4,9 @@ namespace ageofqueenscom.Models
 {
     public class LeaderboardViewModel
     {
-        public List<LeaderboardPlayerModel> LeaderboardPlayerListRM;
+        public List<LeaderboardPlayer> LeaderboardPlayerListRM;
 
-        public class LeaderboardPlayerModel
+        public class LeaderboardPlayer
         {
             public int Id { get; set; }
             public string Name { get; set; }

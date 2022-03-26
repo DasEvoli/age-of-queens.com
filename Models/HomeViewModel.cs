@@ -4,9 +4,9 @@ namespace ageofqueenscom.Models
 {
     public class HomeViewModel
     {
-        public List<BlogpostModel> BlogpostList;
+        public List<Blogpost> BlogpostList;
         
-        public class BlogpostModel
+        public class Blogpost
         {
             public string Title { get; set;}
             public string Content { get; set; }
