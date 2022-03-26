@@ -1,0 +1,18 @@
+Refactor Csv.cs 
+Refactor Views
+Refactor site.css
+Check for better variable names
+Check if we can use property bindings (or called decorations)
+Create a better Error Page and use it
+Create Error messages when something is not loading correctly
+Organize Images in Directories
+Maybe rename Csv Files and Csv Code file itself
+Check if we can improve Namespaces
+Check if we can improve using directives
+Read how we use GitHub Actions so we can automatically update our VPS Server when we push to master
+Check if we can use wwwroot better
+Write readme.md
+Check if we need Microsoft.EntityFrameworkCore in csproj file
+Read where and how we can store log messages from ILogger in files
+
+

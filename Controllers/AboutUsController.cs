@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
-using ageofqueenscom.Models;
 using Microsoft.Extensions.Logging;
+using ageofqueenscom.Models;
 
 namespace ageofqueenscom.Controllers
 {
@@ -14,8 +14,7 @@ namespace ageofqueenscom.Controllers
         }
         public IActionResult Index()
         {
-            // Default View
-            return View("WhatIsAgeofqueens");
+            return View("WhatIsAgeofqueens");   // Default View.
         }
 
         public IActionResult WhatIsAgeofqueens()
@@ -33,6 +32,7 @@ namespace ageofqueenscom.Controllers
             catch(Exception e)
             {
                 _logger.LogError(e.ToString());
+                model.Introductions = null;
             }
             return View(model);
         }

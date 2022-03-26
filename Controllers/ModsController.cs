@@ -1,8 +1,8 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using ageofqueenscom.Models;
 using ageofqueenscom.Code;
-using Microsoft.Extensions.Logging;
 
 namespace ageofqueenscom.Controllers
 {
@@ -26,7 +26,6 @@ namespace ageofqueenscom.Controllers
                 _logger.LogError(e.ToString());
                 model.ModList = null;
             }
-            
             return View(model);
         }
     }

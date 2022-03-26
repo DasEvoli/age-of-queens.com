@@ -9,7 +9,7 @@ namespace ageofqueenscom.Models
         public List<Json.Stream> StreamsList;
         public List<Json.User> UserList;
 
-        public class Json
+        public class Json   // This class gives the framework for Newtonsoft to Deserialize Json to an object.
         {
             public class AccessToken
             {

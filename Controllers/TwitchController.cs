@@ -3,11 +3,11 @@ using System.IO;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using ageofqueenscom.Models;
+using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using Microsoft.Extensions.Logging;
+using ageofqueenscom.Models;
 
 namespace ageofqueenscom.Controllers
 {
@@ -37,7 +37,7 @@ namespace ageofqueenscom.Controllers
         {
             TwitchViewModel model = new TwitchViewModel();
             if(!IsAccessTokenValid(_accessToken)){
-                if(!UpdateAccessToken()) View(model);   // TODO: Return an error message
+                if(!UpdateAccessToken()) View(model);
             }
             model.Team = await GetTeam("ageofqueens");
             Task[] tasks= new Task[2];  // Can be executed parallel. They depend on Twitch Team.
@@ -148,7 +148,7 @@ namespace ageofqueenscom.Controllers
             }
         }
 
-        // Updates the AccessToken in appsettings.json and initializes member variable.
+        // Updates the AccessToken in appsettings.json and initializes accesstoken member variable.
         public bool UpdateAccessToken()
         {
             try

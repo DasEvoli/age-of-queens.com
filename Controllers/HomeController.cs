@@ -1,10 +1,10 @@
 ﻿using System;
-using ageofqueenscom.Code;
-using ageofqueenscom.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using ageofqueenscom.Code;
+using ageofqueenscom.Models;
 
 namespace ageofqueenscom.Controllers
 {
@@ -27,11 +27,9 @@ namespace ageofqueenscom.Controllers
                 _logger.LogError(e.ToString());
                 model.BlogpostList = null;
             }
-            
             return View(model);
         }
 
-        // TODO: Learn more about those properties. Could also be called Decoration. And I think bindings
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

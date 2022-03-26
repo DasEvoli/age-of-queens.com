@@ -1,8 +1,8 @@
 ﻿using System;
-using ageofqueenscom.Code;
-using ageofqueenscom.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ageofqueenscom.Code;
+using ageofqueenscom.Models;
 
 namespace ageofqueenscom.Controllers
 {
@@ -26,7 +26,6 @@ namespace ageofqueenscom.Controllers
                 _logger.LogError(e.ToString());
                 model.LeaderboardPlayerListRM = null;
             }
-            
             return View(model);
         }
     }

@@ -1,5 +1,4 @@
-﻿using ageofqueenscom.Code;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ageofqueenscom.Models
 {
@@ -19,5 +18,4 @@ namespace ageofqueenscom.Models
             public string ModUrl { get; set; }
         }
     }
-
 }
