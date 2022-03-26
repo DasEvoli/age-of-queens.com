@@ -13,59 +13,59 @@ namespace ageofqueenscom.Controllers
 {
     public class TwitchController : Controller
     {
-        public IConfiguration Configuration;
-        private readonly ILogger _logger = null;
-        public string ClientId = null;
-        public string ClientSecret = null;
-        public string AccessToken = null;
-        public readonly string BaseTokenUrl = "https://id.twitch.tv/oauth2/token";
-        public readonly string BaseApiUrl = "https://api.twitch.tv/helix";
-        public readonly string ValidationUrl = "https://id.twitch.tv/oauth2/validate";
-        public readonly IHttpClientFactory HttpClientFactory;
+        private IConfiguration _configuration;
+        private readonly IHttpClientFactory _httpClientFactory;
+        private readonly ILogger _logger;
+        private readonly string _clientId;
+        private readonly string _clientSecret;
+        private string _accessToken;
+        private readonly string _baseTokenUrl = "https://id.twitch.tv/oauth2/token";
+        private readonly string _baseApiUrl = "https://api.twitch.tv/helix";
+        private readonly string _validationUrl = "https://id.twitch.tv/oauth2/validate";
 
         public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory, ILogger<TwitchController> logger)
         {
-            Configuration = configuration;
+            _configuration = configuration;  // Needs to be initialized so we can set values in the configuration file.
             _logger = logger;
-            ClientId = configuration["TWITCH_CLIENT_ID"];
-            ClientSecret = configuration["TWITCH_CLIENT_SECRET"];
-            AccessToken = configuration["TWITCH_ACCESS_TOKEN"];
-            HttpClientFactory = httpClientFactory;
+            _clientId = configuration["TWITCH_CLIENT_ID"];
+            _clientSecret = configuration["TWITCH_CLIENT_SECRET"];
+            _accessToken = configuration["TWITCH_ACCESS_TOKEN"];
+            _httpClientFactory = httpClientFactory;
         }
 
         public async Task<IActionResult> Index()
         {
             TwitchViewModel model = new TwitchViewModel();
-            if(!IsAccessTokenValid(AccessToken)){
-                if(!UpdateAccessToken()) View(model);           // TODO: Return an error message
+            if(!IsAccessTokenValid(_accessToken)){
+                if(!UpdateAccessToken()) View(model);   // TODO: Return an error message
             }
-            model.Team = await GetTwitchTeam("ageofqueens");
-            // Can be executed parallel. They depend on Twitch Team data.
-            Task[] tasks= new Task[2];
+            model.Team = await GetTeam("ageofqueens");
+            Task[] tasks= new Task[2];  // Can be executed parallel. They depend on Twitch Team.
             tasks[0] = Task.Run(async() => model.StreamsList = await GetStreams(model.Team.TeamMemberList));
             tasks[1] = Task.Run(async() => model.UserList = await GetUsers(model.Team.TeamMemberList));
             Task.WaitAll(tasks);
             return View(model);
         }
 
-        public async Task<TwitchViewModel.Json.Team> GetTwitchTeam(string team)
+        // Gets the Twitch Team. Teams are a way to unite and connect streamers together on Twitch.
+        public async Task<TwitchViewModel.Json.Team> GetTeam(string teamName)
         {
-            TwitchViewModel.Json.Team twitchTeam = null;
+            TwitchViewModel.Json.Team team = null;
             try
             {
-                string url = $"{BaseApiUrl}/teams?name={team}";
-                HttpClient httpClient = HttpClientFactory.CreateClient();
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {AccessToken}");
-                httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
+                string url = $"{_baseApiUrl}/teams?name={teamName}";
+                HttpClient httpClient = _httpClientFactory.CreateClient();
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
+                httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
                     StreamReader reader = new StreamReader(await content.ReadAsStreamAsync());
                     string responseString = await reader.ReadToEndAsync();
-                    TwitchViewModel.Json.TeamList twitchTeamList = JsonConvert.DeserializeObject<TwitchViewModel.Json.TeamList>(responseString);
-                    twitchTeam = twitchTeamList.Data[0];
+                    TwitchViewModel.Json.TeamList teamList = JsonConvert.DeserializeObject<TwitchViewModel.Json.TeamList>(responseString);
+                    team = teamList.Data[0];
                 }
-                return twitchTeam;
+                return team;
             }
             catch (Exception e)
             {
@@ -74,6 +74,7 @@ namespace ageofqueenscom.Controllers
             }
         }
 
+        // Gets all online streams from the Twitch Team.
         public async Task<List<TwitchViewModel.Json.Stream>> GetStreams(List<TwitchViewModel.Json.TeamMember> members)
         {
             List<TwitchViewModel.Json.Stream> streams = null;
@@ -81,11 +82,11 @@ namespace ageofqueenscom.Controllers
             {
                 string idQuery = "user_id=" + members[0].UserId;
                 for (int i = 1; i < members.Count; i++) idQuery += "&user_id=" + members[i].UserId;
-                string url = $"{BaseApiUrl}/streams?{idQuery}";
+                string url = $"{_baseApiUrl}/streams?{idQuery}";
 
-                HttpClient httpClient = HttpClientFactory.CreateClient();
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {AccessToken}");
-                httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
+                HttpClient httpClient = _httpClientFactory.CreateClient();
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
+                httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
@@ -102,6 +103,7 @@ namespace ageofqueenscom.Controllers
             }
         }
 
+        // Gets all users from the Twitch Team.
         public async Task<List<TwitchViewModel.Json.User>> GetUsers(List<TwitchViewModel.Json.TeamMember> members)
         {
             List<TwitchViewModel.Json.User> users = null;
@@ -109,11 +111,11 @@ namespace ageofqueenscom.Controllers
             {
                 string idQuery = "id=" + members[0].UserId;
                 for (int i = 1; i < members.Count; i++) idQuery += "&id=" + members[i].UserId;
-                string url = $"{BaseApiUrl}/users?{idQuery}";
+                string url = $"{_baseApiUrl}/users?{idQuery}";
 
-                HttpClient httpClient = HttpClientFactory.CreateClient();
-                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {AccessToken}");
-                httpClient.DefaultRequestHeaders.Add("Client-Id", ClientId);
+                HttpClient httpClient = _httpClientFactory.CreateClient();
+                httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {_accessToken}");
+                httpClient.DefaultRequestHeaders.Add("Client-Id", _clientId);
                 HttpResponseMessage response = await httpClient.SendAsync(new HttpRequestMessage(HttpMethod.Get, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
@@ -134,9 +136,9 @@ namespace ageofqueenscom.Controllers
         {
             try
             {
-                HttpClient httpClient = HttpClientFactory.CreateClient();
+                HttpClient httpClient = _httpClientFactory.CreateClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {accessToken}");
-                HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, ValidationUrl));
+                HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Get, _validationUrl));
                 return response.IsSuccessStatusCode;
             }
             catch (Exception e)
@@ -146,19 +148,20 @@ namespace ageofqueenscom.Controllers
             }
         }
 
+        // Updates the AccessToken in appsettings.json and initializes member variable.
         public bool UpdateAccessToken()
         {
             try
             {  
-                string url = BaseTokenUrl + "?client_id=" + ClientId + "&client_secret=" + ClientSecret + "&grant_type=" + "client_credentials";
-                HttpClient httpClient = HttpClientFactory.CreateClient();
+                string url = $"{_baseTokenUrl}?client_id={_clientId}&client_secret={_clientSecret}&grant_type=client_credentials";
+                HttpClient httpClient = _httpClientFactory.CreateClient();
                 HttpResponseMessage response = httpClient.Send(new HttpRequestMessage(HttpMethod.Post, url));
                 if(response.IsSuccessStatusCode){
                     HttpContent content = response.Content;
                     StreamReader reader = new StreamReader(content.ReadAsStream());
                     string responseString = reader.ReadToEnd();
-                    AccessToken = JsonConvert.DeserializeObject<TwitchViewModel.Json.AccessToken>(responseString).Value;
-                    Configuration["TWITCH_ACCESS_TOKEN"] = AccessToken;
+                    _accessToken = JsonConvert.DeserializeObject<TwitchViewModel.Json.AccessToken>(responseString).Value;
+                    _configuration["TWITCH_ACCESS_TOKEN"] = _accessToken;
                     return true;
                 }
                 else return false;

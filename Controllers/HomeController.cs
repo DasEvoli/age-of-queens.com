@@ -31,7 +31,7 @@ namespace ageofqueenscom.Controllers
             return View(model);
         }
 
-        // TODO: Learn more about those properties
+        // TODO: Learn more about those properties. Could also be called Decoration. And I think bindings
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
