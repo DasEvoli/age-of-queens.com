@@ -1,9 +1,10 @@
-Create Error messages when something is not loading correctly
+
 Check if we can improve Namespaces
 Check if we can improve using directives
 
 
 Check if we can use property bindings (or called decorations)
+Check if using is used correctly
 Refactor Views
 Refactor site.css
 Read how we use GitHub Actions so we can automatically update our VPS Server when we push to master
@@ -17,3 +18,4 @@ Finished:
     Check if we can use wwwroot better
     Check if we need Microsoft.EntityFrameworkCore in csproj file
     Read where and how we can store log messages from ILogger in files
+    Create Error messages when something is not loading correctly

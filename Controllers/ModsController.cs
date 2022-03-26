@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ageofqueenscom.Models;
-using ageofqueenscom.Code;
+using Ageofqueenscom.Models;
+using Ageofqueenscom.Code;
 
-namespace ageofqueenscom.Controllers
+namespace Ageofqueenscom.Controllers
 {
     public class ModsController : Controller
     {

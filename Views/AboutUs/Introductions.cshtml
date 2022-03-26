@@ -1,6 +1,6 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
-@model ageofqueenscom.Models.IntroductionsViewModel
+@model Ageofqueenscom.Models.IntroductionsViewModel
 @{
     ViewData["Title"] = "Introductions";
 }
@@ -9,7 +9,7 @@
 
 @if (Model.Introductions != null)
 {
-    foreach (ageofqueenscom.Models.IntroductionsViewModel.Introduction introduction in Model.Introductions)
+    foreach (Ageofqueenscom.Models.IntroductionsViewModel.Introduction introduction in Model.Introductions)
     {
     <div data-aos="fade-right">
         <div class="player-introduction">

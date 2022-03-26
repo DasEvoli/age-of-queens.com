@@ -1,6 +1,6 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
-@model ageofqueenscom.Models.HomeViewModel
+@model Ageofqueenscom.Models.HomeViewModel
 
 @{
     ViewData["Title"] = "an AOE2 Community";
@@ -11,7 +11,7 @@
         <h1>News</h1>
         @if (Model.BlogpostList != null)
         {
-            foreach (ageofqueenscom.Models.HomeViewModel.Blogpost item in Model.BlogpostList)
+            foreach (Ageofqueenscom.Models.HomeViewModel.Blogpost item in Model.BlogpostList)
             {
                 <div data-aos="fade-right">
                     <article>

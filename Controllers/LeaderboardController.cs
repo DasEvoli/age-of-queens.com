@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ageofqueenscom.Code;
-using ageofqueenscom.Models;
+using Ageofqueenscom.Code;
+using Ageofqueenscom.Models;
 
-namespace ageofqueenscom.Controllers
+namespace Ageofqueenscom.Controllers
 {
     public class LeaderboardController : Controller
     {

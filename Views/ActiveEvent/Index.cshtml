@@ -1,6 +1,6 @@
 ﻿@using Microsoft.Extensions.Configuration
 @inject IConfiguration Configuration
-@model ageofqueenscom.Models.ActiveEventViewModel
+@model Ageofqueenscom.Models.ActiveEventViewModel
 
 @{
     ViewData["Title"] = "Active Event";
@@ -16,7 +16,7 @@
 <div>
     @if(Model.ActiveGameEventGameList != null)
     {
-        @foreach (ageofqueenscom.Models.ActiveEventViewModel.ActiveEventGame item in Model.ActiveGameEventGameList)
+        @foreach (Ageofqueenscom.Models.ActiveEventViewModel.ActiveEventGame item in Model.ActiveGameEventGameList)
         {
             <article style="padding:1.2em">
                 <div class="border-bottom">

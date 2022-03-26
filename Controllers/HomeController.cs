@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using ageofqueenscom.Code;
-using ageofqueenscom.Models;
+using Ageofqueenscom.Code;
+using Ageofqueenscom.Models;
 
-namespace ageofqueenscom.Controllers
+namespace Ageofqueenscom.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,10 +1,10 @@
-﻿using ageofqueenscom.Models;
-using Microsoft.VisualBasic.FileIO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using Microsoft.VisualBasic.FileIO;
+using Ageofqueenscom.Models;
 
-namespace ageofqueenscom.Code
+namespace Ageofqueenscom.Code
 {
     public class Csv
     {

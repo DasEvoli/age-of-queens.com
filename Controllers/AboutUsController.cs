@@ -1,9 +1,9 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using ageofqueenscom.Models;
+using Ageofqueenscom.Models;
 
-namespace ageofqueenscom.Controllers
+namespace Ageofqueenscom.Controllers
 {
     public class AboutUsController : Controller
     {
