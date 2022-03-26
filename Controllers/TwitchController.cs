@@ -20,7 +20,7 @@ namespace ageofqueenscom.Controllers
         private readonly string _clientSecret;
         private string _accessToken;
         private readonly string _baseTokenUrl = "https://id.twitch.tv/oauth2/token";
-        private readonly string _baseApiUrl = "https://api.twitch.tv/helix";
+        private readonly string _baseApiUrl = "https://api.twitch.tv/hlix";
         private readonly string _validationUrl = "https://id.twitch.tv/oauth2/validate";
 
         public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory, ILogger<TwitchController> logger)
@@ -40,10 +40,13 @@ namespace ageofqueenscom.Controllers
                 if(!UpdateAccessToken()) View(model);
             }
             model.Team = await GetTeam("ageofqueens");
-            Task[] tasks= new Task[2];  // Can be executed parallel. They depend on Twitch Team.
-            tasks[0] = Task.Run(async() => model.StreamsList = await GetStreams(model.Team.TeamMemberList));
-            tasks[1] = Task.Run(async() => model.UserList = await GetUsers(model.Team.TeamMemberList));
-            Task.WaitAll(tasks);
+            if(model.Team != null)
+            {
+                Task[] tasks= new Task[2];  // Can be executed parallel. They depend on Twitch Team.
+                tasks[0] = Task.Run(async() => model.StreamsList = await GetStreams(model.Team.TeamMemberList));
+                tasks[1] = Task.Run(async() => model.UserList = await GetUsers(model.Team.TeamMemberList));
+                Task.WaitAll(tasks);
+            }
             return View(model);
         }
 

@@ -1,4 +1,3 @@
-Create a better Error Page and use it
 Create Error messages when something is not loading correctly
 Check if we can improve Namespaces
 Check if we can improve using directives
