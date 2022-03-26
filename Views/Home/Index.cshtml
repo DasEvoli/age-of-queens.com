@@ -1,4 +1,6 @@
-﻿@model ageofqueenscom.Models.HomeViewModel
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@model ageofqueenscom.Models.HomeViewModel
 
 @{
     ViewData["Title"] = "an AOE2 Community";
@@ -35,7 +37,7 @@
             <script async src="//www.instagram.com/embed.js"></script>
         </div>
         <div class="card side-card">
-            <img src="/Images/queensclash.jpg" class="card-img-top" alt="...">
+            <img src="@Configuration["Directories:Images:Cards"]queensclash.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <H2 class="card-title">Past Events</H2>
                 <p class="card-text">Watch our last events</p>
@@ -43,7 +45,7 @@
             </div>
         </div>
         <div class="card side-card">
-            <img src="/Images/discord.png" class="card-img-top" alt="...">
+            <img src="@Configuration["Directories:Images:Cards"]discord.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <H2 class="card-title">Want to join?</H2>
                 <p class="card-text">Join our Age of Queens Discord today!</p>
@@ -51,7 +53,7 @@
             </div>
         </div>
         <div class="card side-card">
-            <img src="/Images/twitch.png" class="card-img-top" alt="...">
+            <img src="@Configuration["Directories:Images:Cards"]twitch.png" class="card-img-top" alt="...">
             <div class="card-body">
                 <H2 class="card-title">We have a Twitch Team!</H2>
                 <p class="card-text">Explore all members</p>
@@ -59,7 +61,7 @@
             </div>
         </div>
         <div class="card side-card">
-            <img src="/Images/paypal.jpg" class="card-img-top" alt="...">
+            <img src="@Configuration["Directories:Images:Cards"]paypal.jpg" class="card-img-top" alt="...">
             <div class="card-body">
                 <H2 class="card-title">Support us!</H2>
                 <p class="card-text">Every donation will go to the next prize pool</p>

@@ -10,7 +10,7 @@ namespace ageofqueenscom.Code
     {
         public static List<IntroductionsViewModel.Introduction> LoadIntroductions()
         {
-            string path = "Csv/Introductions.csv";
+            string path = "csv/introductions.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
@@ -34,7 +34,7 @@ namespace ageofqueenscom.Code
         
         public static List<HomeViewModel.Blogpost> LoadBlogposts()
         {
-            string path = "Csv/BlogPosts.csv";
+            string path = "csv/blog_posts.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
@@ -59,7 +59,7 @@ namespace ageofqueenscom.Code
 
         public static List<LeaderboardViewModel.LeaderboardPlayer> LoadLeaderboardRM()
         {
-            string path = "Csv/LeaderboardRM.csv";
+            string path = "csv/leaderboard_rm.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
@@ -89,7 +89,7 @@ namespace ageofqueenscom.Code
 
         public static List<ModsViewModel.Mod> LoadMods()
         {
-            string path = "Csv/Mods.csv";
+            string path = "csv/mods.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });
@@ -115,7 +115,7 @@ namespace ageofqueenscom.Code
         }
 
         public static ActiveEventViewModel LoadActiveEvent(){
-            string path = "Csv/Current_Event_Data.csv";
+            string path = "csv/current_event_data.csv";
             using TextFieldParser csvReader = new TextFieldParser(Path.Combine(Directory.GetCurrentDirectory(), path));
             csvReader.CommentTokens = new string[] { "#" };
             csvReader.SetDelimiters(new string[] { "," });

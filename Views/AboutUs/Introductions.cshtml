@@ -1,4 +1,6 @@
-﻿@model ageofqueenscom.Models.IntroductionsViewModel
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@model ageofqueenscom.Models.IntroductionsViewModel
 @{
     ViewData["Title"] = "Introductions";
 }
@@ -12,20 +14,20 @@
     <div data-aos="fade-right">
         <div class="player-introduction">
             <div class="row">
-                    <img src="/Images/@{@introduction.Name}.jpg" />
+                    <img src="@Configuration["Directories:Images:Introductions"]@{@introduction.Name}.jpg" />
                 <div class="player-introduction-content">
                     <h2>@introduction.Name</h2>
                     <p>@introduction.Description</p>
                 </div>
                 <div class="player-introduction-buttons">
                     @if (!String.IsNullOrEmpty(introduction.TwitterUrl))
-                    {<a href="@introduction.TwitterUrl" target="_blank" style="margin-left:1em"><img src="/Images/twitter_icon.png" class="icon"></a>}
+                    {<a href="@introduction.TwitterUrl" target="_blank" style="margin-left:1em"><img src="@Configuration["Directories:Images:Icons"]twitter_icon.png" class="icon"></a>}
                     @if (!String.IsNullOrEmpty(introduction.YoutubeUrl))
-                    {<a href="@introduction.YoutubeUrl" target="_blank" style="margin-left:1em"><img src="/Images/youtube_icon.png" class="icon"></a>}
+                    {<a href="@introduction.YoutubeUrl" target="_blank" style="margin-left:1em"><img src="@Configuration["Directories:Images:Icons"]youtube_icon.png" class="icon"></a>}
                     @if (!String.IsNullOrEmpty(introduction.TwitchUrl))
-                    {<a href="@introduction.TwitchUrl" target="_blank" style="margin-left:1em"><img src="/Images/twitch_icon.png" class="icon"></a>}
+                    {<a href="@introduction.TwitchUrl" target="_blank" style="margin-left:1em"><img src="@Configuration["Directories:Images:Icons"]twitch_icon.png" class="icon"></a>}
                     @if (!String.IsNullOrEmpty(introduction.InstagramUrl))
-                    {<a href="@introduction.InstagramUrl" target="_blank" style="margin-left:1em"><img src="/Images/instagram_icon.png" class="icon"></a>}
+                    {<a href="@introduction.InstagramUrl" target="_blank" style="margin-left:1em"><img src="@Configuration["Directories:Images:Icons"]instagram_icon.png" class="icon"></a>}
                 </div>
             </div>
         </div>

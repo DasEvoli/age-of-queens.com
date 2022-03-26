@@ -51,18 +51,6 @@ var app = builder.Build();
 IConfiguration configuration = app.Configuration;
 // APP SETTINGS
 app.UseStaticFiles();   // For wwwroot
-app.UseStaticFiles(new StaticFileOptions()
-{
-    FileProvider = new PhysicalFileProvider(
-    Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
-    RequestPath = new PathString("/Images")
-});
-app.UseStaticFiles(new StaticFileOptions()
-{
-    FileProvider = new PhysicalFileProvider(
-    Path.Combine(Directory.GetCurrentDirectory(), @"Csv")),
-    RequestPath = new PathString("/Csv")
-});
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();

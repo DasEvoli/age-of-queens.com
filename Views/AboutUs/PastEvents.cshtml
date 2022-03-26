@@ -1,11 +1,13 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
     ViewData["Title"] = "Past Events";
 }
 
 <div id="past-events-container" class="container">
     <div class="accordion">
         <div class="card">
-            <div class="card-header past-event-header" style="background-image: url(/Images/queensclashbanner.png)">
+            <div class="card-header past-event-header" style="background-image: url(@Configuration["Directories:Images:Past_Events"]queensclashbanner.png)">
                 <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseQueensClash">
                     Queen's Clash
                 </button>
@@ -35,7 +37,7 @@
 
     <div class="accordion">
         <div class="card">
-            <div class="card-header past-event-header" style="background-image: url(/Images/1v1secondeditionbanner.png)">
+            <div class="card-header past-event-header" style="background-image: url(@Configuration["Directories:Images:Past_Events"]1v1secondeditionbanner.png)">
                 <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseLeague2021">
                     Age of Queens 1v1 Second Edition
                 </button>
@@ -66,7 +68,7 @@
 
     <div class="accordion">
         <div class="card">
-            <div class="card-header past-event-header" style="background-image: url(/Images/1v1firsteditionbanner.png)">
+            <div class="card-header past-event-header" style="background-image: url(@Configuration["Directories:Images:Past_Events"]1v1firsteditionbanner.png)">
                 <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseFirstEdition">
                     Age of Queens 1v1 First Edition
                 </button>

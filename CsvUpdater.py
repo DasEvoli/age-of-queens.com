@@ -27,11 +27,11 @@ while True:
     url_teamseed = 'https://docs.google.com/spreadsheets/d/1Ljr1248kdWjpxuOuSE_Y-mDNLUGn00zoBehrStFhsnQ/export?format=csv&id=1Ljr1248kdWjpxuOuSE_Y-mDNLUGn00zoBehrStFhsnQ&gid=0'
     url_mods = 'https://docs.google.com/spreadsheets/d/1lxuqnQGlkopeHeKBp8qDMGgFC72Cy5ZGWBA5kks-VBc/export?format=csv&id=1lxuqnQGlkopeHeKBp8qDMGgFC72Cy5ZGWBA5kks-VBc&gid=0'
     url_currentevent = 'https://docs.google.com/spreadsheets/d/1ro9r0h6xNabPvelKh7pviK682tTQE_bLCBrvXkta_Hc/export?format=csv&id=1ro9r0h6xNabPvelKh7pviK682tTQE_bLCBrvXkta_Hc&gid=1420222812'
-    download_csv(url_casting_roster, 'CastingRoster.csv')
-    download_csv(url_solo_seed, 'SoloSeed.csv')
-    download_csv(url_leaderboard, 'LeaderboardRM.csv')
-    download_csv(url_blogposts, 'BlogPosts.csv')
-    download_csv(url_teamseed, 'TeamSeed.csv')
-    download_csv(url_mods, 'Mods.csv')
-    download_csv(url_currentevent, 'Current_Event_Data.csv')
+    download_csv(url_casting_roster, 'casting_roster.csv')
+    download_csv(url_solo_seed, 'solo_seed.csv')
+    download_csv(url_leaderboard, 'leaderboard_rm.csv')
+    download_csv(url_blogposts, 'blog_posts.csv')
+    download_csv(url_teamseed, 'team_seed.csv')
+    download_csv(url_mods, 'mods.csv')
+    download_csv(url_currentevent, 'current_event_data.csv')
     time.sleep(TIMEOUT)

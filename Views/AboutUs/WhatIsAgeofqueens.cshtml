@@ -1,4 +1,6 @@
-﻿@{
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+@{
     ViewData["Title"] = "What is Age of Queens?";
 }
 <div style="text-align:center">
@@ -14,7 +16,7 @@
     <div class="row">
         <div class="col-md-6" style="text-align:center">
             <h2>Age of Queens Server</h2>
-            <img src="/Images/discord.png" style="border-radius: 20px; max-width: 100%; margin-top: 1em;" />
+            <img src="@Configuration["Directories:Images:Misc"]discord.png" style="border-radius: 20px; max-width: 100%; margin-top: 1em;" />
             <ul style="text-align:left; margin-top: 0.5em">
                 <li>Only women and nonbinary people</li>
                 <li>To request access message either Tiny Triss#1563, Yekky#2186, Eleda au Venatus#0554, LilTrouble#3881 or ashleylynn#4783 on Discord.</li>
@@ -22,7 +24,7 @@
         </div>
         <div class="col-md-6" style="text-align:center">
             <h2>AoQc and Friends Server</h2>
-            <img src="/Images/discord_2.png" style="border-radius:20px;max-width:100%; margin-top: 1em;" />
+            <img src="@Configuration["Directories:Images:Misc"]discord_2.png" style="border-radius:20px;max-width:100%; margin-top: 1em;" />
             <ul style="text-align:left; margin-top: 0.5em">
                 <li>For everyone</li>
                 <li><a href="https://discord.gg/x6vNkQkF7h">Click to join</a></li>
@@ -32,7 +34,7 @@
 </div>
 <div class="row" style="align-items: flex-start;">
     <div class="card side-card">
-        <img src="/Images/paypal.jpg" class="card-img-top" alt="...">
+        <img src="@Configuration["Directories:Images:Cards"]paypal.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <H2 class="card-title">Support us!</H2>
             <p class="card-text">Every donation will go to the next prize pool</p>
@@ -40,7 +42,7 @@
         </div>
     </div>
     <div class="card side-card">
-        <img src="/Images/Age_of_Queens_logo.png" class="card-img-top" alt="...">
+        <img src="@Configuration["Directories:Images:Cards"]Age_of_Queens_logo.png" class="card-img-top" alt="...">
         <div class="card-body">
             <H2 class="card-title">Age of Queens Clan</H2>
             <p class="card-text">Watch our clan on Liquipedia</p>
@@ -48,7 +50,7 @@
         </div>
     </div>
     <div class="card side-card">
-        <img src="/Images/leaderboard_rm_demo.png" class="card-img-top" alt="...">
+        <img src="@Configuration["Directories:Images:Cards"]leaderboard_rm_demo.png" class="card-img-top" alt="...">
         <div class="card-body">
             <H2 class="card-title">Leaderboard RM</H2>
             <p class="card-text">We have a leaderboard!</p>
