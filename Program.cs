@@ -47,8 +47,6 @@ builder.Services.AddSession(options =>
 });
 
 var app = builder.Build();
-// TODO: Do we need to specify this?
-IConfiguration configuration = app.Configuration;
 // APP SETTINGS
 app.UseStaticFiles();   // For wwwroot
 if (app.Environment.IsDevelopment())
