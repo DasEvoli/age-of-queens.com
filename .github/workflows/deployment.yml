@@ -1,20 +1,65 @@
-name: Deployment Host Machine
+name: Deployment
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
-  deploy:
-    name: Deploy
-    runs-on: ubuntu-lastest
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
-    - name: running ssh commands
-      uses: appleboy/ssh-action@master
-      with:
-        host: a2c3bfd.online-server.cloud
-        username: dasevoli
-        key: ${{ secrets.PRIVATE_KEY }}
-        port: 22
-        script: |
-          cd /var/www/age-of-queens-com/
-          ls -al
+      - uses: actions/checkout@v2
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 6.0.x
+      - name: Compile
+        run: dotnet publish "$GITHUB_WORKSPACE/ageofqueenscom.csproj" -c Release -p:EnvironmentName=Production -o age-of-queens.com
+      - name: Add Directories
+        run: |
+          cp -r $GITHUB_WORKSPACE/wwwroot/ age-of-queens.com
+          cp -r $GITHUB_WORKSPACE/Csv/ age-of-queens.com
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.2.0
+        with:
+          name: age-of-queens.com
+          path: age-of-queens.com/**
+          if-no-files-found: error
+
+  publish:
+    name: Publish
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: mkdir ~/age-of-queens.com
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with: 
+          name: age-of-queens.com
+          path: age-of-queens.com
+      - name: SSH copying to host machine
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY}}
+          port: 22
+          rm: true
+          target: /var/www/age-of-queens.com/
+          source: age-of-queens.com/*
+          strip_components: 1
+  
+  restart:
+    name: Restart Webservice
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.PRIVATE_KEY}}
+          port: 22
+          script: |
+            printf "${{ secrets.PASSWORD }}" | sudo -S systemctl restart age-of-queens.service
