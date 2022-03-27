@@ -1,0 +1,20 @@
+name: Deployment Host Machine
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-lastest
+    steps:
+    - name: running ssh commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: a2c3bfd.online-server.cloud
+        username: dasevoli
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 22
+        script: |
+          cd /var/www/age-of-queens-com/
+          ls -al
