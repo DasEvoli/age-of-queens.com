@@ -64,3 +64,4 @@ jobs:
           port: 22
           script: |
             printf "${{ secrets.PASSWORD }}" | sudo -S systemctl restart age-of-queens.service
+            printf "${{ secrets.PASSWORD }}" | sudo -S systemctl restart age-of-queens-updater.service
