@@ -27,4 +27,5 @@ Currently I use GitHub Actions to deploy this webapplication on my webserver wit
 * DasEvoli (Vinzenz Wetzel)
 
 ## License
-This project is licensed under the Apache License 2.0.
+* This project is licensed under the Apache License 2.0
+* All files which don't include any sourcecode especially image files fall under copyright protection and you are not allowed to use them in your projects unless stated otherwise
