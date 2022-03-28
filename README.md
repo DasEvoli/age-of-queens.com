@@ -23,6 +23,11 @@ dotnet ageofqueens.dll --urls=https://localhost:5001/
 ## Deploy
 I use GitHub Actions to deploy this webapplication on my own webserver with every push on the main branch.
 
+## Todo
+- [ ] Proper property bindings
+- [ ] Create ogImage for every site
+- [ ] Refactor site.css
+
 ## Authors
 ![Image of DasEvoli](https://i.imgur.com/xNcLWUT.png) DasEvoli (Vinzenz Wetzel)
 
