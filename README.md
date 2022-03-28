@@ -11,7 +11,7 @@ This .NET Core Web Application is written for Age of Queens. Age of Queens is a 
 * Building is easily possible in VSCode. I provided a launch.json and tasks.json file.
 * If you want to build it yourself:
 ```
-dotnet publish "ageofqueenscom.csproj" -c Release -p:EnvironmentName=Production
+dotnet publish "ageofqueenscom.csproj" -c Release -p:EnvironmentName=Development
 ```
 * Fill appsettings.json or use environment variables. For development I recommend user secrets.
 
@@ -21,11 +21,11 @@ dotnet ageofqueens.dll --urls=https://localhost:5001/
 ```
 
 ## Deploy
-Currently I use GitHub Actions to deploy this webapplication on my webserver with every push on Main. 
+I use GitHub Actions to deploy this webapplication on my own webserver with every push on the main branch.
 
 ## Authors
-* DasEvoli (Vinzenz Wetzel)
+* ![Image of DasEvoli](https://drive.google.com/uc?id=18704P2vcZ88vdlJ0WfDGNUZeG6qBTeNi) DasEvoli (Vinzenz Wetzel)
 
 ## License
-* This project is licensed under the Apache License 2.0
-* All files which don't include any sourcecode especially image files fall under copyright protection and you are not allowed to use them in your projects unless stated otherwise
+* This project is licensed under the Apache License 2.0.
+* All files that don't include any source code, especially image files, fall under copyright protection and you are not allowed to use them in your projects unless stated otherwise.
