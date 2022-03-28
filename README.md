@@ -14,6 +14,7 @@ This .NET Core Web Application is written for Age of Queens. Age of Queens is a 
 dotnet debug "ageofqueenscom.csproj" -p:EnvironmentName=Development
 ```
 * Fill appsettings.json or use environment variables. For development I recommend user secrets.
+* Some content will be loaded by .csv files. They are automatically getting updated via Python script.
 
 ## Run
 ```
