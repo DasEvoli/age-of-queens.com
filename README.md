@@ -27,6 +27,7 @@ I use GitHub Actions to deploy this webapplication on my own webserver with ever
 - [ ] Proper property bindings
 - [ ] Create ogImage for every site
 - [ ] Refactor site.css
+- [ ] Add Error Middleware
 
 ## Authors
 ![Image of DasEvoli](https://i.imgur.com/xNcLWUT.png) DasEvoli (Vinzenz Wetzel)
