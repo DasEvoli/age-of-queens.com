@@ -479,17 +479,19 @@ article h1 {
 .twitch-team-member-container img {
     height: 8em !important;
     border-radius: 100% !important;
-    padding: 1em;
+    margin: 0.5em;
+    filter: saturate(0.5);
+}
+
+.twitch-team-member-container img:hover {
+    border: 3px solid #f7ebda;
+    filter: saturate(1.0);
 }
 
 #twitch-team-members-container {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-}
-
-.twitch-team-member-image:hover {
-    filter: brightness(1.25);
 }
 
 .past-event-header {
