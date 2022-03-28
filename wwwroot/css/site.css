@@ -73,10 +73,6 @@ for details on configuring this project to bundle and minify static web assets. 
         margin-right: auto !important;
     }
 
-    .twitch-team-member-image {
-        height: 8em !important;
-    }
-
     #casting-roster-table td {
         vertical-align: middle;
     }
@@ -480,16 +476,16 @@ article h1 {
     text-align: center;
 }
 
+.twitch-team-member-container img {
+    height: 8em !important;
+    border-radius: 100% !important;
+    padding: 1em;
+}
+
 #twitch-team-members-container {
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-}
-
-.twitch-team-member-image {
-    padding: 1em;
-    height: 10em;
-    border-radius: 100%;
 }
 
 .twitch-team-member-image:hover {

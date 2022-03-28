@@ -32,7 +32,7 @@ else
                     @foreach (TwitchViewModel.Json.User item in Model.UserList)
                     {
                     <div class="twitch-team-member-container">
-                        <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img class="twitch-team-member-image" src="@item.ProfileImageUrl" /></a>
+                        <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img src="@item.ProfileImageUrl" /></a>
                         <h7>@item.DisplayName</h7>
                     </div>
                     }
