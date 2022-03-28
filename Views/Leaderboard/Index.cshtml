@@ -1,7 +1,10 @@
-﻿@model ageofqueenscom.Models.LeaderboardViewModel
-
+﻿@model LeaderboardViewModel
 @{
     ViewData["Title"] = "Leaderboard";
+    ViewData["Description"] = "Check our always updated leaderboard for RM.";
+    ViewData["OgDescription"] = "Check our always updated leaderboard.";
+    ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
+    ViewData["OgUrl"] = "https://age-of-queens.com/Leaderboard";
 }
 
 <div class="container">
@@ -10,7 +13,6 @@
         Data provided by Julinse <br />
         If you want to be included in the leaderboard go to the pinned messages on the Age of Queens Discord server in #announcements for further instructions
     </span>
-
     <table class="table table-striped table-bordered">
         <thead>
             <tr>
@@ -22,11 +24,10 @@
             </tr>
         </thead>
         <tbody>
-
             @if (Model.LeaderboardPlayerListRM != null)
             {
                 int rankNumber = 0;
-                foreach (ageofqueenscom.Code.LeaderboardPlayerModel item in Model.LeaderboardPlayerListRM)
+                foreach (LeaderboardViewModel.LeaderboardPlayer item in Model.LeaderboardPlayerListRM)
                 {
                     rankNumber += 1;
                     <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-hover">
@@ -37,6 +38,10 @@
                         <td>@item.Country</td>
                     </tr>
                 }
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">Error while loading the content.</div>
             }
         </tbody>
     </table>

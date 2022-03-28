@@ -1,50 +1,56 @@
-﻿@model ageofqueenscom.Models.TwitchViewModel
-
+﻿@model TwitchViewModel
 @{
     ViewData["Title"] = "Twitch Team";
+    ViewData["Description"] = "We have an official Twitch Team. Check our members and if someone is online.";
+    ViewData["OgDescription"] = "We have an official Twitch Team. Check our members and if someone is online.";
+    ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
+    ViewData["OgUrl"] = "https://age-of-queens.com/Twitch";
 }
 
-@if (Model.TwitchTeam != null)
+@if (Model.Team != null)
 {
-    <h1>@Model.TwitchTeam.TeamDisplayName - Twitch Team</h1>
+    <h1>@Model.Team.TeamDisplayName - Twitch Team</h1>
     <div id="twitchteam-info-container">
-        <img src="@Model.TwitchTeam.Banner" />
-        <p>"@Model.TwitchTeam.Info"</p>
+        <img src="@Model.Team.Banner" />
+        <p>"@Model.Team.Info"</p>
     </div>
+}
+else 
+{
+    <div class="alert alert-warning" role="alert">Error while loading the content.</div>
 }
 
 <div id="accordion" style="margin-top:2em">
     <div class="card">
         <div class="card-header">
-            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">
-                Show Members
-            </button>
+            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">Show Members</button>
         </div>
-
         <div id="twitch-team-memberlist" class="collapse hide" data-parent="#accordion">
             <div class="card-body" id="twitch-team-members-container">
-                @if (Model.TwitchTeam != null && Model.TwitchTeam.TwitchTeamMemberList != null && Model.TwitchUserList != null)
+                @if (Model.Team != null && Model.Team.TeamMemberList != null && Model.UserList != null)
                 {
-                    @foreach (ageofqueenscom.Code.JsonClasses.TwitchUser item in Model.TwitchUserList)
+                    @foreach (TwitchViewModel.Json.User item in Model.UserList)
                     {
-                <div class="twitch-team-member-container">
-
-                    <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img class="twitch-team-member-image" src="@item.ProfileImageUrl" /></a>
-                    <h7>@item.DisplayName</h7>
-                </div>
+                    <div class="twitch-team-member-container">
+                        <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img class="twitch-team-member-image" src="@item.ProfileImageUrl" /></a>
+                        <h7>@item.DisplayName</h7>
+                    </div>
                     }
                 }
-
-</div>
+                else 
+                {
+                    <div class="alert alert-warning" role="alert">Error while loading the content.</div>
+                }
+            </div>
         </div>
     </div>
 </div>
 <div style="margin-top:2em">
     <h2>Currently Online</h2>
     <div id="online-streams-container" style="display:flex; flex-wrap:wrap">
-        @if (Model.TwitchStreamsList != null)
+        @if (Model.StreamsList != null)
         {
-            @foreach (ageofqueenscom.Code.JsonClasses.TwitchStream item in Model.TwitchStreamsList)
+            @foreach (TwitchViewModel.Json.Stream item in Model.StreamsList)
             {
                 <div class="twitch-iframe">
                     <p>@item.UserName</p>
@@ -52,6 +58,9 @@
                 </div>
             }
         }
-
+        else 
+        {
+            <div class="alert alert-warning" role="alert">Error while loading the content.</div>
+        }
     </div>
 </div>

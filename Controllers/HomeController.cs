@@ -1,36 +1,31 @@
-﻿using ageofqueenscom.Code;
-using ageofqueenscom.Models;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using Microsoft.Extensions.Logging;
-using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc;
+using Ageofqueenscom.Code;
+using Ageofqueenscom.Models;
 
-namespace ageofqueenscom.Controllers
+namespace Ageofqueenscom.Controllers
 {
     public class HomeController : Controller
     {
-        //Todo check if we need this
-        private readonly ILogger<HomeController> _logger;
-
+        private readonly ILogger _logger = null;
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
         public IActionResult Index()
         {
             HomeViewModel model = new HomeViewModel();
-
-            model.BlogpostList = Csv.LoadBlogposts();
-
+            try
+            {
+                model.BlogpostList = Csv.LoadBlogposts();
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.ToString());
+                model.BlogpostList = null;
+            }
             return View(model);
-        }
-
-        // TODO: Learn more about those properties
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

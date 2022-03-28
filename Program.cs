@@ -2,9 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpOverrides;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
@@ -47,22 +45,8 @@ builder.Services.AddSession(options =>
 });
 
 var app = builder.Build();
-// TODO: Do we need to specify this?
-IConfiguration configuration = app.Configuration;
 // APP SETTINGS
 app.UseStaticFiles();   // For wwwroot
-app.UseStaticFiles(new StaticFileOptions()
-{
-    FileProvider = new PhysicalFileProvider(
-    Path.Combine(Directory.GetCurrentDirectory(), @"Images")),
-    RequestPath = new PathString("/Images")
-});
-app.UseStaticFiles(new StaticFileOptions()
-{
-    FileProvider = new PhysicalFileProvider(
-    Path.Combine(Directory.GetCurrentDirectory(), @"Csv")),
-    RequestPath = new PathString("/Csv")
-});
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();

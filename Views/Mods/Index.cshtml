@@ -1,11 +1,15 @@
-﻿@model ageofqueenscom.Models.ModsViewModel
+﻿@model ModsViewModel
 @{
     ViewData["Title"] = "Mods";
+    ViewData["Description"] = "Our girls are even creators of aoe modifications. Check them out here.";
+    ViewData["OgDescription"] = "Our girls are even creators of aoe modifications. Check them out here.";
+    ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
+    ViewData["OgUrl"] = "https://age-of-queens.com/Mods";
 }
 
 @if (Model.ModList != null)
 {
-    foreach (ageofqueenscom.Code.ModModel mod in Model.ModList)
+    foreach (ModsViewModel.Mod mod in Model.ModList)
     {
         <div data-aos="fade-right">
             <div class="mod-container clickable-hover" onclick="window.open('@mod.ModUrl')">
@@ -22,14 +26,12 @@
         </div>
     }
 }
+else 
+{
+    <div class="alert alert-warning" role="alert">Error while loading the content.</div>
+}
 
-
-@section scripts {
-
-    <script>
-
-        AOS.init();
-
-    </script>
-
+@section scripts 
+{
+    <script>AOS.init()</script>
 }
