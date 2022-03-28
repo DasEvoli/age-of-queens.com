@@ -11,7 +11,7 @@ This .NET Core Web Application is written for Age of Queens. Age of Queens is a 
 * Building is easily possible in VSCode. I provided a launch.json and tasks.json file.
 * If you want to build it yourself:
 ```
-dotnet publish "ageofqueenscom.csproj" -c Release -p:EnvironmentName=Development
+dotnet debug "ageofqueenscom.csproj" -p:EnvironmentName=Development
 ```
 * Fill appsettings.json or use environment variables. For development I recommend user secrets.
 

@@ -17,7 +17,7 @@
                 <div data-aos="fade-right">
                     <article>
                         <h2 class="border-bottom">@item.Title</h2>
-                        <p>@item.Content</p>
+                        <p>@Html.Raw(item.Content)</p>
                         @if (!String.IsNullOrEmpty(item.ImageUrl))
                         {
                             <img style="border-radius: 10px" src="@item.ImageUrl" />
