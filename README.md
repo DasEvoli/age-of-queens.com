@@ -28,6 +28,8 @@ I use GitHub Actions to deploy this webapplication on my own webserver with ever
 - [ ] Create ogImage for every site
 - [ ] Refactor site.css
 - [ ] Add Error Middleware
+- [ ] Better mobile version
+- [ ] Small Thumbnails for Mod Page
 
 ## Authors
 ![Image of DasEvoli](https://i.imgur.com/xNcLWUT.png) DasEvoli (Vinzenz Wetzel)

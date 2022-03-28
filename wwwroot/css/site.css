@@ -33,7 +33,7 @@ for details on configuring this project to bundle and minify static web assets. 
         font-size: 1.2em !important;
     }
 
-    .side-card {
+    .card {
         display: none;
     }
 
@@ -262,6 +262,8 @@ a .navbar-brand {
 .dropdown-menu {
     background-color: #64023b;
     font-size: 1em;
+    padding: 0em;
+    border-bottom: 2px solid #f7ebda;
 }
 
 .challonge-widget {
@@ -370,21 +372,23 @@ article h1 {
     background-color: #a9b1e414;
     margin-left: auto;
     color: white;
-    margin-right: auto
+    width: 75%;
+    margin-right: auto;
+    border-radius: 1em;
 }
 
 .card a {
     text-decoration: none;
 }
 
+.card img {
+    border-radius: 1em 1em 0em 0em;
+}
+
 .card-title {
     padding-top: 0em;
     padding-bottom: 0.2em;
     border-bottom: solid 1px #ffffff1f;
-}
-
-.card-text {
-    font-size: 1.1em;
 }
 
 .player-introduction {
