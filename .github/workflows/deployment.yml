@@ -19,6 +19,7 @@ jobs:
         run: |
           cp -r $GITHUB_WORKSPACE/wwwroot/ age-of-queens.com
           cp -r $GITHUB_WORKSPACE/Csv/ age-of-queens.com
+          cp $GITHUB_WORKSPACE/CsvUpdater.py age-of-queens.com
       - name: Upload Artifact
         uses: actions/upload-artifact@v2.2.0
         with:
