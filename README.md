@@ -15,7 +15,7 @@ dotnet debug "ageofqueenscom.csproj" -p:EnvironmentName=Development
 ```
 * Fill appsettings.json or use environment variables. For development I recommend user secrets.
 
-## Run
+### Run
 ```
 dotnet ageofqueens.dll --urls=https://localhost:5001/
 ```
