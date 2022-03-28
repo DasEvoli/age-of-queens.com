@@ -24,7 +24,7 @@ dotnet ageofqueens.dll --urls=https://localhost:5001/
 I use GitHub Actions to deploy this webapplication on my own webserver with every push on the main branch.
 
 ## Authors
-* ![Image of DasEvoli](https://drive.google.com/uc?id=18704P2vcZ88vdlJ0WfDGNUZeG6qBTeNi) DasEvoli (Vinzenz Wetzel)
+![Image of DasEvoli](https://drive.google.com/uc?id=18704P2vcZ88vdlJ0WfDGNUZeG6qBTeNi) DasEvoli (Vinzenz Wetzel)
 
 ## License
 * This project is licensed under the Apache License 2.0.
