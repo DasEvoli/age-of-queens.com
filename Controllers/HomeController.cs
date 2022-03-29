@@ -27,5 +27,9 @@ namespace Ageofqueenscom.Controllers
             }
             return View(model);
         }
+        public IActionResult Error()
+        {
+            return View();
+        }
     }
 }
