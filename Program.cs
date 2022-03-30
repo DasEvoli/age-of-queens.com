@@ -31,9 +31,7 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days.
-    // When returned as a header from a website, it indicates to the client that the server wants you to use HTTPS for all future requests.
-    app.UseHsts();
+    app.UseHsts(); // The default HSTS value is 30 days.
 }
 app.UseStaticFiles();
 app.UseForwardedHeaders(new ForwardedHeadersOptions{ ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto });

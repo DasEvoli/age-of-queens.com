@@ -1,3 +1,6 @@
+# This Python script file is used to automatically update csv files we use on the website
+# Reason for this is that this makes it very easy for users to update the data by themselves
+
 import time
 import requests
 import os

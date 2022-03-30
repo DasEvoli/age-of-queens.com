@@ -13,7 +13,7 @@ namespace Ageofqueenscom.Controllers
 {
     public class TwitchController : Controller
     {
-        private IConfiguration _configuration;
+        private IConfiguration _configuration;  // Used to set values in the configuration file
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly ILogger _logger;
         private readonly string _clientId;
@@ -25,7 +25,7 @@ namespace Ageofqueenscom.Controllers
 
         public TwitchController(IConfiguration configuration, IHttpClientFactory httpClientFactory, ILogger<TwitchController> logger)
         {
-            _configuration = configuration;  // Needs to be initialized so we can set values in the configuration file.
+            _configuration = configuration;  
             _logger = logger;
             _clientId = configuration["TWITCH_CLIENT_ID"];
             _clientSecret = configuration["TWITCH_CLIENT_SECRET"];
