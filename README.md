@@ -1,7 +1,10 @@
 ![Age of Queens Banner](https://i.imgur.com/0TY1zSa.png)
 
 # age-of-queens.com
-This .NET Core Web Application is written for Age of Queens. Age of Queens is a community and a safe space for women who play Age of Empires to cultivate an environment that connects women to other women and encourage more to pick up the game.
+This .NET Core MVC Web Application is written for Age of Queens. Age of Queens is a community and a safe space for women who play Age of Empires to cultivate an environment that connects women to other women and encourage more to pick up the game.
+
+## Contributing
+If you are a member of the Age of Queens community or you are approved as an editor you can contribute by doing pull requests.
 
 ## Requirements
 * .NET Core 6.0 SDK
@@ -25,11 +28,10 @@ dotnet ageofqueens.dll --urls=https://localhost:5001/
 I use GitHub Actions to deploy this webapplication on my own webserver with every push on the main branch.
 
 ## Todo
-- [ ] Proper property bindings
 - [ ] Create ogImage for every site
-- [ ] Refactor site.css
-- [ ] Add Error Middleware
-- [ ] Better mobile version
+- [ ] Refactor site.css and the views accordingly
+- [X] Add Error Middleware
+- [ ] Improve mobile version
 - [ ] Small Thumbnails for Mod Page
 
 ## Authors
