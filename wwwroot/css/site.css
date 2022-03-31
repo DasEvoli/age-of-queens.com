@@ -56,7 +56,6 @@
         font-family: 'Josefin Sans', sans-serif;
     }
 
-
     body {
         margin-bottom: 60px;
         background: linear-gradient(0deg, rgba(12, 11, 38, 1) 0%, rgba(102, 2, 60, 1) 100%);
@@ -170,7 +169,7 @@
         line-height: inherit;
     }
 
-    .table {
+    .table-leaderboard {
         color: white;
         border-color: #dee2e64a;
         font-size: 1.2em;
@@ -202,6 +201,60 @@
 
     }
 
+    .active-event{
+        text-align: center;
+    }
+
+    .active-event img{
+        max-width: 50%;
+    }
+
+    .active-event-gamelist-meta{
+        font-size: 1.8rem;
+        position: relative;
+        height: 3rem;
+    }
+
+    .active-event-gamelist-info{
+        margin-top: 1rem;
+    }
+
+    .active-event-gamelist-date{
+        position: absolute;
+        left: 0;
+    }
+
+    .active-event-gamelist-mode{
+        position: absolute;
+        right: 0;
+    }
+
+    .active-event-gamelist-teams{
+        margin-top: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        line-height: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .active-event-gamelist-team{
+        border-radius: 0.3em;
+        background-color: #dda2d61a; 
+        padding: 0.3em;
+    }
+
+    .active-event-gamelist-vs{
+        font-size: 0.8rem;
+    }
+
+    .active-event-gamelist-maps{
+        font-size: 1.2rem;
+    }
+
+    .active-event-gamelist{
+        text-align: center;
+    }
+
     #casting-roster-table td,
     #casting-roster-table th {
         padding: 0em;
@@ -218,7 +271,7 @@
         margin-top: 2em;
         -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
         box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        word-break: break-all;
+        word-break: break-word;
     }
 
     article img {
@@ -270,18 +323,20 @@
         -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
         box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
         border-radius: 1em;
+        padding: 1rem;
     }
 
     .player-introduction-content {
         margin: 2em;
         font-size: 16px;
-        text-align: center;
     }
 
     .player-introduction .row {
         align-items: center;
         position: relative;
         flex-wrap: nowrap;
+        margin-right: 0rem; 
+        margin-left: 0rem;
     }
 
     .player-introduction-buttons {
@@ -294,7 +349,7 @@
         text-decoration: none;
     }
 
-    .player-introduction-content img {
+    .player-introduction img {
         max-width: 12em;
         border-radius: 10px;
         max-height: 18em;
@@ -354,8 +409,8 @@
     }
 
     .twitch-team-member-container img {
-        height: 8em !important;
-        border-radius: 100% !important;
+        height: 8rem;
+        border-radius: 100%;
         margin: 0.5em;
         filter: saturate(0.5);
     }
@@ -422,7 +477,6 @@
     }
 }
 
-
 @media (min-width: 1600px) {
     .container {
         max-width: 1540px;
@@ -477,6 +531,28 @@
         height: auto;
     }
 
+    .mod-container img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: unset;
+    }
+
+    .table-leaderboard{
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        font-size: 1.2rem;
+    }
+
+    .table-leaderboard tr {
+        height: 5rem;
+    }
+
+    .table-leaderboard tr td, tr th {
+        vertical-align: middle;
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
     #twitchteam-info-container img {
         max-width: 100%;
     }
@@ -486,12 +562,25 @@
         margin-right: auto ;
     }
 
+    .twitch-team-member-container img {
+        height: 6rem;
+        border-radius: 5%;
+    }
+
+    .twitch-team-member-container h7 {
+        font-size: 1rem;
+    }
+
     #casting-roster-table td {
         vertical-align: middle;
     }
 
     #casting-roster-table th {
         vertical-align: middle;
+    }
+
+    .player-introduction {
+        padding: 2rem 1rem 1rem 1rem;
     }
 
     .player-introduction .row {
@@ -510,18 +599,7 @@
 
     .player-introduction-content {
         font-size: 1.2rem;
-    }
-
-    .table {
-        font-size: 1rem;
-    }
-
-    .table th {
-        padding: 0.2rem;
-    }
-
-    .table td {
-        padding: 0.2rem;
+        margin: 0rem;
     }
 
     .challonge-widget {
