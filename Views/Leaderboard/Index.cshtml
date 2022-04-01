@@ -6,14 +6,13 @@
     ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
     ViewData["OgUrl"] = "https://age-of-queens.com/Leaderboard";
 }
-
-<div class="container">
+<section>
     <h1>Leaderboard RM</h1>
-    <span class="annotation">
+    <p class="annotation">
         Data provided by Julinse <br />
         If you want to be included in the leaderboard go to the pinned messages on the Age of Queens Discord server in #announcements for further instructions
-    </span>
-    <table class="table table-striped table-bordered table-leaderboard">
+    </p>
+    <table class="table table-striped table-bordered">
         <thead>
             <tr>
                 <th scope="col">Rank</th>
@@ -30,7 +29,7 @@
                 foreach (LeaderboardViewModel.LeaderboardPlayer item in Model.LeaderboardPlayerListRM)
                 {
                     rankNumber += 1;
-                    <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable-hover">
+                    <tr onclick="window.open('https://aoe2.net/#profile-@item.Id')" class="clickable">
                         <td scope="row">@rankNumber</td>
                         <td>@item.Name</td>
                         <td>@item.Rating</td>
@@ -45,4 +44,4 @@
             }
         </tbody>
     </table>
-</div>
+</section>

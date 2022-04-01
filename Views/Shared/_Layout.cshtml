@@ -28,7 +28,7 @@
     <header>
         <nav class="navbar navbar-dark navbar-expand-sm navbar-toggleable-sm box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Age of Queens</a>
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">Age of Queens</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,7 +36,7 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown">About us</a>
@@ -47,16 +47,16 @@
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Leaderboard" asp-action="Index">Leaderboard</a>
+                            <a class="nav-link" asp-controller="Leaderboard" asp-action="Index">Leaderboard</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Mods" asp-action="Index">Mods</a>
+                            <a class="nav-link" asp-controller="Mods" asp-action="Index">Mods</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="Twitch" asp-action="Index">Twitch Team</a>
+                            <a class="nav-link" asp-controller="Twitch" asp-action="Index">Twitch Team</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-controller="ActiveEvent" asp-action="Index">Active/Last Event</a>
+                            <a class="nav-link" asp-controller="ActiveEvent" asp-action="Index">Active/Last Event</a>
                         </li>
                     </ul>
                 </div>
@@ -68,15 +68,14 @@
             @RenderBody()
         </div>
     </main>
-    <footer class="footer">
-        <div class="container">
-            &copy; 2022 - Vinzenz Wetzel <img src="~/images/icons/GitHub-Mark-Light-32px.png"/><a href="https://github.com/DasEvoli" style="text-decoration:none"> DasEvoli</a> 
-        </div>
+    <footer>
+            <p>&copy; 2022 - Vinzenz Wetzel <img src="~/images/icons/GitHub-Mark-Light-32px.png"/><a href="https://github.com/DasEvoli"> DasEvoli</a></p>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="~/lib/aos.min.js"></script>
+    <script>AOS.init()</script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

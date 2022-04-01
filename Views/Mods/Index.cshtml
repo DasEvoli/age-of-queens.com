@@ -6,32 +6,28 @@
     ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
     ViewData["OgUrl"] = "https://age-of-queens.com/Mods";
 }
-
-@if (Model.ModList != null)
-{
-    foreach (ModsViewModel.Mod mod in Model.ModList)
-    {
-        <div data-aos="fade-right">
-            <div class="mod-container clickable-hover" onclick="window.open('@mod.ModUrl')">
-                <img src="@mod.ImageUrl" />
-                <div class="mod-content">
-                    <h2>@mod.Title</h2>
-                    <span>@mod.Category</span>
-                    <p>@mod.Description</p>
-                </div>
-                <div class="mod-info">
-                    <span>@mod.Creator - @mod.Date</span>
-                </div>
+<div class="col-12">
+    <section>
+    @if (Model.ModList != null)
+    {  
+        @foreach (ModsViewModel.Mod mod in Model.ModList)
+        {
+        <div data-aos="fade-right" id="mod-container" class="clickable shadow" onclick="window.open('@mod.ModUrl')">
+            <img src="@mod.ImageUrl" />
+            <div id="mod-content">
+                <h2>@mod.Title</h2>
+                <p>@mod.Category</p>
+                <p>@mod.Description</p>
+            </div>
+            <div id="mod-info">
+                <p>@mod.Creator - @mod.Date</p>
             </div>
         </div>
+        }
     }
-}
-else 
-{
-    <div class="alert alert-warning" role="alert">Error while loading the content.</div>
-}
-
-@section scripts 
-{
-    <script>AOS.init()</script>
-}
+    else 
+    {
+        <div class="alert alert-warning" role="alert">Error while loading the content.</div>
+    }
+    </section>
+</div>

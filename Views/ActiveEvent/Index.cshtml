@@ -7,32 +7,32 @@
     ViewData["OgUrl"] = "https://age-of-queens.com/ActiveEvent";
 }
 
-<div class="active-event">
+<section id="active-event">
     <h1>@Model.Title</h1>
     <p>@Model.Information</p>
-    <img class="border-custom-aoq" src="@Model.Image">
-</div>
-<div class="active-event-gamelist">
+    <img id="border-special-aoq" src="@Model.Image">
+</section>
+<section id="active-event-gamelist">
     @if(Model.ActiveGameEventGameList != null)
     {
         @foreach (ActiveEventViewModel.ActiveEventGame item in Model.ActiveGameEventGameList)
         {
-            <article>
-                <div class="border-bottom active-event-gamelist-meta">
-                    <span class="active-event-gamelist-date">@item.Date</span>
-                    <span class="active-event-gamelist-mode">@item.Mode</span>
+            <article class="shadow">
+                <div id="active-event-gamelist-meta">
+                    <p id="active-event-gamelist-date">@item.Date</p>
+                    <p id="active-event-gamelist-mode">@item.Mode</p>
                 </div>
-                <div class="active-event-gamelist-teams">
+                <div id="active-event-gamelist-teams">
                 @for(int i = 0; i < item.ActiveEventTeams.Count; i++)
                 {
                     if(i != 0){
-                        <span class="active-event-gamelist-vs">vs.</span>
+                        <p>vs.</p>
                     }
-                    <span class="active-event-gamelist-team">@item.ActiveEventTeams[i]</span>
+                    <p id="active-event-gamelist-team">@item.ActiveEventTeams[i]</p>
                 }
                 </div>
-                <div class="border-bottom active-event-gamelist-maps">@item.Maps</div>
-                <div class="active-event-gamelist-info">@item.Information</div>
+                <p class="border-bottom padding-bottom-small">@item.Maps</p>
+                <p>@item.Information</p>
             </article>
         }
     }
@@ -40,4 +40,4 @@
     {
         <div class="alert alert-warning" role="alert">Error while loading the content.</div>
     }
-</div>
+</section>

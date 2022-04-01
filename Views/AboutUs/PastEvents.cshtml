@@ -6,86 +6,114 @@
     ViewData["OgUrl"] = "https://age-of-queens.com/AboutUs/PastEvents";
 }
 
-<div id="past-events-container" class="container">
-    <div class="accordion">
-        <div class="card">
-            <div class="card-header past-event-header">
-                <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseQueensClash">Queen's Clash</button>
+<section id="past-events-carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="d-block w-100" src="@Configuration["Directories:Images:PastEvents"]1.png" alt="First slide">
+            <div id="past-events-carousel-box" class="carousel-caption d-none d-md-block">
+                <h5>Queen's Clash</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet bibendum augue. Pellentesque interdum, nibh vitae cursus iaculis, massa mi rutrum tortor, sit amet euismod libero dolor sodales orci. Quisque consequat nibh non ex tincidunt, sit amet facilisis neque facilisis. Morbi vestibulum eros ac orci laoreet suscipit. In a finibus tellus.</p>
             </div>
-            <div id="collapseQueensClash" class="collapse hidden">
-                <div class="card-body">
-                    <div class="past-event-container">
-                        <H2>Gold League</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 Gabi $1,000</h3></li>
-                            <li><h3>🥈 Lavie Head $750</h3></li>
-                            <li><h3>🥉 Ofelia $500</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/QueensClashGold/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-                        <H2>Silver League</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 Kaaaai_ $350</h3></li>
-                            <li><h3>🥈 Tileä $250</h3></li>
-                            <li><h3>🥉 Flor_13 $100</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/QueensClashSilver/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="true" allowtransparency="true"></iframe>
-                    </div>
-                </div>
+            <div id="past-events-carousel-rank-list">
+                <ul>
+                    <h6>Gold League</h6>
+                    <li><span class="medal gold">1</span><p>Gabi $1,000</p></li>
+                    <li><span class="medal silver">2</span><p>Lavie Head $750</p></li>
+                    <li><span class="medal bronze">3</span><p>Ofelia $500</p></li>
+                    <h6>Silver League</h6>
+                    <li><span class="medal gold">1</span><p>Kaaaai_ $350</p></li>
+                    <li><span class="medal silver">2</span><p>Tileä $250</p></li>
+                    <li><span class="medal bronze">3</span><p>Flor_13 $100</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="@Configuration["Directories:Images:PastEvents"]3.png" alt="Third slide">
+            <div id="past-events-carousel-box" class="carousel-caption d-none d-md-block">
+                <h5>Age of Queens 1v1 First Edition</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet bibendum augue. Pellentesque interdum, nibh vitae cursus iaculis, massa mi rutrum tortor, sit amet euismod libero dolor sodales orci. Quisque consequat nibh non ex tincidunt, sit amet facilisis neque facilisis. Morbi vestibulum eros ac orci laoreet suscipit. In a finibus tellus.</p>
+            </div>
+            <div id="past-events-carousel-rank-list">
+                <ul>
+                    <h6>League 1</h6>
+                    <li><span class="medal gold">1</span><p>OfeliaAoE $50</p></li>
+                    <li><span class="medal silver">2</span><p>Qwin</p></li>
+                    <li><span class="medal bronze">3</span><p>sunsetflyer</p></li>
+                    <h6>League 2</h6>
+                    <li><span class="medal gold">1</span><p>Redphoenix $20</p></li>
+                    <li><span class="medal silver">2</span><p>[S1N]Joules</p></li>
+                    <li><span class="medal bronze">3</span><p>erin_msr</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block w-100" src="@Configuration["Directories:Images:PastEvents"]2.png" alt="Second slide">
+            <div id="past-events-carousel-box" class="carousel-caption d-none d-md-block">
+                <h5>Age of Queens 1v1 Second Edition</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet bibendum augue. Pellentesque interdum, nibh vitae cursus iaculis, massa mi rutrum tortor, sit amet euismod libero dolor sodales orci. Quisque consequat nibh non ex tincidunt, sit amet facilisis neque facilisis. Morbi vestibulum eros ac orci laoreet suscipit. In a finibus tellus.</p>
+            </div>
+            <div id="past-events-carousel-rank-list">
+                <ul>
+                    <h6>League 1</h6>
+                    <li><span class="medal gold">1</span><p>[RUS-F]the_queen 50€</p></li>
+                    <li><span class="medal silver">2</span><p>Gabi 30€</p></li>
+                    <li><span class="medal bronze">3</span><p>Julinse 20€</p></li>
+                    <h6>League 2</h6>
+                    <li><span class="medal gold">1</span><p>CharChar 25€</p></li>
+                    <li><span class="medal silver">2</span><p>apach2421 15€</p></li>
+                    <li><span class="medal bronze">3</span><p>neyswife 10€</p></li>
+                </ul>
+            </div>
+        </div>
+        <div class="carousel-item" id="carousel-queens-charity">
+            <img class="d-block w-100" src="@Configuration["Directories:Images:PastEvents"]4.png" alt="Third slide">
+            <div id="past-events-carousel-box" class="carousel-caption d-none d-md-block">
+                <h5>Queens' Charity Clash</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquet bibendum augue. Pellentesque interdum, nibh vitae cursus iaculis, massa mi rutrum tortor, sit amet euismod libero dolor sodales orci. Quisque consequat nibh non ex tincidunt, sit amet facilisis neque facilisis. Morbi vestibulum eros ac orci laoreet suscipit. In a finibus tellus.</p>
+            </div>
+            <div id="past-events-carousel-rank-list">
+                <ul>
+                    <h6>Players</h6>
+                    <li><p>Akroma</p></li>
+                    <li><p>Anthocyanina</p></li>
+                    <li><p>ashleylynn</p></li>
+                    <li><p>Blackbaby</p></li>
+                    <li><p>CharChar</p></li>
+                    <li><p>daehiise</p></li>
+                    <li><p>Dani</p></li>
+                    <li><p>Dannimon992</p></li>
+                    <li><p>Elhyar</p></li>
+                    <li><p>EspressoCat</p></li>
+                    <li><p>Flower</p></li>
+                    <li><p>Gabi</p></li>
+                    <li><p>Gaelyn</p></li>
+                    <li><p>joules</p></li>
+                    <li><p>KaneteTV</p></li>
+                    <li><p>LilT</p></li>
+                    <li><p>Linh1032</p></li>
+                    <li><p>MagnoliaAoE</p></li>
+                    <li><p>Medusa</p></li>
+                    <li><p>Mica</p></li>
+                    <li><p>Nodscouter</p></li>
+                    <li><p>oceaningabyss</p></li>
+                    <li><p>Ottilia</p></li>
+                    <li><p>Stealth_r_Us</p></li>
+                    <li><p>sunsetfire</p></li>
+                    <li><p>yosumi</p></li>
+
+
+                </ul>
             </div>
         </div>
     </div>
-    <div class="accordion">
-        <div class="card">
-            <div class="card-header past-event-header">
-                <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseLeague2021">Age of Queens 1v1 Second Edition</button>
-            </div>
-            <div id="collapseLeague2021" class="collapse hidden">
-                <div class="card-body">
-                    <div class="past-event-container">
-                        <H2>League 1</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 [RUS-F]the_queen 50€</h3></li>
-                            <li><h3>🥈 Gabi 30€</h3></li>
-                            <li><h3>🥉 Julinse 20€</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/AgeofQueens1v1L12021/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-                        <H2>League 2</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 CharChar 25€</h3></li>
-                            <li><h3>🥈 apach2421 15€</h3></li>
-                            <li><h3>🥉 neyswife 10€</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/AgeofQueens1v1L22021/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion">
-        <div class="card">
-            <div class="card-header past-event-header">
-                <button class="btn big-button-font" type="button" data-toggle="collapse" data-target="#collapseFirstEdition">Age of Queens 1v1 First Edition</button>
-            </div>
-            <div id="collapseFirstEdition" class="collapse hidden">
-                <div class="card-body">
-                    <div class="past-event-container">
-                        <H2>League 1</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 OfeliaAoE $50 Steam Gift Card</h3></li>
-                            <li><h3>🥈 Qwin</h3></li>
-                            <li><h3>🥉 sunsetflyer</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/AgeofQueens1v1L1/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-                        <H2>League 2</H2>
-                        <ul class="medals-list">
-                            <li><h3>🥇 Redphoenix $20 Steam Gift Card</h3></li>
-                            <li><h3>🥈 [S1N]Joules</h3></li>
-                            <li><h3>🥉 erin_msr</h3></li>
-                        </ul>
-                        <iframe class="challonge-widget" src="https://challonge.com/de/AgeofQueens1v1L2/module?scale_to_fit=1" width="100%" height="500" frameborder="0" scrolling="auto" allowtransparency="true"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+    <!-- Controllers -->
+    <a class="carousel-control-next" href="#past-events-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+    <ol class="carousel-indicators">
+        <li data-target="#past-events-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#past-events-carousel" data-slide-to="1"></li>
+        <li data-target="#past-events-carousel" data-slide-to="2"></li>
+        <li data-target="#past-events-carousel" data-slide-to="3"></li>
+    </ol>
+</section>

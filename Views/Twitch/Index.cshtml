@@ -9,29 +9,31 @@
 
 @if (Model.Team != null)
 {
-    <h1>@Model.Team.TeamDisplayName - Twitch Team</h1>
-    <div id="twitchteam-info-container">
-        <img src="@Model.Team.Banner" />
-        <p>"@Model.Team.Info"</p>
-    </div>
+    <section>
+        <h1>@Model.Team.TeamDisplayName - Twitch Team</h1>
+        <div id="twitchteam-info-container">
+            <img src="@Model.Team.Banner" />
+            <p>"@Model.Team.Info"</p>
+        </div>
+    </section>
 }
 else 
 {
     <div class="alert alert-warning" role="alert">Error while loading the content.</div>
 }
 
-<div id="accordion" style="margin-top:2em">
+<section id="collapse-twitch-team-member-list">
     <div class="card">
         <div class="card-header">
-            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-memberlist" aria-expanded="true">Show Members</button>
+            <button class="btn big-button-font" data-toggle="collapse" data-target="#twitch-team-member-container" aria-expanded="true">Show Members</button>
         </div>
-        <div id="twitch-team-memberlist" class="collapse hide" data-parent="#accordion">
-            <div class="card-body" id="twitch-team-members-container">
+        <div id="twitch-team-member-container" class="collapse hide" data-parent="#collapse-twitch-team-member-list">
+            <div class="card-body">
                 @if (Model.Team != null && Model.Team.TeamMemberList != null && Model.UserList != null)
                 {
                     @foreach (TwitchViewModel.Json.User item in Model.UserList)
                     {
-                    <div class="twitch-team-member-container">
+                    <div id="twitch-team-member">
                         <a href="https://twitch.tv/@item.DisplayName" target="_blank"><img src="@item.ProfileImageUrl" /></a>
                         <h7>@item.DisplayName</h7>
                     </div>
@@ -44,10 +46,10 @@ else
             </div>
         </div>
     </div>
-</div>
-<div style="margin-top:2em">
+</section>
+<section>
     <h2>Currently Online</h2>
-    <div id="online-streams-container" style="display:flex; flex-wrap:wrap">
+    <div id="twitch-team-online-streams">
         @if (Model.StreamsList != null)
         {
             @foreach (TwitchViewModel.Json.Stream item in Model.StreamsList)
@@ -63,4 +65,4 @@ else
             <div class="alert alert-warning" role="alert">Error while loading the content.</div>
         }
     </div>
-</div>
+</section>

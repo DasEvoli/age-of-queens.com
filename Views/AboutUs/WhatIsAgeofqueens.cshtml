@@ -5,37 +5,34 @@
     ViewData["OgImage"]="https://age-of-queens.com/images/og/age_of_queens_banner.png";
     ViewData["OgUrl"] = "https://age-of-queens.com/AboutUs";
 }
-
-<div style="text-align:center">
-    <iframe id="youtube-widget" width="800" height="450" src="https://www.youtube.com/embed/NYaasI9sbJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<h1 style="text-align:center">What is Age of Queens?</h1>
-<article style="text-align:center">
-    <p>
-        Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels. We ultimately want to cultivate an environment that connects women players to other women and encourage more to pick up the game. Since female players are a minority in gaming in general and many players often don’t know other women play AoE2, we also want to provide more awareness for this demographic.  Our Discord server offers a secure environment for women only to have a platform to find games, build teams, participate in events, exchange experiences, and make friendships. We also have an in-game clan, AoQc,  a Twitch Team to support female AoE2 streamers, and you can find players online every day.
-    </p>
-</article>
-<div data-aos="fade-right" style="margin-top: 6em">
-    <div class="row">
-        <div class="col-md-6" style="text-align:center">
+<section>
+    <div class="youtube-video">
+        <iframe width="800" height="450" src="https://www.youtube.com/embed/NYaasI9sbJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <h1>What is Age of Queens?</h1>
+    <article>
+        <p>
+            Age of Queens is a community for women who play Age of Empires II. Primarily we are a community united on our Discord server and periodically host events including a variety of tournaments and show matches for all skill levels. We ultimately want to cultivate an environment that connects women players to other women and encourage more to pick up the game. Since female players are a minority in gaming in general and many players often don’t know other women play AoE2, we also want to provide more awareness for this demographic.  Our Discord server offers a secure environment for women only to have a platform to find games, build teams, participate in events, exchange experiences, and make friendships. We also have an in-game clan, AoQc,  a Twitch Team to support female AoE2 streamers, and you can find players online every day.
+        </p>
+    </article>
+</section>
+<div data-aos="fade-right">
+    <section id="what-is-age-of-queens-discord-section" class="row">
+        <div class="col-md-6">
             <h2>Age of Queens Server</h2>
-            <img src="@Configuration["Directories:Images:Misc"]discord.png" style="border-radius: 20px; max-width: 100%; margin-top: 1em;" />
-            <ul style="text-align:left; margin-top: 0.5em">
+            <img src="@Configuration["Directories:Images:Misc"]discord.png"/>
+            <ul>
                 <li>Only women and nonbinary people</li>
                 <li>To request access message either Tiny Triss#1563, Yekky#2186, Eleda au Venatus#0554, LilTrouble#3881 or ashleylynn#4783 on Discord</li>
             </ul>
         </div>
-        <div class="col-md-6" style="text-align:center">
+        <div class="col-md-6">
             <h2>AoQc and Friends Server</h2>
-            <img src="@Configuration["Directories:Images:Misc"]discord_2.png" style="border-radius:20px;max-width:100%; margin-top: 1em;" />
-            <ul style="text-align:left; margin-top: 0.5em">
+            <img src="@Configuration["Directories:Images:Misc"]discord_2.png"/>
+            <ul>
                 <li>For everyone</li>
                 <li><a href="https://discord.gg/x6vNkQkF7h">Click to join</a></li>
             </ul>
         </div>
-    </div>
+    </section>
 </div>
-
-@section scripts {
-    <script>AOS.init()</script>
-}

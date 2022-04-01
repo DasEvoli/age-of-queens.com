@@ -1,624 +1,682 @@
-﻿@media all {
+﻿:root {
+    --main-purple-color: #63023b;
+    --main-gold-color: #f7ebda;
+    --container-bg-color: #a9b1e417;
+    --carousel-box-color: rgba(0,0,0,.5);
+    --body-font-family: "Montserrat", -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol","Noto Color Emoji";
+    --border-color: #ffffff1f;
+    --border-width: 1px;
+    --button-font-family: "Josefin Sans", sans-serif;
+    --navbar-font-family: "Mate SC", serif;
+    --color-clickable-hover: #ffffff21;
+    --border-radius-small: 10px;
+    --border-radius-middle: 30px;
+    --padding-border-small: 1rem;
+}
+
+
+/* Standard Desktop */
+@media all {
+
+    /* TAGS */
 
     html {
         position: relative;
         min-height: 100%;
-    }
-
-    a {
-        color: white;
-        text-decoration: underline;
-    }
-
-    h1 {
-        margin-bottom: 0em;
-        padding-bottom: 0.2em;
-        border-bottom: 1px solid #ffffff1f !important;
-        margin-top: 1rem;
-    }
-
-    h2 {
-        border-bottom: 1px solid #ffffff1f !important;
-        padding-bottom: 0.4em;
-        margin-top: 1rem;
-    }
-
-    h3 {
-        border-bottom: 1px solid #ffffff1f !important;
-        padding-top: 1em;
-        padding-bottom: 0.5em;
-    }
-
-    button:focus {
-        outline: 0px dotted;
-        outline: 0px auto -webkit-focus-ring-color;
-    }
-
-    .btn.focus,
-    .btn:focus {
-        outline: 0;
-        box-shadow: 0 0 0 0rem rgb(0 123 255 / 25%);
-    }
-
-    .btn {
-        color: white;
-        font-family: 'Mate SC', serif;
-    }
-
-    .btn:hover {
-        color: white;
-    }
-
-    .btn-primary {
-        background-color: #d6c99e;
-        color: #442356;
-        border: none;
-        font-family: 'Josefin Sans', sans-serif;
+        font-size: 15px;
     }
 
     body {
-        margin-bottom: 60px;
+        margin-bottom: 5rem;
         background: linear-gradient(0deg, rgba(12, 11, 38, 1) 0%, rgba(102, 2, 60, 1) 100%);
-        color: white;
         background-attachment: fixed;
-        font-family: Montserrat;
-        font-size: 14px;
+        font-family: var(--body-font-family);
+        color: white;
     }
 
-    .footer {
+    footer {
         position: absolute;
         bottom: 0;
         width: 100%;
-        white-space: nowrap;
         line-height: 60px;
-        border-top: solid 1px #f9f7d094;
+        border-top: solid 1px var(--main-gold-color);
     }
 
-    .row {
-        align-items: flex-start;
+    footer p {
+        margin-left: 10rem;
+        margin-bottom: unset;
     }
 
-    .navbar {
-        border-bottom: solid 1px #f9f7d094;
-        font-family: 'Mate SC', serif;
-        font-size: 1.4em;
-        color: #f7ebda;
-    }
-
-    .navbar a {
-        color: #f7ebda;
-        text-decoration: none !important;
-    }
-
-
-    .nav-link:hover {
-        color: rgb(255 255 255) !important;
-        cursor: pointer;
-    }
-
-    .navbar-brand {
-        color: #f7ebda;
-        text-decoration: none;
-        font-size: 1.7rem;
-    }
-
-    .nav-link {
-        color: inherit;
-    }
-
-    .navbar-dark .navbar-brand {
-        color: inherit;
-    }
-
-    a .navbar-brand {
-        white-space: normal;
-        text-align: center;
-        word-break: break-all;
-    }
-
-    .nav-pills .nav-link.active,
-    .nav-pills .show>.nav-link {
-        color: #fff;
-        background-color: #1b6ec2;
-        border-color: #1861ac;
-    }
-
-    .navbar-dark .navbar-nav .nav-link {
-        color: inherit;
-    }
-
-    .dropdown-menu {
-        background-color: #64023b;
-        font-size: 1em;
-        padding: 0em;
-        border-bottom: 2px solid #f7ebda;
-    }
-
-    .challonge-widget {
-        margin-top: 2em;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    #instagram-widget {
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    #youtube-widget {
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 2em;
-        border-radius: 20px;
-    }
-
-    .border-top {
-        border-top: 1px solid #ffffff1f !important;
-    }
-
-    .border-bottom {
-        border-bottom: 1px solid #ffffff1f !important;
-    }
-
-    .box-shadow {
-        box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
-    }
-
-    button.accept-policy {
-        font-size: 1rem;
-        line-height: inherit;
-    }
-
-    .table-leaderboard {
-        color: white;
-        border-color: #dee2e64a;
-        font-size: 1.2em;
-        margin-top: 2em;
-    }
-
-    .table thead th {
-        vertical-align: bottom;
-        border-bottom: 1px solid #dee2e67a;
-    }
-
-    .table-bordered td,
-    .table-bordered th {
-        border: 1px solid #dee2e64a;
-    }
-
-    .table thead {
-        border-bottom: solid 2px #ffffff;
-    }
-
-    .clickable-hover:hover {
-        cursor: pointer;
-        background-color: #ffffff21 !important;
-    }
-
-    #casting-roster-table {
-        text-align: center;
-        font-size: 0.9em;
-
-    }
-
-    .active-event{
-        text-align: center;
-    }
-
-    .active-event img{
-        max-width: 50%;
-    }
-
-    .active-event-gamelist-meta{
-        font-size: 1.8rem;
-        position: relative;
-        height: 3rem;
-    }
-
-    .active-event-gamelist-info{
-        margin-top: 1rem;
-    }
-
-    .active-event-gamelist-date{
-        position: absolute;
-        left: 0;
-    }
-
-    .active-event-gamelist-mode{
-        position: absolute;
-        right: 0;
-    }
-
-    .active-event-gamelist-teams{
-        margin-top: 1rem;
-        font-size: 1.3rem;
-        font-weight: bold;
-        line-height: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .active-event-gamelist-team{
-        border-radius: 0.3em;
-        background-color: #dda2d61a; 
-        padding: 0.3em;
-    }
-
-    .active-event-gamelist-vs{
-        font-size: 0.8rem;
-    }
-
-    .active-event-gamelist-maps{
-        font-size: 1.2rem;
-    }
-
-    .active-event-gamelist{
-        text-align: center;
-    }
-
-    #casting-roster-table td,
-    #casting-roster-table th {
-        padding: 0em;
-    }
-
-    .accordion>.card:first-of-type {
-        border-radius: 20px;
+    img {
+        border-radius: var(--border-radius-small);
+        max-width: 100%;
     }
 
     article {
-        padding: 2em;
-        border-radius: 15px;
-        background-color: #a9b1e414;
-        margin-top: 2em;
-        -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        word-break: break-word;
+        padding: 1.5rem;
+        border-radius: var(--border-radius-small);
+        background-color: var(--container-bg-color);
+        margin-top: 2rem;
+        text-align: justify;
+        overflow-wrap: break-word;
     }
 
     article img {
         max-height: 500px;
         max-width: 100%;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 1em;
-        margin-top: 1em;
+        margin-bottom: 1rem;
     }
 
-    article p {
-        font-size: 1.2em;
-        margin: 0em;
+    a {
+        text-decoration: none;
+        color: white;
     }
 
-    article h1 {
-        margin-bottom: 0.5em;
+    iframe {
+        border-radius: var(--border-radius-middle);
     }
+
+    a:hover {
+        color: white;
+        font-weight:600;
+    }
+
+    h1, h2, h3, h4 {
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: 0.8rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+        color: white;
+    }
+
+    .btn-primary {
+        background-color: var(--main-gold-color);
+        color: black;
+        border: none;
+        font-family: var(--button-font-family);
+    }
+
+    .btn-primary:hover {
+        color: white;
+    }
+
+    .padding-bottom-small {
+        padding-bottom:  var(--padding-border-small);
+    }
+
+    .border-bottom {
+        border-bottom: var(--border-width) solid var(--border-color) !important; /* Overwrite bootstrap !important */
+    }
+
+    .border-top {
+        border-bottom: var(--border-width) solid var(--border-color) !important; /* Overwrite bootstrap !important */
+    }
+    
+    .annotation {
+        font-size: 0.8rem;
+        opacity: .8;
+    }
+
+    .shadow {
+        box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
+    }
+
+    /* CARD (Bootstrap overwrites) */
 
     .card {
-        margin-top: 2em;
-        background-color: #a9b1e414;
+        background-color: var(--container-bg-color);
         margin-left: auto;
-        color: white;
-        width: 75%;
-        margin-right: auto;
-        border-radius: 1em;
-    }
-
-    .card a {
-        text-decoration: none;
+        margin-right: auto; 
+        border-radius: var(--border-radius-small);
+        margin-top: 2rem;
     }
 
     .card img {
-        border-radius: 1em 1em 0em 0em;
+        border-radius: 1rem 1rem 0em 0em;
     }
 
     .card-title {
-        padding-top: 0em;
-        padding-bottom: 0.2em;
-        border-bottom: solid 1px #ffffff1f;
+        padding-top: 0rem;
+        padding-bottom: 0.2rem;
     }
 
-    .player-introduction {
-        margin: 1em;
-        background-color: #a9b1e414;
-        -webkit-box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        border-radius: 1em;
+    /* NAVIGATION */
+
+    .navbar {
+        border-bottom: solid 1px var(--main-gold-color);
+        font-family: var(--navbar-font-family);
+    }
+
+    .navbar-dark .navbar-nav .nav-link, .navbar-dark {
+        color: unset;
+    }
+
+    .navbar * {
+        color: var(--main-gold-color);
+        font-size: 1.4rem;
+    }
+
+    .nav-link:hover {
+        color: white !important; /* Overwrite bootstrap !important */
+        cursor: pointer;
+    }
+
+    .navbar-brand, 
+    .navbar-brand:hover {
+        font-size: 1.7rem;
+        color: var(--main-gold-color);
+    }
+
+    .dropdown-menu {
+        background-color: var(--main-purple-color);
+        font-size: 1rem;
+        padding: 0rem;
+        border-bottom: 2px solid var(--main-gold-color);
+    }
+
+    /* TABLES */
+
+    .table {
+        color: white;
+        border-color: var(--color-clickable-hover);
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: rgba(0,0,0,.12);
+    }
+
+    .table-bordered td,
+    .table-bordered th {
+        border: 1px solid var(--color-clickable-hover);
+    }
+
+    .carousel-inner {
+        border-radius: var(--border-radius-small);
+    }
+
+    .carousel-control-next, .carousel-control-prev {
+        opacity: .8;
+    }
+
+    .carousel-control-next-icon, 
+    .carousel-control-prev-icon {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .carousel-indicators li {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 100%;
+    }
+
+    .clickable:hover {
+        cursor: pointer;
+        background-color: var(--color-clickable-hover) !important; /* Overwrite bootstrap !important */
+    }
+
+    .medal {
+        width: 2rem;
+        margin-right: 1rem;
+        height: 2rem;
+        border-radius: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .gold {
+        background-color: rgb(207, 194, 13)
+    }
+
+    .silver {
+        background-color: rgb(158, 158, 158);
+    }
+
+    .bronze{
+        background-color: rgb(131, 98, 27);
+    }
+
+    .widget {
+        overflow: hidden;
+    }
+
+    .youtube-video {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    /* HOME */
+
+    #blogpost img {
+        display: block;
+        margin: 0rem auto 1rem auto;
+    }
+
+    /* WHATISAGEOFQUEENS*/
+
+    #what-is-age-of-queens-discord-section ul {
+        margin-top: 1rem;
+    }
+
+    /* ACTIVE EVENT */
+
+    #active-event {
+        text-align: center;
+    }
+
+    #active-event img {
+        max-width: 50%;
+    }
+
+    #active-event-gamelist p {
+        margin-bottom: .7rem;
+    }
+
+    #active-event-gamelist article {
+        text-align-last: center;
+        text-align: center;
         padding: 1rem;
     }
 
-    .player-introduction-content {
-        margin: 2em;
-        font-size: 16px;
-    }
-
-    .player-introduction .row {
-        align-items: center;
+    #active-event-gamelist-meta {
         position: relative;
-        flex-wrap: nowrap;
-        margin-right: 0rem; 
-        margin-left: 0rem;
+        height: 2rem;
+        border-bottom: 1px solid var(--border-color);
+        margin-bottom: 1rem;
     }
 
-    .player-introduction-buttons {
+    #active-event-gamelist-date {
+        position: absolute;
+        left: 0;
+    }
+
+    #active-event-gamelist-mode {
         position: absolute;
         right: 0;
-        top: 0;
     }
 
-    .player-introduction a {
-        text-decoration: none;
+    #active-event-gamelist-teams {
+        font-weight: bold;
     }
 
-    .player-introduction img {
-        max-width: 12em;
-        border-radius: 10px;
-        max-height: 18em;
-    }
-
-    #twitchteam-info-container {
+    #active-event-gamelist-teams p {
         text-align: center;
-        margin: 2em;
     }
 
-    #twitchteam-info-container p {
-        padding: 2em;
-    }
-
-    .twitch-iframe {
-        margin-left: 1em;
-        margin-top: 1em;
-    }
-
-    .big-button-font {
-        font-size: 1.8em;
-    }
-
-    .past-event-container {
-        margin-top: 1em;
+    #active-event-gamelist-team {
+        border-radius: var(--border-radius-small);
+        background-color: var(--container-bg-color); 
+        padding: 0.3rem;
+        width: fit-content;
+        margin-right: auto;
         margin-left: auto;
-        margin-right: auto;
-        text-align: center;
     }
 
-    .past-event-container img {
-        max-width: 100%;
-        margin-bottom: 1em;
-        max-height: 200px;
-    }
-
-    .medals-list {
-        list-style: none;
-        text-align: left;
-        margin-right: auto;
-        padding-left: 0;
-    }
-
-    #active-event-title {
-        margin-top: 2em;
-    }
-
-    .annotation {
-        font-size: 0.9em;
-        display: block;
-        margin-top: 0.8em;
-    }
-
-    .twitch-team-member-container {
-        display: grid;
-        text-align: center;
-    }
-
-    .twitch-team-member-container img {
-        height: 8rem;
-        border-radius: 100%;
-        margin: 0.5em;
-        filter: saturate(0.5);
-    }
-
-    .twitch-team-member-container img:hover {
-        border: 3px solid #f7ebda;
-        filter: saturate(1.0);
-    }
-
-    #twitch-team-members-container {
-        flex-wrap: wrap;
-        display: flex;
-        justify-content: center;
-    }
-
-    .past-event-header {
-        background-size: 50%;
-        background-repeat: no-repeat;
-        background-position: right;
-    }
-
-    .icon {
-        max-width: 2em !important;
-    }
-
-    .mod-container {
-        background-color: #a9b1e414;
-        box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-        margin: 2em;
-        border-radius: 1em;
-        display: flex;
-        flex-flow: wrap;
-    }
-
-    .mod-container img {
-        max-width: 15%;
-        max-height: 12em;
-        margin: 1em;
-        border-radius: 1em;
-        object-fit: cover;
-    }
-
-    .mod-container p {
-        margin-top: 1em;
-    }
-
-    .mod-content {
-        margin-left: 1em;
-        width: 80%;
-        margin-top: 1em;
-    }
-
-    .mod-info {
-        padding-bottom: 1em;
-        padding-left: 1em;
-        color: #c7c7c7;
-    }
-
-    .border-custom-aoq {
-        border-radius: 1em;
-        border-color: #f7ebda;
+    #border-special-aoq {
+        border-color: var(--main-gold-color);
         border-style: groove;
         border-width: 5px;
     }
-}
 
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1540px;
-    }
-}
+    /* PAST EVENTS */
 
-/* Mobile CSS */
-@media (max-width: 800px) {
-    html {
-        font-size: 10px;
+    #past-events-carousel img {
+        filter: brightness(0.6);
     }
 
-    article p {
-        font-size: unset;
+    #past-events-carousel-box {
+        background-color: var(--carousel-box-color);
+        border-radius: var(--border-radius-small);
     }
 
-    body {
-        margin-bottom: 0px ;
+    #past-events-carousel-rank-list {
+        position: absolute;
+        top: 1rem;
+        left: -1rem;
+        font-size: 1rem;
     }
 
-    .footer {
-        text-align: center;
+    #past-events-carousel-rank-list li {
+        display: flex;
+        margin-top: 1rem;
+        list-style: none;
+    }
+
+    #past-events-carousel-rank-list li p {
+        margin-bottom: 0;
+        text-shadow: 3px 3px 3px #000000;
+    }
+
+    #past-events-carousel-rank-list h6:not(:first-child) {
+        margin-top: 1rem;
+    }
+
+    #carousel-queens-charity #past-events-carousel-rank-list li {
+        font-size: 0.9rem;
+        margin-top: 0;
+        margin-left: 1rem;
+    }
+
+    /* INTRODUCTIONS */
+
+    #player-introduction {
+        align-items: center;
         position: relative;
-        bottom: unset;
-        width: unset;
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 1rem;
+        background-color: var(--container-bg-color);
+        border-radius: var(--border-radius-small);
+        padding: 1rem;
     }
 
-    .big-button-font {
-        font-size: 1.2em ;
+    #player-introduction-content {
+        margin: 2rem;
     }
 
-    .col-3 {
-        display: none;
+    #player-introduction-buttons {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
     }
 
-    .col-8 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    #player-introduction-buttons a:not(:last-child) {
+        margin-right: 1rem;
     }
 
-    .col-9 {
-        flex: 0 0 100%;
-        max-width: 100%;
+    #player-introduction-buttons a img {
+        max-width: 2rem;
     }
 
-    .col-12 {
-        overflow: scroll ;
+    #player-introduction img {
+        max-width: 12rem;
+        max-height: 18rem;
     }
 
-    #youtube-widget {
-        width: auto;
-        height: auto;
-    }
+    /* TWITCHTEAM */
 
-    .mod-container img {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: unset;
-    }
-
-    .table-leaderboard{
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
-        font-size: 1.2rem;
-    }
-
-    .table-leaderboard tr {
-        height: 5rem;
-    }
-
-    .table-leaderboard tr td, tr th {
-        vertical-align: middle;
+    #twitchteam-info-container {
         text-align: center;
-        font-size: 1.3rem;
+        margin: 2rem;
+    }
+
+    #twitchteam-info-container p {
+        margin-top: 2rem;
     }
 
     #twitchteam-info-container img {
         max-width: 100%;
     }
 
+    #twitch-team-member {
+        display: grid;
+        text-align: center;
+    }
+
+    #twitch-team-member img {
+        height: 8rem;
+        border-radius: 100%;
+        margin: 0.5rem;
+        filter: saturate(0.5);
+    }
+
+    #twitch-team-member-container img:hover {
+        border: 3px solid #f7ebda;
+        filter: saturate(1.0);
+    }
+
+    #twitch-team-member-container .card-body {
+        display: flex;
+        justify-content: center;
+        margin-right: auto;
+        margin-left: auto;
+        flex-wrap: wrap;
+    }
+
+    #twitch-team-online-streams {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
     .twitch-iframe {
-        margin-left: auto ;
-        margin-right: auto ;
+        margin: 1rem;
     }
 
-    .twitch-team-member-container img {
-        height: 6rem;
-        border-radius: 5%;
+    /* MODS */
+
+    #mod-container {
+        background-color: var(--container-bg-color);
+        margin: 2rem;
+        border-radius: var(--border-radius-small);
+        display: flex;
+        flex-flow: wrap;
     }
 
-    .twitch-team-member-container h7 {
+    #mod-container img {
+        max-width: 15%;
+        max-height: 12rem;
+        margin: 1rem;
+        object-fit: cover;
+    }
+
+    #mod-content {
+        width: 80%;
+        margin-top: 1rem;
+    }
+
+    #mod-info {
+        padding-bottom: 1rem;
+        padding-left: 2rem;
+    }
+
+    /* ERROR */
+
+    #error-page img {
+        filter: invert(1)
+    }
+}
+
+/* Most Phones */
+@media (max-width: 480px){
+
+    /* TAGS */
+
+    html {
+        font-size: 10px;
+    }
+
+    footer {
+        position: relative;
+        text-align: center;
+    }
+
+    footer p {
+        margin-left: 0;
+    }
+
+    body {
+        margin-bottom: 0;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .col-9 {
+        max-width: 100%;
+    }
+
+    .table{
         font-size: 1rem;
     }
 
-    #casting-roster-table td {
-        vertical-align: middle;
-    }
-
-    #casting-roster-table th {
-        vertical-align: middle;
-    }
-
-    .player-introduction {
-        padding: 2rem 1rem 1rem 1rem;
-    }
-
-    .player-introduction .row {
-        align-items: center;
-        position: relative;
-        flex-wrap: wrap ;
-        justify-content: center;
-    }
-
-    .player-introduction-buttons {
-        position: relative ;
-        right: unset ;
-        top: unset ;
-        margin-bottom: 1rem;
-    }
-
-    .player-introduction-content {
-        font-size: 1.2rem;
-        margin: 0rem;
-    }
-
-    .challonge-widget {
-        display: none;
+    tbody tr{
+        height: 5rem;
+        text-align: center;
     }
 
     .navbar-brand {
         font-size: 2.3rem ;
     }
 
-    .navbar-toggler {
-        font-size: 1rem ;
+    .widget {
+        display: none;
     }
 
-    .past-event-header {
-        background-size: 150% ;
+    .card {
+        display: none;
     }
 
-    .dropdown-menu {
-        display: block ;
+    /* MODS */
+
+    #mod-content {
+        width: 100%;
+        margin-top: unset;
+        text-align: center;
+    }
+
+    #mod-container img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%; 
+        max-height: unset;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #mod-info {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* TWITCHTEAM */
+
+    #twitch-team-member-container img {
+        height: 6rem;
+        border-radius: var(--border-radius-small);
+    }
+
+    #twitch-team-member-container h7 {
+        font-size: 1rem;
+    }
+
+    .twitch-iframe {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* INTRODUCTIONS */
+
+    #player-introduction {
+        text-align: center;
+        position: relative;
+        display: block;
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    #player-introduction p {
+        text-align: justify;
+        font-size: 1.2rem;
+    }
+
+    #player-introduction img {
+        margin-bottom: 0;
+    }
+
+    #player-introduction-buttons {
+        position: relative ;
+        right: unset ;
+        top: unset ;
+        margin-bottom: 1rem;
+    }
+
+    #player-introduction-buttons a img {
+        max-width: 3rem;
+        margin-bottom: 0;
+    }
+
+    /* ACTIVE EVENT */
+
+    #active-event img {
+        max-width: 100%;
+    }
+}
+
+/* TODO: Nothing for 480 - 699 */
+
+/* most Tablets */
+@media (min-width: 700px) and (max-width: 1199){
+
+    .container {
+        max-width: 690px;
+    }
+    
+    html {
+        font-size: 11px;
+    }
+
+    body {
+        margin-bottom: 0;
+    }
+
+    footer {
+        position: relative;
+        text-align: center;
+    }
+
+    footer p {
+        margin-left: 0;
+    }
+    .widget {
+        display: none;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .twitch-iframe {
+        max-width: 40%;
+    }
+
+    #mod-container img {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 75%; 
+        max-height: unset;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    #mod-content {
+        width: 100%;
+        margin-top: unset;
+        text-align: center;
+    }
+
+    #mod-info {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* small Desktops */
+@media(min-width: 993){}
+
+/* Large Viewpoints */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1540px;
     }
 }
