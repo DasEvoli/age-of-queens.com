@@ -1,6 +1,8 @@
 
 using System;
 using System.Linq;
+using Ageofqueenscom.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace ageofqueenscom.code;
 
@@ -17,6 +19,27 @@ public class Helpers
 		}
 
 		return new String(stringChars);
+	}
+
+	public static bool isAdmin(string session_id, string username, DataContext dbContext)
+	{
+		try
+		{
+			var user = dbContext.Users.FirstOrDefault(s => s.UserName == username && s.Session == session_id);
+			if(user != null){
+				return true;
+			}
+			else 
+			{
+				return false;
+			}
+		}
+		catch(Exception e)
+		{
+			return false;
+		}
+
+		
 	}
 }
 
