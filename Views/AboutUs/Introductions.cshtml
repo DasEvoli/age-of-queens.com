@@ -7,15 +7,15 @@
     ViewData["OgUrl"] = "https://age-of-queens.com/AboutUs/Introductions";
 }
 <section>
-    @if (Model.Introductions != null)
+    @if (Model.IntroductionList != null)
     {
-        foreach (IntroductionsViewModel.Introduction introduction in Model.Introductions)
+        foreach (IntroductionsViewModel.Introduction introduction in Model.IntroductionList)
         {
         <article data-aos="fade-right" id="player-introduction" class="shadow">
-            <img src="@Configuration["Directories:Images:Introductions"]@{@introduction.Name}.jpg" />
+            <img src="@Configuration["Directories:Images:introductionList"]@{@introduction.Name}.jpg" />
             <div id="player-introduction-content">
                 <h2>@introduction.Name</h2>
-                <p>@introduction.Description</p>
+                <p>@introduction.Content</p>
             </div>
             <div id="player-introduction-buttons">
                 @if (!String.IsNullOrEmpty(introduction.TwitterUrl))

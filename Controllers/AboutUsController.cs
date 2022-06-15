@@ -2,15 +2,25 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Ageofqueenscom.Models;
+using Ageofqueenscom.Data;
+using System.Collections.Generic;
+using Ageofqueenscom.Entities;
+using System.Linq;
 
 namespace Ageofqueenscom.Controllers
 {
     public class AboutUsController : Controller
     {
         private readonly ILogger _logger = null;
-        public AboutUsController(ILogger<AboutUsController> logger)
+        private DataContext _dataContext;
+        private IntroductionsViewModel _model;
+
+
+        public AboutUsController(ILogger<AboutUsController> logger, DataContext dataContext)
         {
+            _dataContext = dataContext;
             _logger = logger;
+            _model = new IntroductionsViewModel();
         }
         public IActionResult Index()
         {
@@ -24,17 +34,30 @@ namespace Ageofqueenscom.Controllers
 
         public IActionResult Introductions()
         {
-            IntroductionsViewModel model = new IntroductionsViewModel();
             try
             {
-                model.Introductions = Code.Csv.LoadIntroductions();
+                List<IntroductionEntry> introduction_entries = _dataContext.IntroductionEntries.ToList();
+                
+                foreach(IntroductionEntry b in introduction_entries)
+                {
+                    IntroductionsViewModel.Introduction introduction = new IntroductionsViewModel.Introduction
+                    {
+                        Name = b.Name,
+                        Content = b.Content,
+                        ImageUrl = b.ImageUrl,
+                        TwitterUrl = b.TwitterUrl,
+                        YoutubeUrl = b.YoutubeUrl,
+                        TwitchUrl = b.TwitchUrl,
+                        InstagramUrl = b.InstagramUrl
+                    };
+                    _model.IntroductionList.Add(introduction);
+                }
             }
             catch(Exception e)
             {
                 _logger.LogError(e.ToString());
-                model.Introductions = null;
             }
-            return View(model);
+            return View(_model);
         }
 
         public IActionResult PastEvents()

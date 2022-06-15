@@ -10,9 +10,9 @@ namespace Ageofqueenscom.Data
 
 		public DataContext(DbContextOptions<DataContext> options) : base(options){}
 
-
 		public DbSet<User> Users {get;set;}
 		public DbSet<BlogEntry> BlogEntries {get;set;}
-
+		public DbSet<IntroductionEntry> IntroductionEntries {get;set;}
+		public DbSet<ModEntry> ModEntries {get;set;}
 	}
 }

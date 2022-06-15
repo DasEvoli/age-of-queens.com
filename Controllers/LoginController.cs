@@ -1,14 +1,10 @@
 using System;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
-using Ageofqueenscom.Code;
 using Ageofqueenscom.Models;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Ageofqueenscom.Data;
-using System.Threading.Tasks;
 using System.Linq;
-using Ageofqueenscom.Entities;
 using ageofqueenscom.code;
 
 namespace Ageofqueenscom.Controllers
@@ -28,7 +24,7 @@ namespace Ageofqueenscom.Controllers
             return View();
         }
 
-		public async Task<IActionResult> Validate(IFormCollection form)
+		public IActionResult Validate(IFormCollection form)
         {
             LoginViewModel model = new LoginViewModel();
 			string username = form["username"];
