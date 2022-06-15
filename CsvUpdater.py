@@ -7,7 +7,7 @@ import os
 
 DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 SAVE_PATH = '/Csv/'
-TIMEOUT = 600
+TIMEOUT = 3600
 
 def download_csv(url :str, filename :str):
     try:
