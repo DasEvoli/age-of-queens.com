@@ -52,14 +52,13 @@ namespace Ageofqueenscom.Controllers
                     cookieOptions.HttpOnly = true;
                     cookieOptions.Expires =  DateTime.Now.AddDays(31);
                     HttpContext.Response.Cookies.Append("session_id", user.Session, cookieOptions);
-                    
                     HttpContext.Response.Cookies.Append("username", user.UserName, cookieOptions);
                     
                     return RedirectToAction("index", "home");
                 }
                 else
                 {
-                    return Unauthorized();
+                    return View("index");
                 }
             }
             catch(Exception e)
