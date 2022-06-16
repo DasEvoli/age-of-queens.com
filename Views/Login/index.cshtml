@@ -1,13 +1,6 @@
 @model LoginViewModel
 <section>
 	<h1>Login</h1>
-	@if (Model != null)
-	{
-		if(Model.Error && Model.ErrorMessage != null)
-		{
-			<p>Error: @Model.ErrorMessage</p>
-		}
-	}
 	<form method="POST" asp-action="validate">
 		<div class="form-group">
 			<label for="inputUsername">Username</label>

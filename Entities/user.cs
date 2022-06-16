@@ -15,7 +15,7 @@ namespace Ageofqueenscom.Entities
 		[Column("user_password"), Required]
 		public string UserPassword {get;set;}
 		[Column("last_login")]
-		public DateTime LastLogin {get;set;}
+		public DateTime? LastLogin {get;set;}
 		[Column("session")]
 		public string Session {get;set;}
 	}

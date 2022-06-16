@@ -27,15 +27,15 @@ namespace Ageofqueenscom.Controllers
             {
                 List<BlogEntry> blog_entries = _dataContext.BlogEntries.ToList();
 
-                foreach(BlogEntry b in blog_entries){
-                    HomeViewModel.Blogpost blogPost = new HomeViewModel.Blogpost
-                    {
-                        Title = b.Headline,
-                        Content = b.Content,
-                        ImageName = b.ImageName,
-                        Author = b.Author,
-                        Created = b.CreatedAt
-                    };
+                foreach(BlogEntry b in blog_entries)
+                {
+                    HomeViewModel.Blogpost blogPost = new HomeViewModel.Blogpost();
+                    blogPost.Title = b.Headline;
+                    blogPost.Content = b.Content;
+                    blogPost.ImageName = b.ImageName;
+                    blogPost.Author = b.Author;
+                    blogPost.Created = b.CreatedAt;
+                    
                     _model.BlogpostList.Add(blogPost);
                 }
             }

@@ -40,16 +40,15 @@ namespace Ageofqueenscom.Controllers
                 
                 foreach(IntroductionEntry b in introduction_entries)
                 {
-                    IntroductionsViewModel.Introduction introduction = new IntroductionsViewModel.Introduction
-                    {
-                        Name = b.Name,
-                        Description = b.Description,
-                        ImageUrl = b.ImageUrl,
-                        TwitterUrl = b.TwitterUrl,
-                        YoutubeUrl = b.YoutubeUrl,
-                        TwitchUrl = b.TwitchUrl,
-                        InstagramUrl = b.InstagramUrl
-                    };
+                    IntroductionsViewModel.Introduction introduction = new IntroductionsViewModel.Introduction();
+                    introduction.Name = b.Name;
+                    introduction.Description = b.Description;
+                    introduction.ImageUrl = b.ImageUrl;
+                    introduction.TwitterUrl = b.TwitterUrl;
+                    introduction.YoutubeUrl = b.YoutubeUrl;
+                    introduction.TwitchUrl = b.TwitchUrl;
+                    introduction.InstagramUrl = b.InstagramUrl;
+                    
                     _model.IntroductionList.Add(introduction);
                 }
             }

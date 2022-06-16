@@ -31,17 +31,16 @@ namespace Ageofqueenscom.Controllers
 
                 foreach(ModEntry e in mod_entries)
                 {
-                    ModsViewModel.Mod mod = new ModsViewModel.Mod
-                    {
-                        ModId = e.ModId,
-                        Name = e.Name,
-                        Description = e.Description,
-                        Creator = e.Creator,
-                        UploadDate = e.UploadDate,
-                        Category = e.Category,
-                        ImageUrl = e.ImageUrl,
-                        ModUrl = "https://www.ageofempires.com/mods/details/" + e.ModId.ToString()
-                    };
+                    ModsViewModel.Mod mod = new ModsViewModel.Mod();
+                    mod.ModId = e.ModId;
+                    mod.Name = e.Name;
+                    mod.Description = e.Description;
+                    mod.Creator = e.Creator;
+                    mod.UploadDate = e.UploadDate;
+                    mod.Category = e.Category;
+                    mod.ImageUrl = e.ImageUrl;
+                    mod.ModUrl = "https://www.ageofempires.com/mods/details/" + e.ModId.ToString();
+                    
                     _model.ModList.Add(mod);
                 }
             }
