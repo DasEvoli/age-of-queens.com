@@ -11,7 +11,7 @@
     <div class="col-9">
         <section>
             <h1>News</h1>
-            @if (Model.BlogpostList != null)
+            @if (Model.BlogpostList.Count > 0)
             {
                 foreach (HomeViewModel.Blogpost item in Model.BlogpostList)
                 {
@@ -22,7 +22,7 @@
                     {
                         <img src="/images/blog/@item.ImageName" />
                     }
-                    <p>@item.Created.ToString() by @item.Author</p>
+                    <p>@item.Created.ToString("yyyy-MM-dd") by @item.Author</p>
                 </article>
                 }
             }
