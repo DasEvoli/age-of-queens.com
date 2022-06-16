@@ -12,20 +12,20 @@
         foreach (IntroductionsViewModel.Introduction introduction in Model.IntroductionList)
         {
         <article data-aos="fade-right" id="player-introduction" class="shadow">
-            <img src="@Configuration["Directories:Images:introduction"]@{@introduction.ImageUrl}" />
+            <img src="/images/introduction/@{@introduction.ImageUrl}" />
             <div id="player-introduction-content">
                 <h2>@introduction.Name</h2>
                 <p>@introduction.Description</p>
             </div>
             <div id="player-introduction-buttons">
                 @if (!String.IsNullOrEmpty(introduction.TwitterUrl))
-                {<a href="@introduction.TwitterUrl" target="_blank"><img src="@Configuration["Directories:Images:Icons"]twitter_icon.png"></a>}
+                {<a href="@introduction.TwitterUrl" target="_blank"><img src="/images/twitter_icon.png"></a>}
                 @if (!String.IsNullOrEmpty(introduction.YoutubeUrl))
-                {<a href="@introduction.YoutubeUrl" target="_blank"><img src="@Configuration["Directories:Images:Icons"]youtube_icon.png"></a>}
+                {<a href="@introduction.YoutubeUrl" target="_blank"><img src="/images/youtube_icon.png"></a>}
                 @if (!String.IsNullOrEmpty(introduction.TwitchUrl))
-                {<a href="@introduction.TwitchUrl" target="_blank"><img src="@Configuration["Directories:Images:Icons"]twitch_icon.png"></a>}
+                {<a href="@introduction.TwitchUrl" target="_blank"><img src="/images/twitch_icon.png"></a>}
                 @if (!String.IsNullOrEmpty(introduction.InstagramUrl))
-                {<a href="@introduction.InstagramUrl" target="_blank"><img src="@Configuration["Directories:Images:Icons"]instagram_icon.png"></a>}
+                {<a href="@introduction.InstagramUrl" target="_blank"><img src="/images/instagram_icon.png"></a>}
             </div>
         </article>
         }
