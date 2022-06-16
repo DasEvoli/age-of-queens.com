@@ -32,7 +32,7 @@ namespace Ageofqueenscom.Controllers
                     {
                         Title = b.Headline,
                         Content = b.Content,
-                        ImageUrl = b.ImageUrl,
+                        ImageName = b.ImageName,
                         Author = b.Author,
                         Created = b.CreatedAt
                     };

@@ -14,8 +14,8 @@ namespace Ageofqueenscom.Entities
 		public string Headline {get;set;}
 		[Column("content"), Required]
 		public string Content {get;set;}
-		[Column("image_url")]
-		public string ImageUrl {get;set;}
+		[Column("image_name")]
+		public string ImageName {get;set;}
 		[Column("author")]
 		public string Author {get;set;}
 		[Column("created_at")]

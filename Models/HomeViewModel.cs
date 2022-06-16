@@ -13,7 +13,7 @@ namespace Ageofqueenscom.Models
             public string Content { get; set; }
             public string Author { get; set; }
             public DateTime Created { get; set; }
-            public string ImageUrl { get; set; }
+            public string ImageName { get; set; }
         }
     }
 }

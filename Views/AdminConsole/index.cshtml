@@ -1,2 +1,126 @@
 <h1>Admin Console</h1>
+
 <h2>Create a new Post</h2>
+<article>
+	<form id="update-blog-form" enctype="multipart/form-data">
+		<div class="form-group">
+			<p>Title</p>
+			<input type="input" id="update-blog-headline" class="form-control">
+		</div>
+		<div class="form-group">
+			<p>Content</p>
+			<textarea class="form-control" id="update-blog-content" rows="3"></textarea>
+		</div>
+		<div class="form-group">
+			<p>Image</p>
+			<input type="file" class="form-control-file" id="update-blog-image">
+		</div>
+		<div class="form-group">
+			<p>Author</p>
+			<input type="input" class="form-control" id="update-blog-author" size="32">
+		</div>
+		<p id="update-blog-message"></p>
+		<button onclick="sendUpdateBlogData()" class="btn btn-primary">Submit</button>
+	</form>
+</article>
+
+<h2>Create a new introduction</h2>
+<article>
+	<form id="update-introduction-form" enctype="multipart/form-data">
+		<div class="form-group">
+			<p>Name</p>
+			<input type="input" id="update-introduction-name" class="form-control">
+		</div>
+		<div class="form-group">
+			<p>Content</p>
+			<textarea class="form-control" id="update-introduction-description" rows="3"></textarea>
+		</div>
+		<div class="form-group">
+			<p>Image</p>
+			<input type="file" class="form-control-file" id="update-introduction-image">
+		</div>
+		<div class="form-group">
+			<p>Twitter</p>
+			<input type="input" class="form-control" id="update-introduction-twitter">
+		</div>
+		<div class="form-group">
+			<p>Youtube</p>
+			<input type="input" class="form-control" id="update-introduction-youtube">
+		</div>
+		<div class="form-group">
+			<p>Twitch</p>
+			<input type="input" class="form-control" id="update-introduction-twitch">
+		</div>
+		<div class="form-group">
+			<p>Instagram</p>
+			<input type="input" class="form-control" id="update-introduction-instagram">
+		</div>
+		<p id="update-introduction-message"></p>
+		<button onclick="sendUpdateIntroductionData()" class="btn btn-primary">Submit</button>
+	</form>
+</article>
+@section Scripts{
+
+<script>
+	function sendUpdateBlogData()
+	{
+		event.preventDefault();
+		var form = document.getElementById('update-blog-form')
+		var formData = new FormData()
+		formData.append("content", document.getElementById('update-blog-content').value)
+		formData.append("headline", document.getElementById('update-blog-headline').value)
+		formData.append("author", document.getElementById('update-blog-author').value)
+		formData.append("image", document.getElementById('update-blog-image').files[0])
+
+
+		fetch('AdminConsole/UpdateBlog', {
+			method: 'POST',
+			body: formData
+		}).then((r) => {
+			if(r.status != 200)
+			{
+				document.getElementById('update-blog-message').style = "block"
+				document.getElementById('update-blog-message').innerHTML = "Failed."
+			}
+			else
+			{
+				document.getElementById('update-blog-message').style = "block"
+				document.getElementById('update-blog-message').innerHTML = "Success."
+			}
+		})
+	}
+
+	function sendUpdateIntroductionData()
+	{
+		event.preventDefault();
+		var form = document.getElementById('update-introduction-form')
+		var formData = new FormData()
+		formData.append("name", document.getElementById('update-introduction-name').value)
+		formData.append("description", document.getElementById('update-introduction-description').value)
+		formData.append("twitter", document.getElementById('update-introduction-twitter').value)
+		formData.append("youtube", document.getElementById('update-introduction-youtube').value)
+		formData.append("twitch", document.getElementById('update-introduction-twitch').value)
+		formData.append("instagram", document.getElementById('update-introduction-instagram').value)
+		formData.append("image", document.getElementById('update-introduction-image').files[0])
+
+
+		fetch('AdminConsole/UpdateIntroduction', {
+			method: 'POST',
+			body: formData
+		}).then((r) => {
+			if(r.status != 200)
+			{
+				document.getElementById('update-introduction-message').style = "block"
+				document.getElementById('update-introduction-message').innerHTML = "Failed."
+			}
+			else
+			{
+				document.getElementById('update-introduction-message').style = "block"
+				document.getElementById('update-introduction-message').innerHTML = "Success."
+			}
+		})
+	}
+
+</script>
+
+}

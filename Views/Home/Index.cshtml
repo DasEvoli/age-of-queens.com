@@ -18,9 +18,9 @@
                 <article data-aos="fade-right" class="shadow" id="blogpost">
                     <h2 class="border-bottom">@item.Title</h2>
                     <p>@Html.Raw(item.Content)</p>
-                    @if (!String.IsNullOrEmpty(item.ImageUrl))
+                    @if (!String.IsNullOrEmpty(item.ImageName))
                     {
-                        <img src="@item.ImageUrl" />
+                        <img src="@Configuration["Directories:Images:Blog"]@item.ImageName" />
                     }
                     <p>@item.Created.ToString() by @item.Author</p>
                 </article>

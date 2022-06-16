@@ -12,10 +12,10 @@
         foreach (IntroductionsViewModel.Introduction introduction in Model.IntroductionList)
         {
         <article data-aos="fade-right" id="player-introduction" class="shadow">
-            <img src="@Configuration["Directories:Images:introductionList"]@{@introduction.Name}.jpg" />
+            <img src="@Configuration["Directories:Images:introduction"]@{@introduction.ImageUrl}" />
             <div id="player-introduction-content">
                 <h2>@introduction.Name</h2>
-                <p>@introduction.Content</p>
+                <p>@introduction.Description</p>
             </div>
             <div id="player-introduction-buttons">
                 @if (!String.IsNullOrEmpty(introduction.TwitterUrl))

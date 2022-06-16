@@ -12,8 +12,8 @@ namespace Ageofqueenscom.Entities
 		public int EntryId {get;set;}
 		[Column("name"), Required]
 		public string Name {get;set;}
-		[Column("content")]
-		public string Content {get;set;}
+		[Column("description")]
+		public string Description {get;set;}
 		[Column("image_url")]
 		public string ImageUrl {get;set;}
 		[Column("twitter_url")]

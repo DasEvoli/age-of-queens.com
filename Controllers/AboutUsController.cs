@@ -43,7 +43,7 @@ namespace Ageofqueenscom.Controllers
                     IntroductionsViewModel.Introduction introduction = new IntroductionsViewModel.Introduction
                     {
                         Name = b.Name,
-                        Content = b.Content,
+                        Description = b.Description,
                         ImageUrl = b.ImageUrl,
                         TwitterUrl = b.TwitterUrl,
                         YoutubeUrl = b.YoutubeUrl,
