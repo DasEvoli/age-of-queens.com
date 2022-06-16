@@ -102,6 +102,23 @@ namespace Ageofqueenscom.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult DeleteLastPost()
+        {
+            try
+            {
+                List<BlogEntry> blog_entries = _dataContext.BlogEntries.ToList();
+                _dataContext.Remove(blog_entries[blog_entries.Count-1]);
+                _dataContext.SaveChanges();
+                return Ok();
+            }
+            catch(Exception e)
+            {
+                _logger.LogError(e.ToString());
+                return BadRequest();
+            }
+        }
+
         [HttpPost]
         public IActionResult UpdateIntroduction()
         {

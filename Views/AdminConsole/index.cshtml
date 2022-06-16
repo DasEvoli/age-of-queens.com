@@ -21,6 +21,7 @@
 		</div>
 		<p id="update-blog-message"></p>
 		<button onclick="sendUpdateBlogData()" class="btn btn-primary">Submit</button>
+		<button onclick="sendDeleteLastPostData()" class="btn btn-primary">Delete last Blogpost</button>
 	</form>
 </article>
 
@@ -118,6 +119,13 @@
 				document.getElementById('update-introduction-message').style = "block"
 				document.getElementById('update-introduction-message').innerHTML = "Success."
 			}
+		})
+	}
+
+	function sendDeleteLastPostData()
+	{
+		fetch('AdminConsole/DeleteLastPost', {
+			method: 'GET'
 		})
 	}
 
