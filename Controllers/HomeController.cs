@@ -38,6 +38,7 @@ namespace Ageofqueenscom.Controllers
                     
                     _model.BlogpostList.Add(blogPost);
                 }
+                blog_entries.Reverse();
             }
             catch(Exception e)
             {
