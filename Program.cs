@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
+using Ageofqueenscom.Data;
 
 // SERVICES
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
@@ -21,6 +23,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient();
 builder.Services.AddRazorPages();
 builder.Services.AddMemoryCache();
+builder.Services.AddDbContext<DataContext>(options => {
+    string DbPath = System.IO.Path.Join(Environment.CurrentDirectory, "database/age-of-queens.db");
+    options.UseSqlite($"Data Source={DbPath}");
+});
 
 // APP SETTINGS
 var app = builder.Build();

@@ -55,9 +55,8 @@
                         <li class="nav-item">
                             <a class="nav-link" asp-controller="Twitch" asp-action="Index">Twitch Team</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-controller="ActiveEvent" asp-action="Index">Active/Last Event</a>
-                        </li>
+                        @await Component.InvokeAsync("AdminDisplay", 
+                            new {myStr = "Hallo"})
                     </ul>
                 </div>
             </div>

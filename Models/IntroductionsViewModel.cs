@@ -4,7 +4,7 @@ namespace Ageofqueenscom.Models
 {
     public class IntroductionsViewModel
     {
-        public List<Introduction> Introductions;
+        public List<Introduction> IntroductionList = new List<Introduction>();
 
         public class Introduction
         {

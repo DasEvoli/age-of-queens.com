@@ -1,18 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Ageofqueenscom.Models
 {
     public class ModsViewModel
     {
-        public List<Mod> ModList;
+        public List<Mod> ModList = new List<Mod>();
 
         public class Mod
         {
-            public string Title { get; set; }
+            public string Name { get; set; }
             public string Description { get; set; }
             public string Creator { get; set; }
-            public string Date { get; set; }
-            public string Id { get; set; }
+            public DateTime UploadDate { get; set; }
+            public int ModId { get; set; }
             public string Category { get; set; }
             public string ImageUrl { get; set; }
             public string ModUrl { get; set; }
