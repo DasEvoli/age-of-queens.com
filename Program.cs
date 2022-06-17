@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.IO;
 using Ageofqueenscom.Data;
+using Microsoft.Extensions.Configuration;
 
 // SERVICES
 var builder = WebApplication.CreateBuilder(new WebApplicationOptions
@@ -24,8 +25,9 @@ builder.Services.AddHttpClient();
 builder.Services.AddRazorPages();
 builder.Services.AddMemoryCache();
 builder.Services.AddDbContext<DataContext>(options => {
-    string DbPath = System.IO.Path.Join(Environment.CurrentDirectory, "database/age-of-queens.db");
-    options.UseSqlite($"Data Source={DbPath}");
+    //string DbPath = System.IO.Path.Join(Environment.CurrentDirectory, "database/age-of-queens.db");
+    //options.UseSqlite($"Data Source={DbPath}");
+    options.UseMySql(Environment.GetEnvironmentVariable("MYSQL_CONNECTION_STRING"), new MySqlServerVersion(new Version(8, 0, 28)));
 });
 
 // APP SETTINGS
