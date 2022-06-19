@@ -14,15 +14,12 @@
     <meta property="og:url" content='@ViewData["OgUrl"]'/>
     <meta property="og:type" content="website"/>
     <link rel="canonical" href="https://age-of-queens.com"/>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="~/css/site.css"/>
-    <link href="~/css/aos.css" rel="stylesheet"> <!--Slide effect-->
     <link rel="icon" type="image/x-icon" href="~/Age_of_Queens_logo.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLVM7KRY6S"></script>
-    <script src="~/js/google-analytics.js"></script>
+    <script src="~/bundle.js"></script>   
 </head>
 <body>
     <header>
@@ -39,7 +36,7 @@
                             <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown">About us</a>
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About us</a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" asp-controller="AboutUs" asp-action="WhatIsAgeofqueens">What is Age of Queens?</a>
                                 <a class="dropdown-item" asp-controller="AboutUs" asp-action="Introductions">Introductions</a>
@@ -70,11 +67,7 @@
     <footer>
             <p>&copy; 2022 - Vinzenz Wetzel <img src="/images/GitHub-Mark-Light-32px.png"/><a href="https://github.com/DasEvoli"> DasEvoli</a></p>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/lib/aos.min.js"></script>
-    <script>AOS.init()</script>
+    <script>window.AOS.init();</script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>

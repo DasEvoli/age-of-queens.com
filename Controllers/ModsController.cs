@@ -43,6 +43,9 @@ namespace Ageofqueenscom.Controllers
                     
                     _model.ModList.Add(mod);
                 }
+                // Shuffling list so introductions are randomly displayed
+                var rnd = new Random();
+                _model.ModList = _model.ModList.OrderBy(x => rnd.Next()).ToList();
             }
             catch (Exception e)
             {

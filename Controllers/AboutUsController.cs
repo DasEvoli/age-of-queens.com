@@ -51,6 +51,10 @@ namespace Ageofqueenscom.Controllers
                     
                     _model.IntroductionList.Add(introduction);
                 }
+                // Shuffling list so introductions are randomly displayed
+                var rnd = new Random();
+                _model.IntroductionList = _model.IntroductionList.OrderBy(x => rnd.Next()).ToList();
+                
             }
             catch(Exception e)
             {
