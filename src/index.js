@@ -4,7 +4,8 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 import '../node_modules/aos/dist/aos.css'
 import 'jquery'
 import 'bootstrap'
-window.AOS = require('aos');
+window.AOS = require('aos')
+window.marked = require('marked')
 import './site.css'
 
 

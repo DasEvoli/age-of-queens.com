@@ -72,3 +72,16 @@
         </section>
     </div>
 </div>
+
+@section Scripts 
+{
+    <script>
+        let articles = document.getElementsByTagName("article")
+        var articlesArray = [].slice.call(articles)
+        articlesArray.forEach(x=>{
+            paragraph = x.getElementsByTagName('p')[0]
+            paragraphContent = paragraph.innerHTML;
+            paragraph.innerHTML = marked.parse(paragraphContent)
+        })
+    </script>
+}

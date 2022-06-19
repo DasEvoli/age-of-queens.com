@@ -80,11 +80,13 @@
 		}).then((r) => {
 			if(r.status != 200)
 			{
+				alert("Failed")
 				document.getElementById('update-blog-message').style = "block"
 				document.getElementById('update-blog-message').innerHTML = "Failed."
 			}
 			else
 			{
+				alert("Success")
 				document.getElementById('update-blog-message').style = "block"
 				document.getElementById('update-blog-message').innerHTML = "Success."
 			}
@@ -111,11 +113,13 @@
 		}).then((r) => {
 			if(r.status != 200)
 			{
+				alert("Success")
 				document.getElementById('update-introduction-message').style = "block"
 				document.getElementById('update-introduction-message').innerHTML = "Failed."
 			}
 			else
 			{
+				alert("Failed")
 				document.getElementById('update-introduction-message').style = "block"
 				document.getElementById('update-introduction-message').innerHTML = "Success."
 			}
@@ -126,7 +130,7 @@
 	{
 		fetch('AdminConsole/DeleteLastPost', {
 			method: 'GET'
-		})
+		}).then(alert("Success"))
 	}
 
 </script>
