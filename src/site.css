@@ -1,716 +1,190 @@
-﻿:root {
-    --main-purple-color: #63023b;
-    --main-gold-color: #f7ebda;
-    --container-bg-color: #a9b1e417;
-    --carousel-box-color: rgba(0,0,0,.75);
-    --body-font-family: "Montserrat", -apple-system,BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol","Noto Color Emoji";
-    --border-color: #ffffff1f;
-    --border-width: 1px;
-    --button-font-family: "Josefin Sans", sans-serif;
-    --navbar-font-family: "Mate SC", serif;
-    --color-clickable-hover: #ffffff21;
-    --border-radius-small: 10px;
-    --border-radius-middle: 30px;
-    --padding-border-small: 1rem;
+﻿@import url(variables.css);
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    font-family: var(--font-family-content);
+}
+
+h1, h2 {
+    font-family: "IM Fell DW Pica SC";
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+a {
+    color: var(--white);
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1820px;
+}
+
+.vh-90 {
+    height: 90vh !important;
+}
+
+.vh-80 {
+    height: 80vh !important;
+}
+
+.my-navbar {
+    width: 100%;
+    font-family: "akshar";
+    font-size: 32px;
+    margin-top: 1rem;
+    border-bottom: 2px solid var(--white);
+}
+
+.my-navbar .row {
+    align-items: baseline;
+}
+
+.my-navbar .nav-link {
+    color: var(--white);
+}
+
+.navbar-icons {
+    justify-content: center;
+    display: flex;
+}
+
+.navbar-icons svg {
+    margin-left: 1em;
+}
+
+.hero-container {
+    height: 100vh;
+    width: 100%;
+}
+
+.hero-container svg {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.hero-logo {
+    position: absolute;
+    top: 30%;
+}
+
+.hero-image {
+    position: absolute;
+    top: 15%;
+    left: 55%;
+}
+
+.hero-image img {
+    max-width: 100%;
+}
+
+.separator-header {
+    border-bottom: 4px solid var(--purple-3);
+    width: fit-content;
+}
+
+.separator-header h2 {
+    margin-bottom: .1rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.yt-iframe {
+    border-radius: 1rem;
+    margin: 3rem;
+    border: 3px solid black;
+}
+
+.small-info-container{
+    text-align: center;
+    padding: 5rem;
+}
+
+.small-info-container h3 {
+    padding-bottom: 10px;
+    border-bottom: 4px solid var(--purple-7);
+    font-weight: bold;
+}
+
+.image-container {}
+
+.image-container img {
+    border-radius: 1rem;
+    max-height: 250px;
+}
+
+.image-container h3 {
+    font-weight: bold;
+}
+
+.image-container-text {
+    border-left: 4px solid var(--purple-7);
+    padding: 0 1rem;
+}
+
+.member-section {
+    background-color: var(--purple-2);
+}
+
+.member-section h2 {
+    color: var(--white);
+    text-align: center;
+}
+
+.member-container {
+    background-color: var(--white);
+    padding: 2rem;
+    width: 70%;
+    height: 25em;
+    font-size: 16px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 2.5rem;
+    box-shadow: 10px 10px 17px 0px rgba(0,0,0,0.36);
+}
+
+.member-container p {
+    height: 15em;
+    overflow: hidden;
+}
+
+.member-container h4 {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.member-container-socials{
+    padding: 1em;
+    text-align: center;
+}
+
+.member-section-image {
+    width: 160px;
+    margin-left: auto;
+    display: block;
+    top: 1.5em;
+    margin-right: auto;
+    position: relative;
+    /* padding-top: 4rem; */
+    height: 160px;
+    border: 4px solid white;
+    border-radius: 100%;
 }
 
 
-/* Standard Desktop */
-@media all {
 
-    /* TAGS */
+@media (max-width: 992px) {
 
-    html {
-        position: relative;
-        min-height: 100%;
-        font-size: 15px;
-    }
-
-    body {
-        margin-bottom: 5rem;
-        background: linear-gradient(0deg, rgba(12, 11, 38, 1) 0%, rgba(102, 2, 60, 1) 100%);
-        background-attachment: fixed;
-        font-family: var(--body-font-family);
-        color: white;
-    }
-
-    footer {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        line-height: 60px;
-        border-top: solid 1px var(--main-gold-color);
-    }
-
-    footer p {
-        margin-left: 10rem;
-        margin-bottom: unset;
-    }
-
-    img {
-        border-radius: var(--border-radius-small);
-        max-width: 100%;
-    }
-
-    article {
-        padding: 1.5rem;
-        border-radius: var(--border-radius-small);
-        background-color: var(--container-bg-color);
-        margin-top: 2rem;
-        text-align: justify;
-        overflow-wrap: break-word;
-    }
-
-    article img {
-        max-height: 500px;
-        max-width: 100%;
-        margin-bottom: 1rem;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    iframe {
-        border-radius: var(--border-radius-middle);
-    }
-
-    a:hover {
-        color: white;
-        font-weight:600;
-    }
-
-    h1, h2, h3, h4 {
-        border-bottom: 1px solid var(--border-color);
-        padding-bottom: 0.8rem;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    /* BUTTONS */
-
-    .btn {
-        color: white;
-    }
-
-    .btn:hover{
-        color: unset;
-    }
-
-    .btn:focus {
-        box-shadow: unset;
-    }
-
-    .btn-primary {
-        background-color: var(--main-gold-color);
-        color: black;
-        border: none;
-        font-family: var(--button-font-family);
-    }
-
-    .btn-primary:hover {
-        background-color: var(--main-gold-color);
-        font-weight: bold;
-        color: black;
-    }
-
-    .padding-bottom-small {
-        padding-bottom:  var(--padding-border-small);
-    }
-
-    .border-bottom {
-        border-bottom: var(--border-width) solid var(--border-color) !important; /* Overwrite bootstrap !important */
-    }
-
-    .border-top {
-        border-bottom: var(--border-width) solid var(--border-color) !important; /* Overwrite bootstrap !important */
-    }
-    
-    .annotation {
-        font-size: 0.8rem;
-        opacity: .8;
-    }
-
-    .shadow {
-        box-shadow: 7px 7px 25px 0px rgb(0 0 0 / 50%);
-    }
-
-    /* CARD (Bootstrap overwrites) */
-
-    .card {
-        background-color: var(--container-bg-color);
-        margin-left: auto;
-        margin-right: auto; 
-        border-radius: var(--border-radius-small);
-        margin-top: 2rem;
-    }
-
-    .card img {
-        border-radius: 1rem 1rem 0em 0em;
-    }
-
-    .card-title {
-        padding-top: 0rem;
-        padding-bottom: 0.2rem;
-    }
-
-    /* NAVIGATION */
-
-    .navbar {
-        border-bottom: solid 1px var(--main-gold-color);
-        font-family: var(--navbar-font-family);
-    }
-
-    .navbar-dark .navbar-nav .nav-link, .navbar-dark {
-        color: unset;
-    }
-
-    .navbar * {
-        color: var(--main-gold-color);
-        font-size: 1.4rem;
-    }
-
-    .nav-link:hover {
-        color: white !important; /* Overwrite bootstrap !important */
-        cursor: pointer;
-    }
-
-    .navbar-brand, 
-    .navbar-brand:hover {
-        font-size: 1.7rem;
-        color: var(--main-gold-color);
-    }
-
-    .dropdown-menu {
-        background-color: var(--main-purple-color);
-        font-size: 1rem;
-        padding: 0rem;
-        border-bottom: 2px solid var(--main-gold-color);
-    }
-
-    .dropdown-item:active {
-        background-color: white;
-    }
-
-    /* TABLES */
-
-    .table {
-        color: white;
-        border-color: var(--color-clickable-hover);
-        font-size: 1.2rem;
-        margin-top: 1rem;
-    }
-
-    .table-striped tbody tr:nth-of-type(odd) {
-        background-color: rgba(0,0,0,.12);
-        color: white;
-    }
-
-    .table-striped > tbody > tr:nth-of-type(odd) > * {
-        color: white;
-    }
-
-    .table-bordered td,
-    .table-bordered th {
-        border: 1px solid var(--color-clickable-hover);
-    }
-
-    .carousel-inner {
-        border-radius: var(--border-radius-small);
-    }
-
-    .carousel-control-next, .carousel-control-prev {
-        opacity: .8;
-    }
-
-    .carousel-control-next-icon, 
-    .carousel-control-prev-icon {
-        width: 2rem;
-        height: 2rem;   
-    }
-
-    .carousel-control-next:hover .carousel-control-next-icon{
-        font-weight: bold;
-        width: 2.5rem;
-        height: 2.5rem; 
-    }
-
-    .carousel-indicators li {
-        border-radius: 100%;
-    }
-
-    .carousel-indicators [data-bs-target] {
-        width: 1rem;
-        height: 1rem;
-    }
-
-    .clickable:hover {
-        cursor: pointer;
-        background-color: var(--color-clickable-hover) !important; /* Overwrite bootstrap !important */
-    }
-
-    .medal {
-        width: 2rem;
-        margin-right: 1rem;
-        height: 2rem;
-        border-radius: 100%;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-    }
-
-    .gold {
-        background-color: rgb(207, 194, 13)
-    }
-
-    .silver {
-        background-color: rgb(158, 158, 158);
-    }
-
-    .bronze{
-        background-color: rgb(131, 98, 27);
-    }
-
-    .widget {
-        overflow: hidden;
-    }
-
-    .youtube-video {
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    /* HOME */
-
-    #blogpost img {
-        display: block;
-        margin: 0rem auto 1rem auto;
-    }
-
-    /* WHATISAGEOFQUEENS*/
-
-    #what-is-age-of-queens-discord-section ul {
-        margin-top: 1rem;
-    }
-
-    /* ACTIVE EVENT */
-
-    #active-event {
-        text-align: center;
-    }
-
-    #active-event img {
-        max-width: 50%;
-    }
-
-    #active-event-gamelist p {
-        margin-bottom: .7rem;
-    }
-
-    #active-event-gamelist article {
-        text-align-last: center;
-        text-align: center;
-        padding: 1rem;
-    }
-
-    #active-event-gamelist-meta {
-        position: relative;
-        height: 2rem;
-        border-bottom: 1px solid var(--border-color);
-        margin-bottom: 1rem;
-    }
-
-    #active-event-gamelist-date {
-        position: absolute;
-        left: 0;
-    }
-
-    #active-event-gamelist-mode {
-        position: absolute;
-        right: 0;
-    }
-
-    #active-event-gamelist-teams {
-        font-weight: bold;
-    }
-
-    #active-event-gamelist-teams p {
-        text-align: center;
-    }
-
-    #active-event-gamelist-team {
-        border-radius: var(--border-radius-small);
-        background-color: var(--container-bg-color); 
-        padding: 0.3rem;
-        width: fit-content;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    #border-special-aoq {
-        border-color: var(--main-gold-color);
-        border-style: groove;
-        border-width: 5px;
-    }
-
-    /* PAST EVENTS */
-
-    #past-events-carousel img {
-        filter: brightness(0.6);
-    }
-
-    #past-events-carousel-box {
-        background-color: var(--carousel-box-color);
-        border-radius: var(--border-radius-small);
-    }
-
-    #past-events-carousel-rank-list {
-        position: absolute;
-        top: 1rem;
-        left: -1rem;
-        font-size: 1rem;
-    }
-
-    #past-events-carousel-rank-list ul {
-        font-weight: bold;
-    }
-
-    #past-events-carousel-rank-list li {
-        display: flex;
-        margin-top: 1rem;
-        list-style: none;
-        font-weight: bold;
-    }
-
-    #past-events-carousel-rank-list li p {
-        margin-bottom: 0;
-        text-shadow: 3px 3px 3px #000000;
-        align-self: center;
-    }
-
-    #past-events-carousel-rank-list h6:not(:first-child) {
-        margin-top: 1rem;
-    }
-
-    #carousel-queens-charity #past-events-carousel-rank-list li {
-        font-size: 0.9rem;
-        margin-top: 0;
-        margin-left: 1rem;
-    }
-
-    /* INTRODUCTIONS */
-
-    #player-introduction {
-        align-items: center;
-        position: relative;
-        display: flex;
-        flex-wrap: nowrap;
-        margin: 1rem;
-        background-color: var(--container-bg-color);
-        border-radius: var(--border-radius-small);
-        padding: 1rem;
-    }
-
-    #player-introduction-content {
-        margin: 2rem;
-    }
-
-    #player-introduction-buttons {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-    }
-
-    #player-introduction-buttons a:not(:last-child) {
-        margin-right: 1rem;
-    }
-
-    #player-introduction-buttons a img {
-        max-width: 2rem;
-    }
-
-    #player-introduction img {
-        max-width: 12rem;
-        max-height: 18rem;
-    }
-
-    /* TWITCHTEAM */
-
-    #twitchteam-info-container {
-        text-align: center;
-        margin: 2rem;
-    }
-
-    #twitchteam-info-container p {
-        margin-top: 2rem;
-    }
-
-    #twitchteam-info-container img {
-        max-width: 100%;
-    }
-
-    #twitch-team-member {
-        display: grid;
-        text-align: center;
-    }
-
-    #twitch-team-member img {
-        height: 8rem;
-        border-radius: 100%;
-        margin: 0.5rem;
-        filter: saturate(0.8);
-    }
-
-    #twitch-team-member-container img:hover {
-        border: 3px solid #f7ebda;
-        filter: saturate(1.0);
-    }
-
-    #twitch-team-member-container .card-body {
-        display: flex;
-        justify-content: center;
-        margin-right: auto;
-        margin-left: auto;
-        flex-wrap: wrap;
-    }
-
-    #twitch-team-online-streams {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .twitch-iframe {
-        margin: 1rem;
-    }
-
-    /* MODS */
-
-    #mod-container {
-        background-color: var(--container-bg-color);
-        margin: 2rem;
-        border-radius: var(--border-radius-small);
-        display: flex;
-        flex-flow: wrap;
-    }
-
-    #mod-container img {
-        max-width: 15%;
-        max-height: 12rem;
-        margin: 1rem;
-        object-fit: cover;
-    }
-
-    #mod-content {
-        width: 80%;
-        margin-top: 1rem;
-    }
-
-    #mod-info {
-        padding-bottom: 1rem;
-        padding-left: 2rem;
-    }
-
-    /* ERROR */
-
-    #error-page img {
-        filter: invert(1)
-    }
 }
 
-/* Most Phones */
-@media (max-width: 480px){
-
-    /* TAGS */
-
-    html {
-        font-size: 10px;
-    }
-
-    footer {
-        position: relative;
-        text-align: center;
-    }
-
-    footer p {
-        margin-left: 0;
-    }
-
-    body {
-        margin-bottom: 0;
-    }
-
-    iframe {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .col-9 {
-        max-width: 100%;
-    }
-
-    .table{
-        font-size: 1rem;
-    }
-
-    tbody tr{
-        height: 5rem;
-        text-align: center;
-    }
-
-    .navbar-brand {
-        font-size: 2.3rem ;
-    }
-
-    .widget {
-        display: none;
-    }
-
-    .card {
-        display: none;
-    }
-
-    /* MODS */
-
-    #mod-content {
-        width: 100%;
-        margin-top: unset;
-        text-align: center;
-    }
-
-    #mod-container img {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 100%; 
-        max-height: unset;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #mod-info {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* TWITCHTEAM */
-
-    #twitch-team-member-container img {
-        height: 6rem;
-        border-radius: var(--border-radius-small);
-    }
-
-    #twitch-team-member-container h7 {
-        font-size: 1rem;
-    }
-
-    .twitch-iframe {
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    /* INTRODUCTIONS */
-
-    #player-introduction {
-        text-align: center;
-        position: relative;
-        display: block;
-        padding: 1rem;
-        margin: 1rem;
-    }
-
-    #player-introduction p {
-        text-align: justify;
-        font-size: 1.2rem;
-    }
-
-    #player-introduction img {
-        margin-bottom: 0;
-    }
-
-    #player-introduction-buttons {
-        position: relative ;
-        right: unset ;
-        top: unset ;
-        margin-bottom: 1rem;
-    }
-
-    #player-introduction-buttons a img {
-        max-width: 3rem;
-        margin-bottom: 0;
-    }
-
-    /* ACTIVE EVENT */
-
-    #active-event img {
-        max-width: 100%;
-    }
-}
-
-/* TODO: Nothing for 480 - 699 */
-
-/* most Tablets */
-@media (min-width: 700px) and (max-width: 1199){
-
-    .container {
-        max-width: 690px;
-    }
-    
-    html {
-        font-size: 11px;
-    }
-
-    body {
-        margin-bottom: 0;
-    }
-
-    footer {
-        position: relative;
-        text-align: center;
-    }
-
-    footer p {
-        margin-left: 0;
-    }
-    .widget {
-        display: none;
-    }
-
-    iframe {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .twitch-iframe {
-        max-width: 40%;
-    }
-
-    #mod-container img {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 75%; 
-        max-height: unset;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #mod-content {
-        width: 100%;
-        margin-top: unset;
-        text-align: center;
-    }
-
-    #mod-info {
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/* small Desktops */
-@media(min-width: 993){}
-
-/* Large Viewpoints */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1540px;
-    }
-}

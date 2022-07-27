@@ -25,20 +25,25 @@ namespace Ageofqueenscom.Controllers
         {
             try
             {
-                List<BlogEntry> blog_entries = _dataContext.BlogEntries.ToList();
-
-                foreach(BlogEntry b in blog_entries)
+                List<IntroductionEntry> introduction_entries = _dataContext.IntroductionEntries.ToList();
+                
+                foreach(IntroductionEntry b in introduction_entries)
                 {
-                    HomeViewModel.Blogpost blogPost = new HomeViewModel.Blogpost();
-                    blogPost.Title = b.Headline;
-                    blogPost.Content = b.Content;
-                    blogPost.ImageName = b.ImageName;
-                    blogPost.Author = b.Author;
-                    blogPost.Created = b.CreatedAt;
+                    HomeViewModel.Introduction introduction = new HomeViewModel.Introduction();
+                    introduction.Name = b.Name;
+                    introduction.Description = b.Description;
+                    introduction.ImageUrl = b.ImageUrl;
+                    introduction.TwitterUrl = b.TwitterUrl;
+                    introduction.YoutubeUrl = b.YoutubeUrl;
+                    introduction.TwitchUrl = b.TwitchUrl;
+                    introduction.InstagramUrl = b.InstagramUrl;
                     
-                    _model.BlogpostList.Add(blogPost);
+                    _model.IntroductionList.Add(introduction);
                 }
-                _model.BlogpostList.Reverse();
+                // Shuffling list so introductions are randomly displayed
+                var rnd = new Random();
+                _model.IntroductionList = _model.IntroductionList.OrderBy(x => rnd.Next()).ToList();
+                
             }
             catch(Exception e)
             {

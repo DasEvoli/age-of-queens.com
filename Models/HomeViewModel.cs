@@ -5,15 +5,17 @@ namespace Ageofqueenscom.Models
 {
     public class HomeViewModel
     {
-        public List<Blogpost> BlogpostList = new List<Blogpost>();
-        
-        public class Blogpost
+        public List<Introduction> IntroductionList = new List<Introduction>();
+
+        public class Introduction
         {
-            public string Title { get; set;}
-            public string Content { get; set; }
-            public string Author { get; set; }
-            public DateTime Created { get; set; }
-            public string ImageName { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public string ImageUrl { get; set; }
+            public string TwitterUrl { get; set; }
+            public string YoutubeUrl { get; set; }
+            public string TwitchUrl { get; set; }
+            public string InstagramUrl { get; set; }
         }
     }
 }

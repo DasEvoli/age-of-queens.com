@@ -1,0 +1,31 @@
+:root {
+    --purple-1: #5C1A4A;
+    --purple-2: #85356F;
+    --purple-3: #9D3881;
+    --purple-4: #CB48A6;
+    --purple-5: #D96CBA;
+    --purple-6: #EB9FD6;
+    --purple-7: #F8C0DB;
+    --purple-8: #F9DEEB;
+    --gold-1: #EBD938;
+    --gold-2: #E9E365;
+    --gold-3: #E9EB8D;
+    --gold-4: #EAE3A8;
+    --gold-5: #F1F4CC;
+    --gold-6: #FDFFE7;
+    --blue-1: #388EBF;
+    --blue-2: #399BB0;
+    --blue-3: #42B2CB;
+    --blue-4: #66CCE2;
+    --blue-5: #9FDEEC;
+    --blue-6: #D1EFF5;
+    --white: #FFFFFF;
+    --black: #000000;
+    --font-family-content: "Poppins", sans-serif;
+    --font-family-nav: "";
+    --font-family-button: "";
+    --font-family-header: "";
+    --border-radius-1: 10px;
+    --border-radius-2: 20px;
+    --border-radius-3: 30px;
+}
